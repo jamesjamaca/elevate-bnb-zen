@@ -128,18 +128,26 @@ const AboutPage = () => (
     </section>
 
     {/* CTA */}
-    <section className="py-40 lg:py-56 px-6">
+    <section className="py-40 lg:py-56 bg-secondary px-6">
       <div className="container mx-auto max-w-3xl text-center">
         <ScrollReveal>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
-            Built for operators who take their portfolio seriously.
+            Your Portfolio Deserves Structured Support.
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            We build structure where others rely on reaction.
+          <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-14 leading-[1.7]">
+            Let's have a conversation about your listings, your goals, and how ElitebnbHosts can help protect your performance and reputation long-term.
           </p>
-          <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/contact">Let's Talk About Your Portfolio <ArrowRight className="ml-1" size={16} /></Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/services">See How We Can Support You</Link>
+            </Button>
+          </div>
+          <p className="text-muted-foreground text-sm">
+            No long-term contracts. Clear communication. Structured onboarding.
+          </p>
         </ScrollReveal>
       </div>
     </section>
