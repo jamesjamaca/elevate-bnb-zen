@@ -101,6 +101,32 @@ const AboutPage = () => (
       </div>
     </section>
 
+    {/* Compliance Philosophy */}
+    <section className="py-40 lg:py-56 px-6">
+      <div className="container mx-auto max-w-3xl">
+        <ScrollReveal>
+          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Our Commitment</p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
+            Our Compliance Philosophy
+          </h2>
+          <p className="text-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-8">
+            Reputation management should never compromise account integrity.
+          </p>
+          <div className="space-y-6 text-muted-foreground text-base md:text-lg leading-[1.7] max-w-2xl">
+            <p>
+              ElitebnbHosts operates on a policy-aligned framework designed to protect long-term account health. Every review strategy, guest interaction, and claims process is structured around platform compliance and documented precision.
+            </p>
+            <p>
+              While short-term shortcuts may produce temporary results, we prioritize sustainable performance — ensuring that growth never comes at the expense of platform stability.
+            </p>
+            <p>
+              Our goal is simple: protect visibility, protect revenue, and protect the integrity of every portfolio we manage.
+            </p>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="py-40 lg:py-56 px-6">
       <div className="container mx-auto max-w-3xl text-center">
