@@ -5,40 +5,55 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const plans = [
   {
-    name: "Starter",
-    desc: "For hosts with 1–2 properties.",
+    name: "Core Management",
+    range: "2–5 Listings",
+    price: "$150",
+    priceLabel: "/listing",
+    billing: "per month",
+    subRange: null,
     features: [
-      "Guest communication",
-      "Listing optimization",
-      "Basic review management",
-      "Monthly report",
+      "Remote Property Management",
+      "Guest Communication",
+      "Review Management",
+      "Listing Optimization",
+      "Revenue Optimization",
+      "Claims & Dispute Support",
     ],
+    cta: "Book Consultation",
     featured: false,
   },
   {
-    name: "Professional",
-    desc: "For hosts looking to scale.",
+    name: "Growth Management",
+    range: "6–20 Listings",
+    price: "Starting at $140",
+    priceLabel: "/listing",
+    billing: "per month",
+    subRange: "6–10: $140 | 11–20: $130",
     features: [
-      "Everything in Starter",
-      "Revenue optimization",
-      "Review removal support",
-      "Multi-platform management",
-      "Priority support",
-      "Weekly reports",
+      "Everything in Core",
+      "Priority Response Handling",
+      "Enhanced Review Monitoring",
+      "Advanced Claims Management",
+      "Performance Optimization Oversight",
     ],
+    cta: "Scale My Listings",
     featured: true,
   },
   {
-    name: "Enterprise",
-    desc: "Custom solutions for 5+ properties.",
+    name: "Full Remote Operations",
+    range: "21+ Listings",
+    price: "Starting at $110",
+    priceLabel: "/listing",
+    billing: "per month",
+    subRange: "21–30: $110 | 31–50: $100",
     features: [
-      "Everything in Professional",
-      "Dedicated account manager",
-      "Custom reporting",
-      "Claim & dispute handling",
-      "Strategy consultations",
-      "Volume pricing",
+      "Everything in Growth",
+      "24/7 Guest Communication",
+      "Full Review Strategy Implementation",
+      "Complete Claims & Dispute Handling",
+      "Dedicated Operational Oversight",
     ],
+    cta: "Request Enterprise Consultation",
     featured: false,
   },
 ];
@@ -53,9 +68,19 @@ const PricingPage = () => (
           <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-8">
             Simple, transparent<br />pricing.
           </h1>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
-            Flexible plans designed around your portfolio. Every plan delivers measurable ROI.
-          </p>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <div className="max-w-2xl mx-auto space-y-4 text-muted-foreground text-lg md:text-xl leading-relaxed">
+            <p>
+              Traditional property management often charges{" "}
+              <strong className="text-foreground">15–25% of revenue</strong> or requires hiring in-house staff costing{" "}
+              <strong className="text-foreground">$2,000–$3,000+ per month</strong> per property.
+            </p>
+            <p>
+              ElitebnbHosts operates on a predictable flat-rate structure —
+              delivering full remote operations without percentage-based costs.
+            </p>
+          </div>
         </ScrollReveal>
       </div>
     </section>
@@ -77,11 +102,19 @@ const PricingPage = () => (
                   <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/60 mb-6">Most Popular</span>
                 )}
                 <h3 className="font-heading text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className={`text-sm mb-8 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
-                  {plan.desc}
+                <p className={`text-sm mb-4 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                  {plan.range}
                 </p>
-                <p className="font-heading text-3xl font-bold mb-10">
-                  Custom <span className={`text-sm font-body font-normal ${plan.featured ? "text-primary-foreground/40" : "text-muted-foreground"}`}>/ quote</span>
+                <p className="font-heading text-3xl font-bold mb-1">
+                  {plan.price}<span className={`text-sm font-body font-normal ${plan.featured ? "text-primary-foreground/40" : "text-muted-foreground"}`}>{plan.priceLabel}</span>
+                </p>
+                {plan.subRange && (
+                  <p className={`text-xs mb-2 ${plan.featured ? "text-primary-foreground/50" : "text-muted-foreground"}`}>
+                    {plan.subRange}
+                  </p>
+                )}
+                <p className={`text-sm mb-10 ${plan.featured ? "text-primary-foreground/50" : "text-muted-foreground"}`}>
+                  {plan.billing}
                 </p>
                 <ul className="space-y-4 mb-10 flex-1">
                   {plan.features.map((f) => (
@@ -97,17 +130,12 @@ const PricingPage = () => (
                   className="w-full"
                   asChild
                 >
-                  <Link to="/contact">{plan.featured ? "Get Started" : "Contact Us"}</Link>
+                  <Link to="/contact">{plan.cta}</Link>
                 </Button>
               </div>
             </ScrollReveal>
           ))}
         </div>
-        <ScrollReveal>
-          <p className="text-center text-muted-foreground text-sm mt-16 max-w-md mx-auto">
-            All plans are customized based on your portfolio. Book a consultation for a personalized quote.
-          </p>
-        </ScrollReveal>
       </div>
     </section>
 
