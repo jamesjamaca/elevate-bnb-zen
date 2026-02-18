@@ -5,10 +5,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
-  { q: "Is your review management policy-compliant?", a: "Yes. Our review management process follows platform guidelines and focuses on proactive guest communication, reputation protection, and structured performance management." },
-  { q: "Do you communicate directly with Airbnb support?", a: "Our approach is guest-facing and structured to minimize risk. We follow platform processes and handle escalations strategically when required." },
-  { q: "How fast do you respond to guests?", a: "Structured daily coverage is included from 2–20 listings. 24/7 response coverage begins at 21+ listings." },
-  { q: "Do you handle disputes and damage claims?", a: "Yes. We manage documentation, communication, and dispute handling in alignment with platform policies." },
+  { q: "Is your review management policy-compliant?", a: "Absolutely. Our review management process is built entirely around platform guidelines and ethical guest communication. Unlike operators who rely on risky shortcuts or grey-area tactics, we prioritize account integrity and long-term listing protection above all else. Our structured approach achieves approximately a 90% success rate, depending on case eligibility — without ever compromising your standing on the platform." },
+  { q: "Do you communicate directly with Airbnb support?", a: "Our daily operations are guest-facing, focused on delivering exceptional communication and proactive issue resolution. When platform support engagement is necessary, we handle it on a case-by-case basis — using proper documentation, structured escalation protocols, and full compliance with platform processes to protect your account at every step." },
+  { q: "How fast do you respond to guests?", a: "During operational coverage hours, most guest messages are responded to within 10 minutes. For portfolios of 21+ listings, 24/7 response coverage is available to ensure no guest inquiry goes unaddressed, regardless of time zone or hour." },
+  { q: "Do you handle disputes and damage claims?", a: "Yes. We manage the full claims process — from structured documentation and evidence gathering to strategic, policy-aligned claim submission. Our focus is on protecting legitimate owner costs and ensuring fair resolution, always in alignment with platform guidelines. We never pursue claims in ways that could compromise your reputation or account standing." },
   { q: "Is there a long-term contract?", a: "No long-term lock-ins. We believe our results should be the reason you stay." },
   { q: "What platforms do you support?", a: "We specialize in Airbnb but support multi-platform short-term rental operations when required." },
   { q: "How does pricing scale as I grow?", a: "Pricing decreases per listing as your portfolio grows. We're structured to scale with serious operators." },
