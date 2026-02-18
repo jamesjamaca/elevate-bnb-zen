@@ -175,6 +175,44 @@ const PricingPage = () => (
       </div>
     </section>
 
+    {/* Testimonials */}
+    <section className="py-40 lg:py-56 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <ScrollReveal>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20 text-center">
+            Trusted by Professional Hosts<br />& Portfolio Operators
+          </h2>
+        </ScrollReveal>
+
+        {/* Featured */}
+        <ScrollReveal delay={0.1}>
+          <div className="bg-primary text-primary-foreground rounded-2xl p-10 md:p-14 mb-10">
+            <p className="text-lg md:text-xl leading-relaxed italic mb-6">
+              "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,000 reimbursement and protected the integrity of our portfolio."
+            </p>
+            <span className="text-sm text-primary-foreground/60">— Multi-Property Investor</span>
+          </div>
+        </ScrollReveal>
+
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            { quote: "Thank you so much for your excellent work. The results speak for themselves — truly outstanding execution.", author: "Portfolio Host" },
+            { quote: "Review successfully removed. Amazing work as always.", author: "Multi-Listing Operator" },
+            { quote: "Keep giving us excellent results. We're grateful for the consistency.", author: "Short-Term Rental Investor" },
+            { quote: "Great work, team. Fast turnaround and handled professionally.", author: "Property Manager" },
+          ].map((t, i) => (
+            <ScrollReveal key={i} delay={0.1 + i * 0.05}>
+              <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
+                <p className="text-foreground text-base leading-relaxed italic mb-6">"{t.quote}"</p>
+                <span className="text-sm text-muted-foreground">— {t.author}</span>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="py-40 lg:py-56 bg-secondary px-6">
       <div className="container mx-auto max-w-3xl text-center">
