@@ -25,21 +25,21 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-screen flex items-center justify-center px-4">
-        <div className="text-center max-w-4xl mx-auto">
+      <section className="min-h-[100svh] flex items-center justify-center px-6">
+        <div className="text-center max-w-5xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-6">Remote Property Management</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Remote Property Management</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-foreground leading-[0.95] tracking-tight mb-8">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-10">
               Protect your reviews.
               <br />
               <span className="text-muted-foreground">Protect your revenue.</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed">
-              Structured remote management that safeguards your listing performance, guest experience, and long-term profitability.
+            <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-14 leading-relaxed">
+              Structured remote management that safeguards your listing performance and long-term profitability.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
@@ -56,60 +56,20 @@ const Index = () => {
       </section>
 
       {/* Introduction — Why Reviews Matter */}
-      <section className="py-32 lg:py-44 px-4">
+      <section className="py-40 lg:py-56 px-6">
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-4">The Reality</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">The Reality</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight mb-8">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
               Reviews define your listing's future.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-              <p>
-                Your reviews directly influence search ranking, booking conversion, and guest trust. A single negative experience can cascade — lowering visibility, reducing bookings, and eroding revenue over time.
-              </p>
-              <p>
-                ElitebnbHosts provides structured management to prevent this. Through proactive guest communication, operational systems, and strategic review management, we protect the performance your listing depends on.
-              </p>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Who We Are */}
-      <section className="py-24 lg:py-32 bg-secondary px-4">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-4">Who We Are</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Built on real operational experience.
-            </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mb-16">
-              ElitebnbHosts was founded on hands-on experience managing reviews, guest communication, and claims. We understand the challenges because we've been there — and we built systems to solve them.
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
+              Your reviews directly influence search ranking, booking conversion, and guest trust. A single negative experience can cascade — lowering visibility, reducing bookings, and eroding revenue over time.
             </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-              <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-foreground">500+</p>
-                <p className="text-muted-foreground text-sm mt-2">Reviews managed</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-foreground">50+</p>
-                <p className="text-muted-foreground text-sm mt-2">Happy clients</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-foreground">95%</p>
-                <p className="text-muted-foreground text-sm mt-2">Superhost improvements</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl font-bold text-foreground">100+</p>
-                <p className="text-muted-foreground text-sm mt-2">Properties supported</p>
-              </div>
-            </div>
           </ScrollReveal>
         </div>
       </section>
@@ -128,19 +88,54 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
-      {/* Mission */}
-      <section className="py-32 lg:py-44 px-4">
-        <div className="container mx-auto max-w-3xl">
+      {/* Who We Are */}
+      <section className="py-40 lg:py-56 px-6">
+        <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-4">Our Mission</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Who We Are</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
+              Built on real operational experience.
+            </h2>
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-24">
+              ElitebnbHosts was founded on hands-on experience managing reviews, guest communication, and claims. We understand the challenges because we've been there.
+            </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight tracking-tight">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
+              <div>
+                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">500+</p>
+                <p className="text-muted-foreground text-sm mt-3">Reviews managed</p>
+              </div>
+              <div>
+                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">50+</p>
+                <p className="text-muted-foreground text-sm mt-3">Happy clients</p>
+              </div>
+              <div>
+                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">95%</p>
+                <p className="text-muted-foreground text-sm mt-3">Superhost improvements</p>
+              </div>
+              <div>
+                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">100+</p>
+                <p className="text-muted-foreground text-sm mt-3">Properties supported</p>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Mission */}
+      <section className="py-40 lg:py-56 bg-secondary px-6">
+        <div className="container mx-auto max-w-3xl">
+          <ScrollReveal>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Our Mission</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em]">
               Leveling the playing field for property owners.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
-            <p className="text-muted-foreground text-lg leading-relaxed mt-8 max-w-2xl">
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] mt-10 max-w-2xl">
               We exist to protect your digital reputation and ensure your listings reflect the true quality of the guest experience. Through structured management and intelligent systems, every host can compete at the highest level.
             </p>
           </ScrollReveal>
@@ -148,42 +143,20 @@ const Index = () => {
       </section>
 
       {/* Why Trust Us */}
-      <section className="py-24 lg:py-32 bg-secondary px-4">
+      <section className="py-40 lg:py-56 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-4">Why Trust Us</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-16">
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Why Trust Us</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
               Built on compliance,<br />driven by results.
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
             {trustPillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.08}>
                 <div>
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{p.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{p.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Capabilities */}
-      <section className="py-32 lg:py-44 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-4">Capabilities</p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-16">
-              One system.<br />Complete management.
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-12">
-            {capabilities.map((c, i) => (
-              <ScrollReveal key={c.title} delay={i * 0.08}>
-                <div className="group">
-                  <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{c.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{c.desc}</p>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{p.title}</h3>
+                  <p className="text-muted-foreground text-base leading-[1.7]">{p.desc}</p>
                 </div>
               </ScrollReveal>
             ))}
@@ -205,14 +178,36 @@ const Index = () => {
         </section>
       </ScrollReveal>
 
+      {/* Capabilities */}
+      <section className="py-40 lg:py-56 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Capabilities</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
+              One system.<br />Complete management.
+            </h2>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16">
+            {capabilities.map((c, i) => (
+              <ScrollReveal key={c.title} delay={i * 0.08}>
+                <div>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{c.title}</h3>
+                  <p className="text-muted-foreground text-base leading-[1.7]">{c.desc}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-32 lg:py-44 bg-secondary px-4">
+      <section className="py-40 lg:py-56 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl text-center">
           <ScrollReveal>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-6">
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
               Management built<br />around performance.
             </h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-md mx-auto">
+            <p className="text-muted-foreground text-lg md:text-xl mb-14 max-w-md mx-auto leading-[1.7]">
               Scale your Airbnb without the stress. Let's build a strategy that works.
             </p>
             <Button variant="hero" size="lg" asChild>
