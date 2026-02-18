@@ -68,6 +68,20 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Full-width image break — warmth after introduction */}
+      <ScrollReveal>
+        <section className="w-full">
+          <div className="aspect-[21/9] w-full overflow-hidden">
+            <img
+              src={ambientInterior}
+              alt="Minimal luxury rental interior with natural light"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* Who We Are */}
       <section className="py-40 lg:py-56 px-6">
         <div className="container mx-auto max-w-5xl">
@@ -138,20 +152,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Full-width image break */}
-      <ScrollReveal>
-        <section className="w-full">
-          <div className="aspect-[21/9] w-full overflow-hidden">
-            <img
-              src={ambientInterior}
-              alt="Minimal luxury rental interior with natural light"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </section>
-      </ScrollReveal>
 
       {/* Capabilities */}
       <section className="py-40 lg:py-56 px-6">
