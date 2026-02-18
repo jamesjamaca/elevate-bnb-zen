@@ -32,7 +32,7 @@ const Index = () => {
           <ScrollReveal delay={0.1}>
             <h1 className="font-heading text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-12">
               Guest communication.<br />
-              Review oversight.<br />
+              Review management.<br />
               <span className="text-muted-foreground">Revenue secured.</span>
             </h1>
           </ScrollReveal>
