@@ -22,73 +22,73 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[50vh] flex items-center justify-center px-4">
-        <div className="text-center max-w-3xl mx-auto">
+      <section className="min-h-[70vh] flex items-center justify-center px-6">
+        <div className="text-center max-w-4xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-widest uppercase mb-6">Contact</p>
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[0.95] tracking-tight mb-6">
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Contact</p>
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-8">
               Let's talk.
             </h1>
-            <p className="text-muted-foreground text-lg max-w-lg mx-auto">
-              Tell us about your properties and goals. We'll create a custom strategy.
+            <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
+              Tell us about your properties and goals. We'll build a strategy around them.
             </p>
           </ScrollReveal>
         </div>
       </section>
 
       {/* Form */}
-      <section className="pb-24 lg:pb-32 px-4">
+      <section className="pb-40 lg:pb-56 px-6">
         <div className="container mx-auto max-w-xl">
           <ScrollReveal>
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Full Name</label>
+                <label className="text-xs font-medium text-foreground tracking-wide uppercase mb-2 block">Full Name</label>
                 <Input
                   placeholder="John Doe"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   required
-                  className="rounded-lg h-12 bg-secondary border-0"
+                  className="rounded-xl h-13 bg-secondary border-0 text-base px-5"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
+                <label className="text-xs font-medium text-foreground tracking-wide uppercase mb-2 block">Email</label>
                 <Input
                   type="email"
                   placeholder="john@example.com"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                   required
-                  className="rounded-lg h-12 bg-secondary border-0"
+                  className="rounded-xl h-13 bg-secondary border-0 text-base px-5"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Number of Properties</label>
+                <label className="text-xs font-medium text-foreground tracking-wide uppercase mb-2 block">Number of Properties</label>
                 <Input
                   placeholder="e.g. 3"
                   value={form.properties}
                   onChange={(e) => setForm({ ...form, properties: e.target.value })}
-                  className="rounded-lg h-12 bg-secondary border-0"
+                  className="rounded-xl h-13 bg-secondary border-0 text-base px-5"
                 />
               </div>
               <div>
-                <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
+                <label className="text-xs font-medium text-foreground tracking-wide uppercase mb-2 block">Message</label>
                 <Textarea
                   placeholder="Tell us about your properties and goals..."
                   rows={5}
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   required
-                  className="rounded-lg bg-secondary border-0 resize-none"
+                  className="rounded-xl bg-secondary border-0 resize-none text-base px-5 py-4"
                 />
               </div>
-              <Button variant="hero" size="lg" type="submit" className="w-full">
+              <Button variant="hero" size="lg" type="submit" className="w-full mt-4">
                 Send Message <ArrowRight className="ml-1" size={16} />
               </Button>
             </form>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <p className="text-center text-muted-foreground text-sm mt-10">
+            <p className="text-center text-muted-foreground text-sm mt-12">
               Or email us directly at contact@elitebnbhosts.com
             </p>
           </ScrollReveal>
