@@ -1,46 +1,44 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { CheckCircle2, ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
+import ScrollReveal from "@/components/ScrollReveal";
 
 const plans = [
   {
     name: "Starter",
-    desc: "For hosts with 1–2 properties getting started.",
+    desc: "For hosts with 1–2 properties.",
     features: [
-      "Guest communication management",
-      "Listing optimization review",
+      "Guest communication",
+      "Listing optimization",
       "Basic review management",
-      "Monthly performance report",
+      "Monthly report",
     ],
-    cta: "Get Started",
     featured: false,
   },
   {
     name: "Professional",
-    desc: "For serious hosts looking to scale their portfolio.",
+    desc: "For hosts looking to scale.",
     features: [
       "Everything in Starter",
-      "Full revenue optimization",
-      "Policy-based review removal support",
+      "Revenue optimization",
+      "Review removal support",
       "Multi-platform management",
       "Priority support",
-      "Weekly performance reports",
+      "Weekly reports",
     ],
-    cta: "Most Popular",
     featured: true,
   },
   {
     name: "Enterprise",
-    desc: "Custom solutions for portfolios of 5+ properties.",
+    desc: "Custom solutions for 5+ properties.",
     features: [
       "Everything in Professional",
       "Dedicated account manager",
-      "Custom reporting dashboard",
+      "Custom reporting",
       "Claim & dispute handling",
       "Strategy consultations",
       "Volume pricing",
     ],
-    cta: "Contact Us",
     featured: false,
   },
 ];
@@ -48,63 +46,68 @@ const plans = [
 const PricingPage = () => (
   <div>
     {/* Hero */}
-    <section className="py-24 lg:py-32 bg-primary">
-      <div className="container mx-auto px-4 lg:px-8 text-center">
-        <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Pricing</p>
-        <h1 className="font-heading text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
-          Transparent, Value-Driven Pricing
-        </h1>
-        <p className="text-primary-foreground/70 max-w-xl mx-auto">
-          Flexible plans designed around your portfolio size and goals. Every plan delivers measurable ROI.
-        </p>
+    <section className="min-h-[50vh] flex items-center justify-center px-4">
+      <div className="text-center max-w-3xl mx-auto">
+        <ScrollReveal>
+          <p className="text-muted-foreground text-sm tracking-widest uppercase mb-6">Pricing</p>
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[0.95] tracking-tight mb-6">
+            Simple, transparent<br />pricing.
+          </h1>
+          <p className="text-muted-foreground text-lg max-w-lg mx-auto">
+            Flexible plans designed around your portfolio. Every plan delivers measurable ROI.
+          </p>
+        </ScrollReveal>
       </div>
     </section>
 
     {/* Plans */}
-    <section className="py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {plans.map((plan) => (
-            <div
-              key={plan.name}
-              className={`rounded-2xl p-8 border flex flex-col ${
-                plan.featured
-                  ? "bg-primary text-primary-foreground border-accent shadow-2xl scale-105"
-                  : "bg-card text-foreground border-border"
-              }`}
-            >
-              {plan.featured && (
-                <span className="text-xs font-semibold uppercase tracking-wider text-accent mb-4">Most Popular</span>
-              )}
-              <h3 className="font-heading text-2xl font-bold mb-2">{plan.name}</h3>
-              <p className={`text-sm mb-6 ${plan.featured ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
-                {plan.desc}
-              </p>
-              <p className="font-heading text-3xl font-bold mb-6">
-                Custom <span className={`text-sm font-body font-normal ${plan.featured ? "text-primary-foreground/50" : "text-muted-foreground"}`}>/ quote</span>
-              </p>
-              <ul className="space-y-3 mb-8 flex-1">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <CheckCircle2 className={`shrink-0 mt-0.5 ${plan.featured ? "text-accent" : "text-accent"}`} size={16} />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Button
-                variant={plan.featured ? "hero" : "outline"}
-                size="lg"
-                className="w-full"
-                asChild
+    <section className="pb-24 lg:pb-32 px-4">
+      <div className="container mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {plans.map((plan, i) => (
+            <ScrollReveal key={plan.name} delay={i * 0.1}>
+              <div
+                className={`rounded-2xl p-8 flex flex-col h-full ${
+                  plan.featured
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-secondary"
+                }`}
               >
-                <Link to="/contact">{plan.cta}</Link>
-              </Button>
-            </div>
+                {plan.featured && (
+                  <span className="text-xs font-medium uppercase tracking-wider text-primary-foreground/60 mb-4">Most Popular</span>
+                )}
+                <h3 className="font-heading text-2xl font-bold mb-1">{plan.name}</h3>
+                <p className={`text-sm mb-6 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
+                  {plan.desc}
+                </p>
+                <p className="font-heading text-3xl font-bold mb-8">
+                  Custom <span className={`text-sm font-body font-normal ${plan.featured ? "text-primary-foreground/40" : "text-muted-foreground"}`}>/ quote</span>
+                </p>
+                <ul className="space-y-3 mb-8 flex-1">
+                  {plan.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2.5 text-sm">
+                      <Check className={`shrink-0 mt-0.5 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`} size={14} />
+                      <span>{f}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  variant={plan.featured ? "secondary" : "default"}
+                  size="lg"
+                  className="w-full"
+                  asChild
+                >
+                  <Link to="/contact">{plan.featured ? "Get Started" : "Contact Us"}</Link>
+                </Button>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
-        <p className="text-center text-muted-foreground text-sm mt-12 max-w-lg mx-auto">
-          All plans are customized based on the number of properties, locations, and specific requirements. Book a consultation for a personalized quote.
-        </p>
+        <ScrollReveal>
+          <p className="text-center text-muted-foreground text-sm mt-12 max-w-md mx-auto">
+            All plans are customized based on your portfolio. Book a consultation for a personalized quote.
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   </div>
