@@ -12,25 +12,25 @@ const AboutPage = () => (
         <ScrollReveal>
           <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">About</p>
           <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-8">
-            Built by hosts,<br />for hosts.
+            We don't just manage listings.<br />We protect performance.
           </h1>
           <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto leading-relaxed">
-            We understand the challenges because we've been there. That experience drives everything we build.
+            ElitebnbHosts was built to bring structured, policy-compliant operational management to serious short-term rental operators.
           </p>
         </ScrollReveal>
       </div>
     </section>
 
-    {/* Mission */}
+    {/* The Industry Reality */}
     <section className="py-40 lg:py-56 bg-secondary px-6">
       <div className="container mx-auto max-w-3xl">
         <ScrollReveal>
-          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Our Mission</p>
+          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">The Industry Reality</p>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
-            Leveling the playing field.
+            Scale demands structure.
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
-            ElitebnbHosts exists to protect the digital reputation of property owners and ensure listings reflect the true quality of the guest experience. Founded on real operational experience managing reviews, guest communication, and claims.
+            The short-term rental industry rewards visibility, responsiveness, and reputation. As portfolios grow, operational complexity increases. Guest communication, reviews, claims, and performance monitoring must be structured — not reactive.
           </p>
         </ScrollReveal>
       </div>
@@ -50,47 +50,51 @@ const AboutPage = () => (
       </section>
     </ScrollReveal>
 
-    {/* Why Trust Us */}
+    {/* Our Difference */}
     <section className="py-40 lg:py-56 px-6">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-3xl">
         <ScrollReveal>
-          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Why Trust Us</p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
+          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Our Difference</p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
             Compliance first.<br />Results always.
           </h2>
+          <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
+            <p>
+              ElitebnbHosts was designed around compliance, documentation, and long-term platform integrity. While many operators rely on shortcuts, we focus on strategic guest communication, performance oversight, and policy-aligned review management.
+            </p>
+            <p>
+              Our priority is sustainable account health and protected revenue — not temporary results.
+            </p>
+          </div>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
-          {[
-            { title: "Account-Safe Processes", desc: "Every action is fully compliant with platform policies. We never take shortcuts that put your account at risk." },
-            { title: "Proven Experience", desc: "Hundreds of reviews managed, dozens of properties supported, and real results delivered for hosts and investors." },
-            { title: "Guest-First Communication", desc: "Proactive messaging that shapes positive experiences and prevents issues before they become negative reviews." },
-            { title: "Integrated Systems", desc: "Review management, guest communication, and claims handling work together as one cohesive system." },
-          ].map((v, i) => (
-            <ScrollReveal key={v.title} delay={i * 0.1}>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{v.title}</h3>
-              <p className="text-muted-foreground text-base leading-[1.7]">{v.desc}</p>
-            </ScrollReveal>
-          ))}
-        </div>
       </div>
     </section>
 
-    {/* Values */}
+    {/* Operational Philosophy */}
     <section className="py-40 lg:py-56 bg-secondary px-6">
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal>
-          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Values</p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">What we stand for.</h2>
+          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Operational Philosophy</p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
+            We operate like an internal team.
+          </h2>
+          <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-20">
+            Without the overhead.
+          </p>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-20 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
           {[
-            { title: "Results-Driven", desc: "Every strategy is built around measurable outcomes — stronger reviews, higher revenue, less stress." },
-            { title: "Transparency", desc: "No hidden fees, no surprises. Open communication and honest partnerships." },
-            { title: "Innovation", desc: "Modern tools, data insights, and intelligent systems to stay ahead of the market." },
-          ].map((v, i) => (
-            <ScrollReveal key={v.title} delay={i * 0.1}>
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{v.title}</h3>
-              <p className="text-muted-foreground text-base leading-[1.7]">{v.desc}</p>
+            "Structured communication workflows",
+            "Performance monitoring systems",
+            "Policy-compliant review management",
+            "Strategic claims documentation",
+            "Scalable operational coverage",
+          ].map((item, i) => (
+            <ScrollReveal key={item} delay={i * 0.08}>
+              <div className="flex items-center gap-3 text-foreground text-base">
+                <span className="w-1 h-1 rounded-full bg-foreground shrink-0" />
+                {item}
+              </div>
             </ScrollReveal>
           ))}
         </div>
@@ -101,9 +105,11 @@ const AboutPage = () => (
     <section className="py-40 lg:py-56 px-6">
       <div className="container mx-auto max-w-3xl text-center">
         <ScrollReveal>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">Work with us.</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
+            Built for operators who take their portfolio seriously.
+          </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            Let's build a strategy that protects your listings and grows your business.
+            We build structure where others rely on reaction.
           </p>
           <Button variant="hero" size="lg" asChild>
             <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
