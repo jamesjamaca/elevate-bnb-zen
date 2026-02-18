@@ -29,14 +29,9 @@ const AboutPage = () => (
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
             Leveling the playing field.
           </h2>
-          <div className="space-y-8 text-muted-foreground leading-[1.7] text-lg md:text-xl">
-            <p>
-              ElitebnbHosts exists to protect the digital reputation of property owners and ensure listings reflect the true quality of the guest experience.
-            </p>
-            <p>
-              Founded on real operational experience managing reviews, guest communication, and claims — we built systems that solve the problems hosts face every day.
-            </p>
-          </div>
+          <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
+            ElitebnbHosts exists to protect the digital reputation of property owners and ensure listings reflect the true quality of the guest experience. Founded on real operational experience managing reviews, guest communication, and claims.
+          </p>
         </ScrollReveal>
       </div>
     </section>
@@ -69,7 +64,7 @@ const AboutPage = () => (
             { title: "Account-Safe Processes", desc: "Every action is fully compliant with platform policies. We never take shortcuts that put your account at risk." },
             { title: "Proven Experience", desc: "Hundreds of reviews managed, dozens of properties supported, and real results delivered for hosts and investors." },
             { title: "Guest-First Communication", desc: "Proactive messaging that shapes positive experiences and prevents issues before they become negative reviews." },
-            { title: "Integrated Systems", desc: "Review management, guest communication, and claims handling work together as one cohesive system — not isolated services." },
+            { title: "Integrated Systems", desc: "Review management, guest communication, and claims handling work together as one cohesive system." },
           ].map((v, i) => (
             <ScrollReveal key={v.title} delay={i * 0.1}>
               <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{v.title}</h3>
@@ -106,7 +101,7 @@ const AboutPage = () => (
     <section className="py-40 lg:py-56 px-6">
       <div className="container mx-auto max-w-3xl text-center">
         <ScrollReveal>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">Work with us.</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">Work with us.</h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
             Let's build a strategy that protects your listings and grows your business.
           </p>

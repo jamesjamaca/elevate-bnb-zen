@@ -49,8 +49,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Introduction — Why Reviews Matter */}
-      <section className="py-40 lg:py-56 px-6">
+      {/* The Reality */}
+      <section className="py-40 lg:py-56 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">The Reality</p>
@@ -62,7 +62,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
             <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
-              Your reviews directly influence search ranking, booking conversion, and guest trust. A single negative experience can cascade — lowering visibility, reducing bookings, and eroding revenue over time.
+              Your reviews directly influence search ranking, booking conversion, and guest trust. A single negative experience can cascade — lowering visibility, reducing bookings, and eroding revenue.
             </p>
           </ScrollReveal>
         </div>
@@ -158,15 +158,15 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Capabilities</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-24">
               One system.<br />Complete management.
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20">
             {capabilities.map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 0.08}>
                 <div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{c.title}</h3>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mb-4">{c.title}</h3>
                   <p className="text-muted-foreground text-base leading-[1.7]">{c.desc}</p>
                 </div>
               </ScrollReveal>
