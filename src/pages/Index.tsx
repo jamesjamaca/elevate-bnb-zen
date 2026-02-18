@@ -15,10 +15,10 @@ const capabilities = [
 ];
 
 const trustPillars = [
-  { title: "Account-Safe Processes", desc: "Every action we take is fully compliant with platform policies. No shortcuts, no risk." },
-  { title: "Data-Backed Results", desc: "Decisions driven by performance data, market trends, and guest behavior analysis." },
-  { title: "Guest-First Approach", desc: "Proactive communication that prevents issues before they become negative reviews." },
-  { title: "Integrated Systems", desc: "Review management, guest communication, and claims handling work together as one system." },
+  { num: "01", title: "Account-Safe Processes", desc: "Every action is fully compliant with platform policies. No shortcuts, no risk to your account." },
+  { num: "02", title: "Policy-Compliant Reviews", desc: "Strategic review management that works within platform guidelines to protect your ranking." },
+  { num: "03", title: "Proven Experience", desc: "Hundreds of reviews managed across dozens of properties with measurable results." },
+  { num: "04", title: "Data-Backed Decisions", desc: "Performance data, market trends, and guest behavior analysis drive every strategy." },
 ];
 
 const Index = () => {
@@ -132,19 +132,20 @@ const Index = () => {
       </section>
 
       {/* Why Trust Us */}
-      <section className="py-40 lg:py-56 px-6">
+      <section className="py-48 lg:py-64 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Why Trust Us</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
-              Built on compliance,<br />driven by results.
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-24">
+              Compliance first.<br />Results always.
             </h2>
           </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {trustPillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.08}>
-                <div>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{p.title}</h3>
+                <div className="bg-secondary rounded-2xl p-10 md:p-12 h-full">
+                  <span className="text-muted-foreground text-xs tracking-[0.2em] font-medium">{p.num}</span>
+                  <h3 className="font-heading text-xl font-semibold text-foreground mt-6 mb-4">{p.title}</h3>
                   <p className="text-muted-foreground text-base leading-[1.7]">{p.desc}</p>
                 </div>
               </ScrollReveal>
