@@ -88,33 +88,27 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Who We Are</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
               Built on real operational experience.
             </h2>
-            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-24">
-              ElitebnbHosts was founded on hands-on experience managing reviews, guest communication, and claims. We understand the challenges because we've been there.
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-xl">
+              Founded by hosts who've managed reviews, guest communication, and claims firsthand.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={0.1}>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center">
-              <div>
-                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">500+</p>
-                <p className="text-muted-foreground text-sm mt-3">Reviews managed</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">50+</p>
-                <p className="text-muted-foreground text-sm mt-3">Happy clients</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">95%</p>
-                <p className="text-muted-foreground text-sm mt-3">Superhost improvements</p>
-              </div>
-              <div>
-                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground">100+</p>
-                <p className="text-muted-foreground text-sm mt-3">Properties supported</p>
-              </div>
-            </div>
-          </ScrollReveal>
+
+          <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-y-20 gap-x-12">
+            {[
+              { metric: "500+", label: "Reviews managed" },
+              { metric: "50+", label: "Clients supported" },
+              { metric: "95%", label: "Superhost rate" },
+              { metric: "100+", label: "Properties" },
+            ].map((item, i) => (
+              <ScrollReveal key={item.label} delay={i * 0.08}>
+                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-[-0.03em]">{item.metric}</p>
+                <p className="text-muted-foreground text-sm mt-4 tracking-wide">{item.label}</p>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
