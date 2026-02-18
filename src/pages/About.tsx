@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import ambientCoastal from "@/assets/ambient-coastal.jpg";
 
 const AboutPage = () => (
   <div>
@@ -67,6 +68,20 @@ const AboutPage = () => (
         </div>
       </div>
     </section>
+
+    {/* Full-width image break */}
+    <ScrollReveal>
+      <section className="w-full">
+        <div className="aspect-[21/9] w-full overflow-hidden">
+          <img
+            src={ambientCoastal}
+            alt="Modern coastal property"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </ScrollReveal>
 
     {/* Values */}
     <section className="py-24 lg:py-32 bg-secondary px-4">

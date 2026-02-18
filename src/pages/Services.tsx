@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
+import ambientWorkspace from "@/assets/ambient-workspace.jpg";
 
 const services = [
   {
@@ -77,6 +78,20 @@ const ServicesPage = () => (
         ))}
       </div>
     </section>
+
+    {/* Full-width image break */}
+    <ScrollReveal>
+      <section className="w-full">
+        <div className="aspect-[21/9] w-full overflow-hidden">
+          <img
+            src={ambientWorkspace}
+            alt="Professional remote workspace"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </ScrollReveal>
 
     {/* CTA */}
     <section className="py-32 lg:py-44 bg-secondary px-4">
