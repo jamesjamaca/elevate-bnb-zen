@@ -32,18 +32,18 @@ const Index = () => {
           <ScrollReveal delay={0.1}>
             <h1 className="font-heading text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-12">
               Guest communication.<br />
-              Review management.<br />
-              <span className="text-muted-foreground">Revenue protected.</span>
+              Review oversight.<br />
+              <span className="text-muted-foreground">Revenue secured.</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
             <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-[1.6] mb-14">
-              Structured systems that protect your ranking, reputation, and long-term profitability.
+              Structured systems designed to protect visibility, reputation, and long-term performance.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+              <Link to="/contact">Request a Consultation <ArrowRight className="ml-1" size={16} /></Link>
             </Button>
           </ScrollReveal>
         </div>
