@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
+
+const faqs = [
+  { q: "Is your review management policy-compliant?", a: "Yes. Our review management process follows platform guidelines and focuses on proactive guest communication, reputation protection, and structured performance management." },
+  { q: "Do you communicate directly with Airbnb support?", a: "Our approach is guest-facing and structured to minimize risk. We follow platform processes and handle escalations strategically when required." },
+  { q: "How fast do you respond to guests?", a: "Structured daily coverage is included from 2–20 listings. 24/7 response coverage begins at 21+ listings." },
+  { q: "Do you handle disputes and damage claims?", a: "Yes. We manage documentation, communication, and dispute handling in alignment with platform policies." },
+  { q: "Is there a long-term contract?", a: "No long-term lock-ins. We believe our results should be the reason you stay." },
+  { q: "What platforms do you support?", a: "We specialize in Airbnb but support multi-platform short-term rental operations when required." },
+  { q: "How does pricing scale as I grow?", a: "Pricing decreases per listing as your portfolio grows. We're structured to scale with serious operators." },
+];
 
 const plans = [
   {
@@ -136,6 +147,31 @@ const PricingPage = () => (
             </ScrollReveal>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* FAQ */}
+    <section className="py-40 lg:py-56 px-6">
+      <div className="container mx-auto max-w-3xl">
+        <ScrollReveal>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-14 text-center">
+            Frequently Asked Questions
+          </h2>
+        </ScrollReveal>
+        <ScrollReveal delay={0.1}>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="border-border">
+                <AccordionTrigger className="text-left text-base font-medium hover:no-underline">
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </ScrollReveal>
       </div>
     </section>
 
