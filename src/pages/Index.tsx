@@ -25,32 +25,27 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[100svh] flex items-center justify-center px-6">
-        <div className="text-center max-w-5xl mx-auto">
+      <section className="min-h-[100svh] flex flex-col items-center justify-center px-6">
+        <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Remote Property Management</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Remote Property Management</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-10">
-              Protect your reviews.
-              <br />
-              <span className="text-muted-foreground">Protect your revenue.</span>
+            <h1 className="font-heading text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-12">
+              Guest communication.<br />
+              Review management.<br />
+              <span className="text-muted-foreground">Revenue protected.</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-lg mx-auto mb-14 leading-relaxed">
-              Structured remote management that safeguards your listing performance and long-term profitability.
+            <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-[1.6] mb-14">
+              Structured systems that protect your ranking, reputation, and long-term profitability.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
-              </Button>
-              <Button variant="hero-outline" size="lg" asChild>
-                <Link to="/services">Explore Services</Link>
-              </Button>
-            </div>
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+            </Button>
           </ScrollReveal>
         </div>
       </section>
