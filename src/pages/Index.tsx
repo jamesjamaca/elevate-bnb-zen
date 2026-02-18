@@ -113,19 +113,19 @@ const Index = () => {
       </section>
 
       {/* Mission */}
-      <section className="py-40 lg:py-56 bg-secondary px-6">
-        <div className="container mx-auto max-w-3xl">
+      <section className="py-48 lg:py-64 bg-secondary px-6">
+        <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Our Mission</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Our Mission</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em]">
-              Leveling the playing field for property owners.
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-[4rem] font-bold text-foreground leading-[1.08] tracking-[-0.025em]">
+              Every host deserves a listing that reflects the quality of their work.
             </h2>
           </ScrollReveal>
-          <ScrollReveal delay={0.15}>
-            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] mt-10 max-w-2xl">
-              We exist to protect your digital reputation and ensure your listings reflect the true quality of the guest experience. Through structured management and intelligent systems, every host can compete at the highest level.
+          <ScrollReveal delay={0.2}>
+            <p className="text-muted-foreground text-xl md:text-2xl leading-[1.5] mt-14 max-w-xl font-light">
+              We exist to make that possible.
             </p>
           </ScrollReveal>
         </div>
