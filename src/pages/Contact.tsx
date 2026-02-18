@@ -2,21 +2,53 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import ScrollReveal from "@/components/ScrollReveal";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactPage = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", properties: "", message: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message sent.",
-      description: "We'll get back to you within 24 hours.",
-    });
-    setForm({ name: "", email: "", properties: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.from("contact_submissions").insert({
+        name: form.name.trim(),
+        email: form.email.trim(),
+        properties: form.properties.trim() || null,
+        message: form.message.trim(),
+      });
+
+      if (error) throw error;
+
+      // Also trigger email notification
+      try {
+        await supabase.functions.invoke("notify-contact", {
+          body: { name: form.name, email: form.email, properties: form.properties, message: form.message },
+        });
+      } catch {
+        // Email notification is best-effort, don't block the user
+      }
+
+      toast({
+        title: "Message sent.",
+        description: "We'll get back to you within 24 hours.",
+      });
+      setForm({ name: "", email: "", properties: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Something went wrong.",
+        description: "Please try again or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -82,8 +114,12 @@ const ContactPage = () => {
                   className="rounded-xl bg-secondary border-0 resize-none text-base px-5 py-4"
                 />
               </div>
-              <Button variant="hero" size="lg" type="submit" className="w-full mt-4">
-                Send Message <ArrowRight className="ml-1" size={16} />
+              <Button variant="hero" size="lg" type="submit" className="w-full mt-4" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <><Loader2 className="mr-2 animate-spin" size={16} /> Sending...</>
+                ) : (
+                  <>Send Message <ArrowRight className="ml-1" size={16} /></>
+                )}
               </Button>
             </form>
           </ScrollReveal>
