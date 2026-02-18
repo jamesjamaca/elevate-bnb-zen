@@ -5,7 +5,7 @@ import Footer from "./Footer";
 const Layout = () => (
   <>
     <Navbar />
-    <main className="pt-16">
+    <main className="pt-14">
       <Outlet />
     </main>
     <Footer />
