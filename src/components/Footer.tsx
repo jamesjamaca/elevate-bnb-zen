@@ -32,13 +32,13 @@ const Footer = () => (
         </div>
         <div>
           <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Contact</h4>
-          <p className="text-sm text-muted-foreground">contact@elitebnbhosts.com</p>
+          <p className="text-sm text-muted-foreground">usa@elitebnbhosts.com</p>
         </div>
         <div>
           <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Follow Us</h4>
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/elite_airbnbhost/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
@@ -47,7 +47,7 @@ const Footer = () => (
               <Instagram size={18} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/110911848"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"
