@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => (
   <footer className="border-t border-border">
     <div className="container mx-auto px-6 lg:px-8 py-24">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-20">
         <div>
           <h3 className="font-heading text-lg font-semibold mb-5">
             elitebnb<span className="font-light">hosts</span>
@@ -32,6 +33,29 @@ const Footer = () => (
         <div>
           <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Contact</h4>
           <p className="text-sm text-muted-foreground">contact@elitebnbhosts.com</p>
+        </div>
+        <div>
+          <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Follow Us</h4>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={18} />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={18} />
+            </a>
+          </div>
         </div>
       </div>
       <div className="border-t border-border mt-20 pt-10 text-center text-xs text-muted-foreground">
