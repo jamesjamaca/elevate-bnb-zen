@@ -89,7 +89,7 @@ const ContactPage = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <p className="text-center text-muted-foreground text-sm mt-12">
-              Or email us directly at contact@elitebnbhosts.com
+              Or email us directly at usa@elitebnbhosts.com
             </p>
           </ScrollReveal>
         </div>
