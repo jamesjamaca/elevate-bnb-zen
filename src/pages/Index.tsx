@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
-import ambientCoastal from "@/assets/ambient-coastal.jpg";
 import ambientInterior from "@/assets/ambient-interior.jpg";
 
 const capabilities = [
@@ -68,20 +67,6 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Full-width image break */}
-      <ScrollReveal>
-        <section className="w-full">
-          <div className="aspect-[21/9] w-full overflow-hidden">
-            <img
-              src={ambientCoastal}
-              alt="Modern coastal property with clean architecture"
-              className="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </section>
-      </ScrollReveal>
 
       {/* Who We Are */}
       <section className="py-40 lg:py-56 px-6">
