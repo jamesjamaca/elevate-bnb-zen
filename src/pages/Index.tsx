@@ -37,8 +37,13 @@ const Index = () => {
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-[1.6] mb-14">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-[1.6] mb-4">
               Structured systems designed to protect visibility, reputation, and long-term performance.
+            </p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.25}>
+            <p className="text-muted-foreground/60 text-sm tracking-wide mb-14">
+              Designed for growing multi-listing operators.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
