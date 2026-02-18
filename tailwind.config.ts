@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['Outfit', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        heading: ['Neue Haas Grotesk Display Pro', 'Helvetica Neue', 'sans-serif'],
+        body: ['Neue Haas Grotesk Display Pro', 'Helvetica Neue', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
