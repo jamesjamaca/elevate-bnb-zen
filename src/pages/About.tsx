@@ -41,6 +41,20 @@ const AboutPage = () => (
       </div>
     </section>
 
+    {/* Full-width image break */}
+    <ScrollReveal>
+      <section className="w-full">
+        <div className="aspect-[21/9] w-full overflow-hidden">
+          <img
+            src={ambientCoastal}
+            alt="Modern coastal property"
+            className="w-full h-full object-cover"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </ScrollReveal>
+
     {/* Why Trust Us */}
     <section className="py-40 lg:py-56 px-6">
       <div className="container mx-auto max-w-5xl">
@@ -65,20 +79,6 @@ const AboutPage = () => (
         </div>
       </div>
     </section>
-
-    {/* Full-width image break */}
-    <ScrollReveal>
-      <section className="w-full">
-        <div className="aspect-[21/9] w-full overflow-hidden">
-          <img
-            src={ambientCoastal}
-            alt="Modern coastal property"
-            className="w-full h-full object-cover"
-            loading="lazy"
-          />
-        </div>
-      </section>
-    </ScrollReveal>
 
     {/* Values */}
     <section className="py-40 lg:py-56 bg-secondary px-6">
