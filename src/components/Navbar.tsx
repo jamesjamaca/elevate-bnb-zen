@@ -69,8 +69,9 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <li className="pt-4">
-              <Button variant="default" size="sm" className="w-full" asChild>
+            <li className="flex items-center justify-between pt-4">
+              <ThemeToggle />
+              <Button variant="default" size="sm" asChild>
                 <Link to="/contact" onClick={() => setMobileOpen(false)}>Get Started</Link>
               </Button>
             </li>
