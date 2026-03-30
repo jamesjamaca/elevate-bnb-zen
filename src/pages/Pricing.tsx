@@ -150,6 +150,77 @@ const PricingPage = () => (
       </div>
     </section>
 
+    {/* Secondary Service — Review Management & Guest Communication */}
+    <section className="pb-40 lg:pb-56 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Focused Service</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
+              Review Management &<br />Guest Communication
+            </h2>
+            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+              Protect your reviews, maintain consistent guest communication, and improve listing performance — without full property management.
+            </p>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {/* Pricing tiers */}
+          <ScrollReveal delay={0.1}>
+            <div className="bg-secondary rounded-2xl p-10 flex flex-col h-full">
+              <h3 className="font-heading text-2xl font-bold mb-8">Pricing</h3>
+              <div className="space-y-6 flex-1">
+                {[
+                  { range: "2–5 Listings", price: "$110" },
+                  { range: "6–10 Listings", price: "$100" },
+                  { range: "11–20 Listings", price: "$90" },
+                ].map((tier) => (
+                  <div key={tier.range} className="flex items-baseline justify-between">
+                    <span className="text-sm text-muted-foreground">{tier.range}</span>
+                    <span className="font-heading text-xl font-bold">
+                      {tier.price}<span className="text-sm font-body font-normal text-muted-foreground">/listing</span>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-muted-foreground mt-6">per month</p>
+            </div>
+          </ScrollReveal>
+
+          {/* Features */}
+          <ScrollReveal delay={0.2}>
+            <div className="bg-secondary rounded-2xl p-10 flex flex-col h-full">
+              <h3 className="font-heading text-2xl font-bold mb-8">What's Included</h3>
+              <ul className="space-y-4 flex-1">
+                {[
+                  "Guest Communication (7-day structured response handling)",
+                  "Review Management & Monitoring",
+                  "Securing Potential Negative Reviews",
+                  "Policy-Aligned Review Dispute Support",
+                  "Monthly Listing Assessment & Recommendations",
+                  "Review Follow-Up System",
+                  "Risk Detection & Escalation",
+                ].map((feature) => (
+                  <li key={feature} className="flex items-start gap-3 text-sm">
+                    <Check className="shrink-0 mt-0.5 text-muted-foreground" size={14} />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </ScrollReveal>
+        </div>
+
+        <ScrollReveal delay={0.3}>
+          <div className="text-center mt-10">
+            <Button variant="default" size="lg" asChild>
+              <Link to="/contact">Book a Consultation</Link>
+            </Button>
+          </div>
+        </ScrollReveal>
+      </div>
+    </section>
     {/* FAQ */}
     <section className="py-40 lg:py-56 px-6">
       <div className="container mx-auto max-w-3xl">
