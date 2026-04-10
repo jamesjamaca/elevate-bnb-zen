@@ -94,9 +94,7 @@ const Index = () => {
                 <p className="text-muted-foreground text-base leading-[1.7] mb-8 flex-1">
                   The exact 10-step process we use to dispute unfair reviews — with a 90% success rate. Free for any Airbnb host.
                 </p>
-                <Button variant="hero" size="lg" asChild className="w-fit">
-                  <Link to="/contact">Download the Free Checklist <ArrowRight className="ml-1" size={16} /></Link>
-                </Button>
+                <div className="ml-embedded" data-form="0u14Yd"></div>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.1}>
