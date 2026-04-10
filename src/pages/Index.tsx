@@ -246,6 +246,68 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Qualification */}
+      <section className="py-40 lg:py-56 bg-muted px-6">
+        <div className="container mx-auto max-w-4xl">
+          <ScrollReveal>
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-8">
+              Honestly? This might not be for you.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-3xl mb-16">
+              If your reviews are consistently strong, your guests are happy, and your listing is performing well — you probably don't need us. ElitebnbHosts is built specifically for hosts dealing with unfair reviews, difficult guests, or reputation challenges that are costing them bookings and ranking. If that sounds like you, let's talk.
+            </p>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-16">
+            <ScrollReveal delay={0.15}>
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-6">This IS for you if:</h3>
+                <ul className="space-y-4">
+                  {[
+                    "You've received an unfair or retaliatory review",
+                    "A bad review is hurting your search ranking",
+                    "You're managing 2+ listings and can't keep up with guest comms",
+                    "You've had a damage claim go unresolved",
+                    "You want a professional team protecting your reputation 24/7",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted-foreground text-base leading-[1.6]">
+                      <span className="text-success mt-0.5 font-bold">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.2}>
+              <div>
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-6">This is NOT for you if:</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Your reviews are consistently 4.8+ with no issues",
+                    "You have a full in-house team already managing everything",
+                    "You're only managing 1 listing with occasional guests",
+                    "You're not open to a structured, process-driven approach",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted-foreground text-base leading-[1.6]">
+                      <span className="mt-0.5 font-bold">✗</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+          <ScrollReveal delay={0.25}>
+            <div className="text-center">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">See If We're a Good Fit <ArrowRight className="ml-1" size={16} /></Link>
+              </Button>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-40 lg:py-56 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl text-center">
