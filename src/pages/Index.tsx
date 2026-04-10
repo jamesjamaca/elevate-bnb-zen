@@ -59,6 +59,28 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Social Proof */}
+      <section className="py-40 lg:py-56 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <ScrollReveal>
+            <div className="bg-primary text-primary-foreground rounded-2xl p-10 md:p-16 lg:p-20">
+              <p className="text-primary-foreground/50 text-xs tracking-[0.3em] uppercase mb-10">Client Result</p>
+              <blockquote className="font-heading text-2xl md:text-3xl lg:text-[2rem] font-medium leading-[1.4] tracking-[-0.01em] mb-8">
+                "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,000 reimbursement and protected the integrity of our portfolio."
+              </blockquote>
+              <p className="text-primary-foreground/60 text-sm tracking-wide mb-12">— Multi-Property Investor</p>
+              <div className="flex flex-wrap gap-3">
+                {["90% Review Dispute Success Rate", "$8,000+ Claims Recovered", "Multi-Platform Support"].map((stat) => (
+                  <span key={stat} className="text-xs tracking-wide text-primary-foreground/70 border border-primary-foreground/15 rounded-full px-5 py-2">
+                    {stat}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* The Reality */}
       <section className="py-40 lg:py-56 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl">
