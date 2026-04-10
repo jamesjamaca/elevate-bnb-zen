@@ -27,29 +27,34 @@ const Index = () => {
       <section className="min-h-[100svh] flex flex-col items-center justify-center px-6">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Remote Property Management</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Airbnb Review Management Specialists</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h1 className="font-heading text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-12">
-              Guest communication.<br />
-              Review management.<br />
-              <span className="text-muted-foreground">Revenue secured.</span>
+              90% Review Dispute<br />
+              Success Rate.<br />
+              <span className="text-muted-foreground">Revenue protected.</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-md leading-[1.6] mb-4">
-              Structured systems designed to protect visibility, reputation, and long-term performance.
+            <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-[1.6] mb-4">
+              We specialize in protecting Airbnb hosts from unfair reviews — using a policy-aligned process that wins 9 out of 10 disputes. Structured systems for guest communication, reputation management, and long-term performance.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.25}>
             <p className="text-muted-foreground/60 text-sm tracking-wide mb-14">
-              Designed for growing multi-listing operators.
+              Built for growing multi-listing operators.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
-            <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Request a Consultation <ArrowRight className="ml-1" size={16} /></Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button variant="hero" size="lg" asChild>
+                <Link to="/contact">Request a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+              </Button>
+              <Button variant="hero-outline" size="lg" asChild>
+                <Link to="/contact">Get Your Free Review Audit <ArrowRight className="ml-1" size={16} /></Link>
+              </Button>
+            </div>
           </ScrollReveal>
         </div>
       </section>
