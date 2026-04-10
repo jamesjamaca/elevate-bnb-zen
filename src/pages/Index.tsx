@@ -111,7 +111,7 @@ const Index = () => {
                 <p className="text-muted-foreground/50 text-sm italic leading-[1.6] mb-8">
                   Heads up: if your reviews are already in great shape, this service may not be the right fit for you. We only work with hosts where we can make a real difference.
                 </p>
-                <Button size="lg" asChild className="w-fit rounded-full bg-emerald-600 text-white hover:bg-emerald-700 font-medium tracking-wide">
+                <Button size="lg" asChild className="w-fit rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium tracking-wide">
                   <Link to="/contact">Request Your Free Audit <ArrowRight className="ml-1" size={16} /></Link>
                 </Button>
               </div>
