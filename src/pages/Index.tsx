@@ -81,6 +81,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Lead Capture */}
+      <section className="py-40 lg:py-56 bg-secondary px-6">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <ScrollReveal>
+              <div className="border border-border rounded-2xl p-10 md:p-12 h-full flex flex-col bg-background">
+                <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-4">Free Download</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-4">
+                  The Airbnb Review Dispute Checklist
+                </h3>
+                <p className="text-muted-foreground text-base leading-[1.7] mb-8 flex-1">
+                  The exact 10-step process we use to dispute unfair reviews — with a 90% success rate. Free for any Airbnb host.
+                </p>
+                <Button variant="hero" size="lg" asChild className="w-fit">
+                  <Link to="/contact">Download the Free Checklist <ArrowRight className="ml-1" size={16} /></Link>
+                </Button>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1}>
+              <div className="border border-border rounded-2xl p-10 md:p-12 h-full flex flex-col bg-background">
+                <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-4">Free Review Audit</p>
+                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-4">
+                  Is your listing at risk?
+                </h3>
+                <p className="text-muted-foreground text-base leading-[1.7] mb-4 flex-1">
+                  We'll analyze your current reviews and flag anything that could hurt your search ranking or bookings — completely free, no obligation.
+                </p>
+                <p className="text-muted-foreground/50 text-sm italic leading-[1.6] mb-8">
+                  Heads up: if your reviews are already in great shape, this service may not be the right fit for you. We only work with hosts where we can make a real difference.
+                </p>
+                <Button size="lg" asChild className="w-fit rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium tracking-wide">
+                  <Link to="/contact">Request Your Free Audit <ArrowRight className="ml-1" size={16} /></Link>
+                </Button>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* The Reality */}
       <section className="py-40 lg:py-56 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl">
