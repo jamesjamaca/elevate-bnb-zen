@@ -180,11 +180,23 @@ const Index = () => {
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Who We Are</p>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
-              Built on real operational experience.
+              Real experience. Real results.
             </h2>
-            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-xl">
-              Founded by hosts who've managed reviews, guest communication, and claims firsthand.
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-xl mb-8">
+              Elite BNB Hosts was founded by James Jamaca — a former Airbnb support supervisor and subject matter expert with direct experience managing reviews, guest communication, and AirCover claims. We don't guess at what works. We know — because we've worked inside the system that governs your listing.
             </p>
+            <ul className="space-y-3 text-foreground text-base">
+              {[
+                "Former Airbnb support supervisor & SME",
+                "3+ years managing Airbnb operations & property teams",
+                "Proprietary review dispute process — 90% success rate",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <span className="text-success mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </ScrollReveal>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
