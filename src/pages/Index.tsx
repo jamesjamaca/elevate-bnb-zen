@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ambientInterior from "@/assets/ambient-interior.jpg";
+import founderPhoto from "@/assets/founder.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -262,6 +263,51 @@ const Index = () => {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Meet the Founder */}
+      <section className="py-20 lg:py-28 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <ScrollReveal>
+              <div>
+                <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Who We Are</p>
+                <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-6">
+                  Built by someone who's been in your corner.
+                </h2>
+                <p className="text-muted-foreground text-base md:text-lg leading-[1.7] mb-8">
+                  James Jamaca spent years inside Airbnb's support and operations teams — as a supervisor, subject matter expert, and property manager. He's seen exactly how the platform works from the inside. Elite BNB Hosts was built on that experience.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Former Airbnb support supervisor & SME",
+                    "2+ years managing Airbnb operations & property teams",
+                    "Proprietary review dispute process — 90% success rate",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-muted-foreground text-base leading-[1.6]">
+                      <span className="text-success mt-0.5 font-bold">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={0.15}>
+              <div className="flex flex-col items-center">
+                <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-border">
+                  <img
+                    src={founderPhoto}
+                    alt="James Jamaca — Founder, Elite BNB Hosts"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <p className="text-muted-foreground text-sm tracking-wide mt-6 text-center">
+                  James Jamaca — Founder, Elite BNB Hosts
+                </p>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
