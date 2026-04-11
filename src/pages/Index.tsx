@@ -24,7 +24,7 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[100svh] flex flex-col items-center justify-center px-6">
+      <section className="min-h-[85svh] flex flex-col items-center justify-center px-6 py-20">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Airbnb Review Management Specialists</p>
