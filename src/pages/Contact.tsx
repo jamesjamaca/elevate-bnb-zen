@@ -54,7 +54,7 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[70vh] flex items-center justify-center px-6">
+      <section className="pt-32 lg:pt-40 pb-8 px-6">
         <div className="text-center max-w-4xl mx-auto">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Contact</p>
