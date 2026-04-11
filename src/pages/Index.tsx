@@ -283,7 +283,7 @@ const Index = () => {
                 <ul className="space-y-4">
                   {[
                     "Former Airbnb support supervisor & SME",
-                    "2+ years managing Airbnb operations & property teams",
+                    "3+ years managing Airbnb operations & property teams",
                     "Proprietary review dispute process — 90% success rate",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-muted-foreground text-base leading-[1.6]">
