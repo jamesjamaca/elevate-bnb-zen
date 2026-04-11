@@ -49,10 +49,10 @@ const Index = () => {
           <ScrollReveal delay={0.3}>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">Request a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Request a Consultation <ArrowRight className="ml-1" size={16} /></a>
               </Button>
               <Button variant="hero-outline" size="lg" asChild>
-                <Link to="/contact">Get Your Free Review Audit <ArrowRight className="ml-1" size={16} /></Link>
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get Your Free Review Audit <ArrowRight className="ml-1" size={16} /></a>
               </Button>
             </div>
           </ScrollReveal>
@@ -110,7 +110,7 @@ const Index = () => {
                   Heads up: if your reviews are already in great shape, this service may not be the right fit for you. We only work with hosts where we can make a real difference.
                 </p>
                 <Button size="lg" asChild className="w-fit rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium tracking-wide">
-                  <Link to="/contact">Request Your Free Audit <ArrowRight className="ml-1" size={16} /></Link>
+                  <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Request Your Free Audit <ArrowRight className="ml-1" size={16} /></a>
                 </Button>
               </div>
             </ScrollReveal>
@@ -299,7 +299,7 @@ const Index = () => {
           <ScrollReveal delay={0.25}>
             <div className="text-center">
               <Button variant="hero" size="lg" asChild>
-                <Link to="/contact">See If We're a Good Fit <ArrowRight className="ml-1" size={16} /></Link>
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">See If We're a Good Fit <ArrowRight className="ml-1" size={16} /></a>
               </Button>
             </div>
           </ScrollReveal>
@@ -317,7 +317,7 @@ const Index = () => {
               Scale your Airbnb without the stress. Let's build a strategy that works.
             </p>
             <Button variant="hero" size="lg" asChild>
-              <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book a Consultation <ArrowRight className="ml-1" size={16} /></a>
             </Button>
           </ScrollReveal>
         </div>
