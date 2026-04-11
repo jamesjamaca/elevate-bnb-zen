@@ -23,7 +23,27 @@ const trustPillars = [
   { num: "04", title: "Data-Backed Decisions", desc: "Performance data, market trends, and guest behavior analysis drive every strategy." },
 ];
 
+const CHECKLIST_URL = "https://drive.google.com/file/d/1DJHIDicuIE0S8hocA2RTp9CLtDUcjYfB/view?usp=sharing";
+
 const Index = () => {
+  const [heroSubmitting, setHeroSubmitting] = useState(false);
+
+  const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const email = (e.currentTarget.elements.namedItem('hero-email') as HTMLInputElement).value;
+    if (!email) return;
+    setHeroSubmitting(true);
+    try {
+      await supabase.functions.invoke('subscribe-mailerlite', {
+        body: { email },
+      });
+    } catch (err) {
+      console.error('Subscription error:', err);
+    }
+    setHeroSubmitting(false);
+    window.open(CHECKLIST_URL, '_blank');
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -51,11 +71,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.28}>
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                const email = (e.currentTarget.elements.namedItem('hero-email') as HTMLInputElement).value;
-                if (email) window.open(`https://drive.google.com/file/d/1DJHIDicuIE0S8hocA2RTp9CLtDUcjYfB/view?usp=sharing`, '_blank');
-              }}
+              onSubmit={handleHeroSubmit}
               className="flex flex-col sm:flex-row items-center gap-3 max-w-xl mb-2"
             >
               <input
@@ -65,8 +81,8 @@ const Index = () => {
                 placeholder="Enter your email address"
                 className="flex h-12 w-full sm:min-w-[280px] rounded-full border border-input bg-background px-5 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               />
-              <Button type="submit" size="lg" className="h-12 rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium whitespace-nowrap">
-                Get the Free Checklist <ArrowRight className="ml-1" size={16} />
+              <Button type="submit" size="lg" disabled={heroSubmitting} className="h-12 rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium whitespace-nowrap">
+                {heroSubmitting ? 'Submitting…' : 'Get the Free Checklist'} <ArrowRight className="ml-1" size={16} />
               </Button>
             </form>
             <p className="text-muted-foreground/50 text-xs tracking-wide mb-8">Free instant download. No spam, ever.</p>
