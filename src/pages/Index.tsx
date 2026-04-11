@@ -24,25 +24,25 @@ const Index = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="min-h-[100svh] flex flex-col items-center justify-center px-6">
+      <section className="min-h-[85svh] flex flex-col items-center justify-center px-6 py-20">
         <div className="max-w-5xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Airbnb Review Management Specialists</p>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Airbnb Review Management Specialists</p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
-            <h1 className="font-heading text-[2.75rem] md:text-[4.5rem] lg:text-[5.5rem] xl:text-[6.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-12">
+            <h1 className="font-heading text-[2.5rem] md:text-[3.5rem] lg:text-[4.5rem] xl:text-[5.5rem] font-bold text-foreground leading-[0.93] tracking-[-0.035em] mb-8">
               90% Review Dispute<br />
               Success Rate.<br />
               <span className="text-muted-foreground">Revenue protected.</span>
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-[1.6] mb-4">
+            <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-[1.6] mb-3">
               We specialize in protecting Airbnb hosts from unfair reviews — using a policy-aligned process that wins 9 out of 10 disputes. Structured systems for guest communication, reputation management, and long-term performance.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.25}>
-            <p className="text-muted-foreground/60 text-sm tracking-wide mb-14">
+            <p className="text-muted-foreground/60 text-sm tracking-wide mb-8">
               Built for growing multi-listing operators.
             </p>
           </ScrollReveal>
@@ -60,7 +60,7 @@ const Index = () => {
       </section>
 
       {/* Social Proof */}
-      <section className="py-40 lg:py-56 px-6">
+      <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <div className="bg-primary text-primary-foreground rounded-2xl p-10 md:p-16 lg:p-20">
@@ -82,7 +82,7 @@ const Index = () => {
       </section>
 
       {/* Lead Capture */}
-      <section className="py-40 lg:py-56 bg-secondary px-6">
+      <section className="py-20 lg:py-28 bg-secondary px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <ScrollReveal>
@@ -119,7 +119,7 @@ const Index = () => {
       </section>
 
       {/* The Reality */}
-      <section className="py-40 lg:py-56 bg-secondary px-6">
+      <section className="py-20 lg:py-28 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">The Reality</p>
@@ -152,7 +152,7 @@ const Index = () => {
       </ScrollReveal>
 
       {/* Who We Are */}
-      <section className="py-40 lg:py-56 px-6">
+      <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Who We Are</p>
@@ -164,7 +164,7 @@ const Index = () => {
             </p>
           </ScrollReveal>
 
-          <div className="mt-32 grid grid-cols-2 md:grid-cols-4 gap-y-20 gap-x-12">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
             {[
               { metric: "500+", label: "Reviews managed" },
               { metric: "50+", label: "Clients supported" },
@@ -181,7 +181,7 @@ const Index = () => {
       </section>
 
       {/* Mission */}
-      <section className="py-48 lg:py-64 bg-secondary px-6">
+      <section className="py-20 lg:py-28 bg-secondary px-6">
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-10">Our Mission</p>
@@ -200,11 +200,11 @@ const Index = () => {
       </section>
 
       {/* Why Trust Us */}
-      <section className="py-48 lg:py-64 px-6">
+      <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Why Trust Us</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-24">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-16">
               Compliance first.<br />Results always.
             </h2>
           </ScrollReveal>
@@ -223,11 +223,11 @@ const Index = () => {
       </section>
 
       {/* Capabilities */}
-      <section className="py-40 lg:py-56 px-6">
+      <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Capabilities</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-24">
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-16">
               One system.<br />Complete management.
             </h2>
           </ScrollReveal>
@@ -245,7 +245,7 @@ const Index = () => {
       </section>
 
       {/* Qualification */}
-      <section className="py-40 lg:py-56 bg-muted px-6">
+      <section className="py-20 lg:py-28 bg-muted px-6">
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-8">
@@ -307,7 +307,7 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="py-40 lg:py-56 bg-secondary px-6">
+      <section className="py-20 lg:py-28 bg-secondary px-6">
         <div className="container mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
