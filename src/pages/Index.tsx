@@ -54,16 +54,16 @@ const Index = () => {
                 const email = (e.currentTarget.elements.namedItem('hero-email') as HTMLInputElement).value;
                 if (email) window.open(`https://drive.google.com/file/d/1DJHIDicuIE0S8hocA2RTp9CLtDUcjYfB/view?usp=sharing`, '_blank');
               }}
-              className="flex flex-col sm:flex-row gap-3 max-w-md mb-2"
+              className="flex flex-col sm:flex-row items-center gap-3 max-w-xl mb-2"
             >
               <input
                 name="hero-email"
                 type="email"
                 required
                 placeholder="Enter your email address"
-                className="flex h-12 w-full rounded-full border border-input bg-background px-5 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                className="flex h-12 w-full sm:min-w-[280px] rounded-full border border-input bg-background px-5 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               />
-              <Button type="submit" size="lg" className="rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium whitespace-nowrap">
+              <Button type="submit" size="lg" className="h-12 rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium whitespace-nowrap">
                 Get the Free Checklist <ArrowRight className="ml-1" size={16} />
               </Button>
             </form>
