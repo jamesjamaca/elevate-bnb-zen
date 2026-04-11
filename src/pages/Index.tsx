@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ambientInterior from "@/assets/ambient-interior.jpg";
+import founderPhoto from "@/assets/founder.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
