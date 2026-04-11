@@ -46,7 +46,29 @@ const Index = () => {
               Built for growing multi-listing operators.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={0.3}>
+          <ScrollReveal delay={0.28}>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const email = (e.currentTarget.elements.namedItem('hero-email') as HTMLInputElement).value;
+                if (email) window.open(`https://drive.google.com/file/d/1DJHIDicuIE0S8hocA2RTp9CLtDUcjYfB/view?usp=sharing`, '_blank');
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mb-2"
+            >
+              <input
+                name="hero-email"
+                type="email"
+                required
+                placeholder="Enter your email address"
+                className="flex h-12 w-full rounded-full border border-input bg-background px-5 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              />
+              <Button type="submit" size="lg" className="rounded-full bg-success text-success-foreground hover:bg-success/90 font-medium whitespace-nowrap">
+                Get the Free Checklist <ArrowRight className="ml-1" size={16} />
+              </Button>
+            </form>
+            <p className="text-muted-foreground/50 text-xs tracking-wide mb-8">Free instant download. No spam, ever.</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.35}>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="hero" size="lg" asChild>
                 <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Request a Consultation <ArrowRight className="ml-1" size={16} /></a>
