@@ -70,30 +70,30 @@ const AboutPage = () => (
       </div>
     </section>
 
-    {/* Operational Philosophy */}
+    {/* How It Works */}
     <section className="py-40 lg:py-56 bg-secondary px-6">
       <div className="container mx-auto max-w-5xl">
         <ScrollReveal>
-          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Operational Philosophy</p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
-            We operate like an internal team.
+          <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">How It Works</p>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-20">
+            Wins in week one.<br />Full operations by day 30.
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-20">
-            Without the overhead.
-          </p>
         </ScrollReveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-16">
+        <div className="space-y-16">
           {[
-            "Structured communication workflows",
-            "Performance monitoring systems",
-            "Policy-compliant review management",
-            "Strategic claims documentation",
-            "Scalable operational coverage",
-          ].map((item, i) => (
-            <ScrollReveal key={item} delay={i * 0.08}>
-              <div className="flex items-center gap-3 text-foreground text-base">
-                <span className="w-1 h-1 rounded-full bg-foreground shrink-0" />
-                {item}
+            { num: "01", title: "Day 0: Book your audit.", desc: "We record each listing's rating, Superhost status and next assessment date." },
+            { num: "02", title: "Day 1: Audit delivered.", desc: "We walk you through it on a call. Portfolios over 50 listings get it within 72 hours." },
+            { num: "03", title: "Days 2–3: First disputes filed.", desc: "Review disputes and open claims start right away." },
+            { num: "04", title: "Week 1: Your playbook.", desc: "We document how your properties run so every agent handles guests your way." },
+            { num: "05", title: "Day 30: Full handover.", desc: "Your dedicated team takes over guest operations. Your current team covers until then." },
+          ].map((step, i) => (
+            <ScrollReveal key={step.num} delay={i * 0.08}>
+              <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-12 items-start">
+                <span className="text-muted-foreground/20 font-heading text-6xl md:text-7xl font-bold leading-none">{step.num}</span>
+                <div>
+                  <h3 className="font-heading text-xl md:text-2xl font-semibold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground text-base md:text-lg leading-[1.7]">{step.desc}</p>
+                </div>
               </div>
             </ScrollReveal>
           ))}

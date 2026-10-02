@@ -58,8 +58,9 @@ const Footer = () => (
           </div>
         </div>
       </div>
-      <div className="border-t border-border mt-20 pt-10 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} ElitebnbHosts. All rights reserved.
+      <div className="border-t border-border mt-20 pt-10 text-center text-xs text-muted-foreground space-y-2">
+        <p>© {new Date().getFullYear()} ElitebnbHosts. All rights reserved.</p>
+        <p>Elite BNB Hosts is an independent service and is not affiliated with Airbnb.</p>
       </div>
     </div>
   </footer>

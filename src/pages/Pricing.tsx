@@ -1,72 +1,21 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const faqs = [
-  { q: "Is your review management policy-compliant?", a: "Absolutely. Our review management process is built entirely around platform guidelines and ethical guest communication. Unlike operators who rely on risky shortcuts or grey-area tactics, we prioritize account integrity and long-term listing protection above all else. Our structured approach achieves approximately a 90% success rate, depending on case eligibility — without ever compromising your standing on the platform." },
-  { q: "Do you communicate directly with Airbnb support?", a: "Our daily operations are guest-facing, focused on delivering exceptional communication and proactive issue resolution. When platform support engagement is necessary, we handle it on a case-by-case basis — using proper documentation, structured escalation protocols, and full compliance with platform processes to protect your account at every step." },
-  { q: "How fast do you respond to guests?", a: "During operational coverage hours, most guest messages are responded to within 10 minutes. For portfolios of 21+ listings, 24/7 response coverage is available to ensure no guest inquiry goes unaddressed, regardless of time zone or hour." },
-  { q: "Do you handle disputes and damage claims?", a: "Yes. We manage the full claims process — from structured documentation and evidence gathering to strategic, policy-aligned claim submission. Our focus is on protecting legitimate owner costs and ensuring fair resolution, always in alignment with platform guidelines. We never pursue claims in ways that could compromise your reputation or account standing." },
-  { q: "Is there a long-term contract?", a: "No long-term lock-ins. We believe our results should be the reason you stay." },
-  { q: "What platforms do you support?", a: "We specialize in Airbnb but support multi-platform short-term rental operations when required." },
-  { q: "How does pricing scale as I grow?", a: "Pricing decreases per listing as your portfolio grows. We're structured to scale with serious operators." },
+  { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
+  { q: "How do you remove reviews?", a: "Only through Airbnb's official dispute process. We challenge reviews that break Airbnb's own policies. That's how we've removed 500+ so far." },
+  { q: "What access do you need?", a: "Co-host access to your listings. It stays under your control, and you can see everything we do." },
+  { q: "What happens to my current team?", a: "They keep handling guests until handover on day 30. After that, they can focus on cleaning, maintenance and growth." },
+  { q: "My properties are different. Will this work?", a: "We build a playbook for your properties in week one, with ready-made guides for villas, condos and penthouses." },
 ];
 
-const plans = [
-  {
-    name: "Core Management",
-    range: "2–5 Listings",
-    price: "$150",
-    priceLabel: "/listing",
-    billing: "per month",
-    subRange: null,
-    features: [
-      "Remote Property Management",
-      "Guest Communication",
-      "Review Management",
-      "Listing Optimization",
-      "Revenue Optimization",
-      "Claims & Dispute Support",
-    ],
-    cta: "Book Consultation",
-    featured: false,
-  },
-  {
-    name: "Growth Management",
-    range: "6–20 Listings",
-    price: "Starting at $140",
-    priceLabel: "/listing",
-    billing: "per month",
-    subRange: "6–10: $140 | 11–20: $130",
-    features: [
-      "Everything in Core",
-      "Priority Response Handling",
-      "Enhanced Review Monitoring",
-      "Advanced Claims Management",
-      "Performance Optimization Oversight",
-    ],
-    cta: "Scale My Listings",
-    featured: true,
-  },
-  {
-    name: "Full Remote Operations",
-    range: "21+ Listings",
-    price: "Starting at $110",
-    priceLabel: "/listing",
-    billing: "per month",
-    subRange: "21–30: $110 | 31–50: $100",
-    features: [
-      "Everything in Growth",
-      "24/7 Guest Communication",
-      "Full Review Strategy Implementation",
-      "Complete Claims & Dispute Handling",
-      "Dedicated Operational Oversight",
-    ],
-    cta: "Request Enterprise Consultation",
-    featured: false,
-  },
+const extras = [
+  { title: "Free Review Audit", desc: "See every removable review across your portfolio before you commit." },
+  { title: "Property playbooks", desc: "Ready-made guides for villas, condos and penthouses." },
+  { title: "Owner-ready reports", desc: "A monthly report property managers can send straight to owners." },
+  { title: "Superhost Risk Report", desc: "Every quarter, listings at risk are flagged before the assessment." },
 ];
 
 const PricingPage = () => (
@@ -83,66 +32,33 @@ const PricingPage = () => (
         <ScrollReveal delay={0.1}>
           <div className="max-w-2xl mx-auto space-y-4 text-muted-foreground text-lg md:text-xl leading-relaxed">
             <p>
-              Traditional property management often charges{" "}
-              <strong className="text-foreground">15–25% of revenue</strong> or requires hiring in-house staff costing{" "}
-              <strong className="text-foreground">$2,000–$3,000+ per month</strong> per property.
+              Traditional property management often charges a percentage of your revenue, or requires hiring in-house staff — adding headcount, not control.
             </p>
             <p>
-              ElitebnbHosts operates on a predictable flat-rate structure —
-              delivering full remote operations without percentage-based costs.
+              Elite BNB Hosts operates as a done-for-you team instead — full remote operations, without adding a single hire.
             </p>
           </div>
         </ScrollReveal>
       </div>
     </section>
 
-    {/* Plans */}
+    {/* Included Extras */}
     <section className="pb-40 lg:pb-56 px-6">
       <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {plans.map((plan, i) => (
-            <ScrollReveal key={plan.name} delay={i * 0.1}>
-              <div
-                className={`rounded-2xl p-10 flex flex-col h-full ${
-                  plan.featured
-                    ? "bg-primary text-primary-foreground"
-                    : "bg-secondary"
-                }`}
-              >
-                {plan.featured && (
-                  <span className="text-xs font-medium uppercase tracking-[0.2em] text-primary-foreground/60 mb-6">Most Popular</span>
-                )}
-                <h3 className="font-heading text-2xl font-bold mb-2">{plan.name}</h3>
-                <p className={`text-sm mb-4 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`}>
-                  {plan.range}
-                </p>
-                <p className="font-heading text-3xl font-bold mb-1">
-                  {plan.price}<span className={`text-sm font-body font-normal ${plan.featured ? "text-primary-foreground/40" : "text-muted-foreground"}`}>{plan.priceLabel}</span>
-                </p>
-                {plan.subRange && (
-                  <p className={`text-xs mb-2 ${plan.featured ? "text-primary-foreground/50" : "text-muted-foreground"}`}>
-                    {plan.subRange}
-                  </p>
-                )}
-                <p className={`text-sm mb-10 ${plan.featured ? "text-primary-foreground/50" : "text-muted-foreground"}`}>
-                  {plan.billing}
-                </p>
-                <ul className="space-y-4 mb-10 flex-1">
-                  {plan.features.map((f) => (
-                    <li key={f} className="flex items-start gap-3 text-sm">
-                      <Check className={`shrink-0 mt-0.5 ${plan.featured ? "text-primary-foreground/60" : "text-muted-foreground"}`} size={14} />
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  variant={plan.featured ? "secondary" : "default"}
-                  size="lg"
-                  className="w-full"
-                  asChild
-                >
-                  <Link to="/contact">{plan.cta}</Link>
-                </Button>
+        <ScrollReveal>
+          <div className="text-center mb-20">
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Included Extras</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
+              Extras that come<br />with the system.
+            </h2>
+          </div>
+        </ScrollReveal>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {extras.map((extra, i) => (
+            <ScrollReveal key={extra.title} delay={i * 0.1}>
+              <div className="bg-secondary rounded-2xl p-10 h-full">
+                <h3 className="font-heading text-xl font-semibold text-foreground mb-3">{extra.title}</h3>
+                <p className="text-muted-foreground text-base leading-[1.7]">{extra.desc}</p>
               </div>
             </ScrollReveal>
           ))}
@@ -150,72 +66,58 @@ const PricingPage = () => (
       </div>
     </section>
 
-    {/* Secondary Service — Review Management & Guest Communication */}
+    {/* Guarantee */}
     <section className="pb-40 lg:pb-56 px-6">
-      <div className="container mx-auto max-w-5xl">
+      <div className="container mx-auto max-w-4xl">
         <ScrollReveal>
-          <div className="text-center mb-20">
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Focused Service</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-6">
-              Review Management &<br />Guest Communication
+          <div className="text-center mb-16">
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-8">Guarantee</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em]">
+              We guarantee what we control.
             </h2>
-            <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-              Protect your reviews, maintain consistent guest communication, and improve listing performance — without full property management.
-            </p>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {/* Pricing tiers */}
+        <div className="space-y-6 max-w-3xl mx-auto">
           <ScrollReveal delay={0.1}>
-            <div className="bg-secondary rounded-2xl p-10 flex flex-col h-full">
-              <h3 className="font-heading text-2xl font-bold mb-8">Pricing</h3>
-              <div className="space-y-6 flex-1">
-                {[
-                  { range: "2–5 Listings", price: "$110" },
-                  { range: "6–10 Listings", price: "$100" },
-                  { range: "11–20 Listings", price: "$90" },
-                ].map((tier) => (
-                  <div key={tier.range} className="flex items-baseline justify-between">
-                    <span className="text-sm text-muted-foreground">{tier.range}</span>
-                    <span className="font-heading text-xl font-bold">
-                      {tier.price}<span className="text-sm font-body font-normal text-muted-foreground">/listing</span>
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-xs text-muted-foreground mt-6">per month</p>
+            <div className="bg-secondary rounded-2xl p-10">
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Superhost Guarantee (Full Operations)</h3>
+              <p className="text-foreground text-base leading-[1.7] italic mb-4">
+                "Keep Superhost at your first full quarterly assessment after handover, or we work for free until you do."
+              </p>
+              <p className="text-muted-foreground text-sm leading-[1.6]">
+                Conditions: maintenance issues fixed within 24–48 hours, no host cancellations above Airbnb's limit, your staff follow the playbook, and our access stays active all quarter.
+              </p>
             </div>
           </ScrollReveal>
-
-          {/* Features */}
+          <ScrollReveal delay={0.15}>
+            <div className="bg-secondary rounded-2xl p-10">
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Listing Rescue</h3>
+              <p className="text-muted-foreground text-base leading-[1.7]">
+                If any listing averages below 4.8 on new reviews in a quarter, we run a free audit, fix what's wrong and give it extra attention the next quarter.
+              </p>
+            </div>
+          </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <div className="bg-secondary rounded-2xl p-10 flex flex-col h-full">
-              <h3 className="font-heading text-2xl font-bold mb-8">What's Included</h3>
-              <ul className="space-y-4 flex-1">
-                {[
-                  "Guest Communication (7-day structured response handling)",
-                  "Review Management & Monitoring",
-                  "Securing Potential Negative Reviews",
-                  "Policy-Aligned Review Dispute Support",
-                  "Monthly Listing Assessment & Recommendations",
-                  "Review Follow-Up System",
-                  "Risk Detection & Escalation",
-                ].map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm">
-                    <Check className="shrink-0 mt-0.5 text-muted-foreground" size={14} />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="bg-secondary rounded-2xl p-10">
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">48-Hour Filing</h3>
+              <p className="text-muted-foreground text-base leading-[1.7]">
+                Every new review that qualifies for dispute is filed within 48 hours, or that month is free for those listings.
+              </p>
             </div>
           </ScrollReveal>
         </div>
 
+        <ScrollReveal delay={0.25}>
+          <p className="text-muted-foreground/70 text-sm italic leading-[1.6] max-w-2xl mx-auto text-center mt-10">
+            We don't promise Airbnb's decisions on reviews or claims. Nobody controls those. Our track record speaks for itself instead.
+          </p>
+        </ScrollReveal>
+
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-10">
             <Button variant="default" size="lg" asChild>
-              <Link to="/contact">Book a Consultation</Link>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Review Audit</a>
             </Button>
           </div>
         </ScrollReveal>
@@ -289,13 +191,13 @@ const PricingPage = () => (
       <div className="container mx-auto max-w-3xl text-center">
         <ScrollReveal>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-8">
-            Not sure which plan?
+            Ready to protect your Superhost status?
           </h2>
           <p className="text-muted-foreground text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            Book a free consultation. We'll recommend a plan based on your portfolio and goals.
+            Start with a free Review Audit. We'll show you exactly what we'd fix.
           </p>
           <Button variant="hero" size="lg" asChild>
-            <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+            <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Review Audit <ArrowRight className="ml-1" size={16} /></a>
           </Button>
         </ScrollReveal>
       </div>
