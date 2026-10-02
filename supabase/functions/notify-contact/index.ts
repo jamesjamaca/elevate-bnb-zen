@@ -13,22 +13,20 @@ serve(async (req) => {
   try {
     const { name, email, properties, message } = await req.json();
 
-    // Log the submission for now - email integration can be added later
     console.log("New contact submission:", { name, email, properties, message });
 
-    // To enable email notifications, add a RESEND_API_KEY secret and uncomment below:
-    /*
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (RESEND_API_KEY) {
-      await fetch("https://api.resend.com/emails", {
+      const emailResponse = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${RESEND_API_KEY}`,
         },
         body: JSON.stringify({
-          from: "Elite BnB Hosts <onboarding@resend.dev>",
+          from: "Elite BNB Hosts <onboarding@resend.dev>",
           to: "usa@elitebnbhosts.com",
+          reply_to: email,
           subject: `New Contact: ${name}`,
           html: `<h2>New Contact Form Submission</h2>
             <p><strong>Name:</strong> ${name}</p>
@@ -38,8 +36,14 @@ serve(async (req) => {
             <p>${message}</p>`,
         }),
       });
+
+      if (!emailResponse.ok) {
+        const errText = await emailResponse.text();
+        console.error("Resend API error:", emailResponse.status, errText);
+      }
+    } else {
+      console.warn("RESEND_API_KEY not set — skipping email notification, submission still saved to database.");
     }
-    */
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, "Content-Type": "application/json" },
