@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
@@ -19,20 +19,29 @@ const capabilities = [
 const trustPillars = [
   {
     num: "01",
+    icon: MessageSquare,
     title: "Guest Experience System",
     desc: "Trained agents assigned to your account handle every guest conversation, day and night, from your playbook.",
-    bullets: ["24/7 guest messaging", "Playbook built for your properties", "Problems caught before checkout"],
+    stat: "24/7",
+    statLabel: "Live guest coverage",
+    bullets: ["Every message answered on your playbook", "Issues flagged before checkout", "One team across your whole portfolio"],
   },
   {
     num: "02",
+    icon: ShieldCheck,
     title: "Review Defense",
     desc: "Specialists challenge every review that breaks Airbnb's rules, using Airbnb's own dispute process.",
-    bullets: ["Disputes filed within 48 hours", "Ratings tracked listing by listing", "Listing Rescue if one slips below 4.8"],
+    stat: "48 hrs",
+    statLabel: "Avg. dispute filing time",
+    bullets: ["Every listing's rating tracked weekly", "500+ reviews disputed and removed", "Listing Rescue if one slips below 4.8"],
   },
   {
     num: "03",
+    icon: FileCheck2,
     title: "Account Protection",
     desc: "We keep your account healthy and get you paid for damage, with a claims specialist on every case.",
+    stat: "100%",
+    statLabel: "Claims documented & filed",
     bullets: ["Damage and reimbursement claims", "Escalations handled for you", "Quarterly Superhost Risk Report"],
   },
 ];
@@ -306,23 +315,43 @@ const Index = () => {
       <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Three Pillars</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-16">
-              Three pillars.<br />One team running them for you.
-            </h2>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+              <div>
+                <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Three Pillars</p>
+                <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground leading-[1.05] tracking-[-0.02em]">
+                  Three pillars.<br />One team running them for you.
+                </h2>
+              </div>
+              <p className="text-muted-foreground text-sm max-w-xs leading-[1.6]">
+                Every system below is tracked and reported on — not just promised.
+              </p>
+            </div>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {trustPillars.map((p, i) => (
               <ScrollReveal key={p.title} delay={i * 0.08}>
-                <div className="bg-secondary rounded-2xl p-10 md:p-12 h-full flex flex-col">
-                  <span className="text-muted-foreground text-xs tracking-[0.2em] font-medium">{p.num}</span>
-                  <h3 className="font-heading text-xl font-semibold text-foreground mt-6 mb-4">{p.title}</h3>
-                  <p className="text-muted-foreground text-base leading-[1.7] mb-6">{p.desc}</p>
-                  <ul className="space-y-3 mt-auto">
+                <div className="bg-secondary rounded-2xl p-8 md:p-9 h-full flex flex-col border border-border/50">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-10 h-10 rounded-lg bg-foreground/5 flex items-center justify-center">
+                      <p.icon size={18} className="text-foreground" strokeWidth={1.75} />
+                    </div>
+                    <span className="text-muted-foreground/60 text-xs tracking-[0.2em] font-mono">{p.num}</span>
+                  </div>
+                  <h3 className="font-heading text-lg font-semibold text-foreground mb-2">{p.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-[1.6] mb-6">{p.desc}</p>
+
+                  <div className="border-t border-border pt-5 mb-6">
+                    <div className="font-heading text-3xl font-bold text-foreground tracking-[-0.02em] tabular-nums">
+                      {p.stat}
+                    </div>
+                    <p className="text-muted-foreground text-xs uppercase tracking-[0.1em] mt-1">{p.statLabel}</p>
+                  </div>
+
+                  <ul className="space-y-2.5 mt-auto">
                     {p.bullets.map((b) => (
-                      <li key={b} className="flex items-start gap-3 text-sm text-foreground">
-                        <span className="w-1 h-1 rounded-full bg-foreground shrink-0 mt-2" />
-                        <span>{b}</span>
+                      <li key={b} className="flex items-start gap-2.5 text-sm text-foreground">
+                        <Check size={14} className="text-muted-foreground shrink-0 mt-[3px]" strokeWidth={2} />
+                        <span className="leading-snug">{b}</span>
                       </li>
                     ))}
                   </ul>
