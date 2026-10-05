@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check } from "lucide-react";
+import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check, ZoomIn } from "lucide-react";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
@@ -53,6 +54,7 @@ const CHECKLIST_URL = "https://drive.google.com/file/d/1DJHIDicuIE0S8hocA2RTp9CL
 
 const Index = () => {
   const [heroSubmitting, setHeroSubmitting] = useState(false);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string; caption: string } | null>(null);
 
   const handleHeroSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -206,9 +208,17 @@ const Index = () => {
             ].map((shot, i) => (
               <ScrollReveal key={shot.caption} delay={i * 0.08}>
                 <figure className="h-full flex flex-col">
-                  <div className="border border-border rounded-2xl overflow-hidden bg-background">
-                    <img src={shot.src} alt={shot.alt} className="w-full h-auto block" loading="lazy" />
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setLightbox(shot)}
+                    aria-label={`Enlarge screenshot: ${shot.caption}`}
+                    className="group relative block w-full cursor-zoom-in border border-border rounded-2xl overflow-hidden bg-background transition-all duration-300 hover:border-brand hover:shadow-[0_0_0_3px_hsl(var(--brand)/0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                  >
+                    <img src={shot.src} alt={shot.alt} className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" loading="lazy" />
+                    <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-black/80 text-white text-xs font-medium px-3 py-1.5">
+                      <ZoomIn size={14} /> Tap to enlarge
+                    </span>
+                  </button>
                   <figcaption className="text-muted-foreground text-sm tracking-wide mt-3">{shot.caption}</figcaption>
                 </figure>
               </ScrollReveal>
@@ -590,6 +600,19 @@ const Index = () => {
           </ScrollReveal>
         </div>
       </section>
+
+      <Dialog open={!!lightbox} onOpenChange={(o) => !o && setLightbox(null)}>
+        <DialogContent className="max-w-[95vw] md:max-w-5xl p-3 md:p-4 bg-background">
+          <DialogTitle className="sr-only">{lightbox?.caption}</DialogTitle>
+          <DialogDescription className="sr-only">{lightbox?.alt}</DialogDescription>
+          {lightbox && (
+            <div className="overflow-auto max-h-[85vh]">
+              <img src={lightbox.src} alt={lightbox.alt} className="w-full min-w-[820px] md:min-w-0 h-auto rounded-lg" />
+              <p className="text-muted-foreground text-sm mt-3">{lightbox.caption}</p>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
