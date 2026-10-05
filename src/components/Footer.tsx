@@ -38,7 +38,7 @@ const Footer = () => (
           <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground mb-6">Follow Us</h4>
           <div className="flex items-center gap-4">
             <a
-              href="https://www.instagram.com/elite_airbnbhost/"
+              href="https://www.instagram.com/elite_bnbhosts/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

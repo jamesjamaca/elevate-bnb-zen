@@ -91,14 +91,14 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero */}
-      <section className="pt-32 lg:pt-40 pb-8 px-6">
-        <div className="text-center max-w-4xl mx-auto">
+      <section className="relative -mt-14 overflow-hidden px-6 pt-40 pb-28 lg:pb-32" style={{ background: "radial-gradient(70% 30% at 50% 120%, #ff9a3a 0%, #d2400d 42%, #5a1304 68%, rgba(0,0,0,0) 78%), #000" }}>
+        <div className="relative text-center max-w-4xl mx-auto">
           <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-8">Contact</p>
-            <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-foreground leading-[0.92] tracking-[-0.03em] mb-8">
+            <p className="text-brand text-sm tracking-[0.3em] uppercase font-semibold mb-8">Contact</p>
+            <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-white leading-[0.92] tracking-[-0.03em] mb-8">
               Let's talk.
             </h1>
-            <p className="text-muted-foreground text-xl md:text-2xl max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-xl md:text-2xl max-w-xl mx-auto leading-relaxed">
               Tell us about your listings and goals. We'll build a strategy around them.
             </p>
           </ScrollReveal>
@@ -106,7 +106,7 @@ const ContactPage = () => {
       </section>
 
       {/* Form */}
-      <section className="pb-40 lg:pb-56 px-6">
+      <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-2xl">
           <ScrollReveal>
             <form onSubmit={handleSubmit} className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-6">

@@ -14,7 +14,7 @@ const navItems = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const isHome = location.pathname !== "/admin"; // dark nav on every public page
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b ${isHome ? "bg-black/70 border-white/10 text-white" : "bg-background/60 border-border/40"}`}>

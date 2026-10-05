@@ -150,7 +150,7 @@ const Index = () => {
               </blockquote>
               <p className="text-white/60 text-base tracking-wide mb-12">— Multi-Property Investor</p>
               <div className="flex flex-wrap gap-3">
-                {["90% Review Dispute Success Rate", "$8,000+ Claims Recovered", "Multi-Platform Support"].map((stat) => (
+                {["90% Review Dispute Success Rate", "$8,587 Claims Recovered", "Multi-Platform Support"].map((stat) => (
                   <span key={stat} className="text-sm tracking-wide text-white/80 border border-brand/40 bg-brand/10 rounded-full px-5 py-2.5">
                     {stat}
                   </span>
@@ -169,7 +169,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h2 className="font-heading text-4xl md:text-6xl lg:text-[4.25rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10 max-w-3xl">
-              Lost Superhost twice. Won it back in five months.
+              Lost Superhost twice. Superhost status recovered.
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
@@ -181,7 +181,7 @@ const Index = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
             {[
               { metric: "68.5% → 91.9%", label: "Occupancy" },
-              { metric: "Regained", label: "Superhost" },
+              { metric: "Recovered", label: "Superhost status" },
               { metric: "18+", label: "Bad reviews removed" },
               { metric: "17 → 24", label: "Listings" },
             ].map((item, i) => (
@@ -365,9 +365,9 @@ const Index = () => {
           <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
             {[
               { metric: "500+", label: "Reviews managed" },
-              { metric: "50+", label: "Clients supported" },
-              { metric: "95%", label: "Superhost rate" },
-              { metric: "100+", label: "Properties" },
+              { metric: "30+", label: "Clients supported" },
+              { metric: "90%", label: "Superhost rate across 8 portfolios" },
+              { metric: "200+", label: "Properties" },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 0.08}>
                 <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-[-0.03em]">{item.metric}</p>
@@ -390,7 +390,7 @@ const Index = () => {
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-muted-foreground text-xl md:text-2xl leading-[1.5] mt-14 max-w-xl font-light">
+            <p className="text-muted-foreground text-xl md:text-2xl leading-[1.5] mt-14 max-w-xl font-normal">
               We exist to make that possible.
             </p>
           </ScrollReveal>
@@ -502,12 +502,12 @@ const Index = () => {
                 <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-border">
                   <img
                     src={founderPhoto}
-                    alt="James Jamaca — Founder, Elite BNB Hosts"
+                    alt="James Jamaca, Founder of Elite BNB Hosts"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <p className="text-muted-foreground text-sm tracking-wide mt-6 text-center">
-                  James Jamaca — Founder, Elite BNB Hosts
+                  <a href="https://www.linkedin.com/in/jamesjamaca/" target="_blank" rel="noopener noreferrer" className="underline decoration-brand/60 underline-offset-4 hover:text-foreground transition-colors">James Jamaca</a> — Founder, Elite BNB Hosts
                 </p>
               </div>
             </ScrollReveal>

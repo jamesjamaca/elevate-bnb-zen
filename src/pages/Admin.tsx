@@ -18,8 +18,6 @@ interface Submission {
   created_at: string;
 }
 
-const ADMIN_PASSWORD = "elitebnb2024"; // Simple password protection
-
 const AdminPage = () => {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(false);
@@ -28,32 +26,35 @@ const AdminPage = () => {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState<Submission | null>(null);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === ADMIN_PASSWORD) {
-      setAuthenticated(true);
-      setError("");
-      fetchSubmissions();
-    } else {
+    setError("");
+    setLoading(true);
+    // The password is checked on the server; nothing secret lives in this file.
+    const { data, error: fnError } = await supabase.functions.invoke("admin-submissions", {
+      body: { action: "list", password },
+    });
+    setLoading(false);
+    if (fnError || !data?.submissions) {
       setError("Incorrect password");
+      return;
     }
+    setSubmissions(data.submissions);
+    setAuthenticated(true);
   };
 
   const fetchSubmissions = async () => {
     setLoading(true);
-    // Use edge function to fetch with service role (bypasses RLS)
-    const { data, error } = await supabase.functions.invoke("admin-submissions", {
-      body: { action: "list" },
+    const { data, error: fnError } = await supabase.functions.invoke("admin-submissions", {
+      body: { action: "list", password },
     });
-    if (!error && data?.submissions) {
-      setSubmissions(data.submissions);
-    }
+    if (!fnError && data?.submissions) setSubmissions(data.submissions);
     setLoading(false);
   };
 
   const markAsRead = async (id: string) => {
     await supabase.functions.invoke("admin-submissions", {
-      body: { action: "mark_read", id },
+      body: { action: "mark_read", id, password },
     });
     setSubmissions((prev) =>
       prev.map((s) => (s.id === id ? { ...s, read: true } : s))
@@ -78,7 +79,9 @@ const AdminPage = () => {
             className="rounded-xl h-13 bg-secondary border-0 text-base px-5"
           />
           {error && <p className="text-destructive text-sm">{error}</p>}
-          <Button type="submit" className="w-full">Sign In</Button>
+          <Button type="submit" className="w-full" disabled={loading}>
+            {loading ? <Loader2 className="animate-spin" size={16} /> : "Sign In"}
+          </Button>
         </form>
       </div>
     );

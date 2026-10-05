@@ -23,7 +23,7 @@
     --secondary-foreground: 0 0% 7%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 34%;
 
     --accent: 0 0% 96%;
     --accent-foreground: 0 0% 7%;
@@ -96,6 +96,8 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
+    font-weight: 400;
+    letter-spacing: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
