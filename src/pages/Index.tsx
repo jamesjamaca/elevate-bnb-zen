@@ -6,6 +6,9 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
 import founderPhoto from "@/assets/founder.jpg";
+import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
+import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
+import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -143,6 +146,70 @@ const Index = () => {
                 ))}
               </div>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Client Results */}
+      <section className="py-20 lg:py-28 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <p className="text-muted-foreground text-xs tracking-[0.3em] uppercase mb-6">Client results</p>
+          </ScrollReveal>
+          <ScrollReveal delay={0.1}>
+            <h2 className="font-heading text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10 max-w-3xl">
+              Lost Superhost twice. Won it back in five months.
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal delay={0.15}>
+            <p className="text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl mb-14">
+              A Boston-area operator came to us after missing Superhost at two assessments in a row. Guests were getting AI-only replies, nobody was watching his reviews, and he was answering messages late into the night. We took over operations in May.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
+            {[
+              { metric: "68.5% → 91.9%", label: "Occupancy" },
+              { metric: "Regained", label: "Superhost" },
+              { metric: "18+", label: "Bad reviews removed" },
+              { metric: "17 → 24", label: "Listings" },
+            ].map((item, i) => (
+              <ScrollReveal key={item.label} delay={i * 0.08}>
+                <div className="border border-border rounded-2xl bg-secondary p-5 sm:p-6 md:p-8 h-full">
+                  <p className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-[1.75rem] xl:text-3xl font-bold text-foreground tracking-[-0.03em] leading-[1.1]">{item.metric}</p>
+                  <p className="text-muted-foreground text-sm mt-3 tracking-wide">{item.label}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal>
+            <p className="text-foreground text-base md:text-lg leading-[1.6] mb-14">
+              He's no longer answering guests at night. Our team runs it.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+            {[
+              { src: clientOccupancyBefore, alt: "Airbnb occupancy report for January to April showing a 68.5% average occupancy rate across 24 listings", caption: "Occupancy, Jan 1 – Apr 30: 68.5%" },
+              { src: clientOccupancyAfter, alt: "Airbnb occupancy report for May to October showing a 91.9% average occupancy rate across 24 listings", caption: "Occupancy, May 1 – Oct 5: 91.9%" },
+              { src: clientSuperhostLost, alt: "Airbnb Superhost assessment showing Superhost status not earned for the July 2025 to June 2026 period", caption: "Superhost assessment before we took over" },
+            ].map((shot, i) => (
+              <ScrollReveal key={shot.caption} delay={i * 0.08}>
+                <figure className="h-full flex flex-col">
+                  <div className="border border-border rounded-2xl overflow-hidden bg-background">
+                    <img src={shot.src} alt={shot.alt} className="w-full h-auto block" loading="lazy" />
+                  </div>
+                  <figcaption className="text-muted-foreground text-xs tracking-wide mt-3">{shot.caption}</figcaption>
+                </figure>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <ScrollReveal>
+            <Button variant="hero" size="lg" asChild>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={16} /></a>
+            </Button>
           </ScrollReveal>
         </div>
       </section>
