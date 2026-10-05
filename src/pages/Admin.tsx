@@ -3,13 +3,16 @@ import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Eye, Mail, Calendar, Building, Loader2, Lock } from "lucide-react";
+import { Eye, Mail, Calendar, Building, Loader2, Lock, MapPin, Phone } from "lucide-react";
 
 interface Submission {
   id: string;
   name: string;
   email: string;
   properties: string | null;
+  company?: string | null;
+  location?: string | null;
+  phone?: string | null;
   message: string;
   read: boolean;
   created_at: string;
@@ -149,9 +152,24 @@ const AdminPage = () => {
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Mail size={14} /> <a href={`mailto:${selected.email}`} className="hover:text-foreground transition-colors">{selected.email}</a>
                   </div>
+                  {selected.company && (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Building size={14} /> {selected.company}
+                    </div>
+                  )}
+                  {selected.location && (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <MapPin size={14} /> {selected.location}
+                    </div>
+                  )}
+                  {selected.phone && (
+                    <div className="flex items-center gap-2 text-muted-foreground">
+                      <Phone size={14} /> <a href={`tel:${selected.phone.replace(/[^\d+]/g, "")}`} className="hover:text-foreground transition-colors">{selected.phone}</a>
+                    </div>
+                  )}
                   {selected.properties && (
                     <div className="flex items-center gap-2 text-muted-foreground">
-                      <Building size={14} /> {selected.properties} properties
+                      <Building size={14} /> {selected.properties} listings
                     </div>
                   )}
                   <div className="flex items-center gap-2 text-muted-foreground">

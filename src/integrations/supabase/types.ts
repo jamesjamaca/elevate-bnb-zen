@@ -16,29 +16,38 @@ export type Database = {
     Tables: {
       contact_submissions: {
         Row: {
+          company: string | null
           created_at: string
           email: string
           id: string
+          location: string | null
           message: string
           name: string
+          phone: string | null
           properties: string | null
           read: boolean
         }
         Insert: {
+          company?: string | null
           created_at?: string
           email: string
           id?: string
+          location?: string | null
           message: string
           name: string
+          phone?: string | null
           properties?: string | null
           read?: boolean
         }
         Update: {
+          company?: string | null
           created_at?: string
           email?: string
           id?: string
+          location?: string | null
           message?: string
           name?: string
+          phone?: string | null
           properties?: string | null
           read?: boolean
         }
