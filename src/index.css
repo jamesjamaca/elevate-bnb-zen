@@ -36,6 +36,8 @@
     --ring: 0 0% 7%;
     --success: 152 60% 36%;
     --success-foreground: 0 0% 100%;
+    --brand: 18 100% 52%;
+    --brand-foreground: 0 0% 4%;
 
     --radius: 0.75rem;
 
@@ -74,6 +76,8 @@
     --ring: 0 0% 100%;
     --success: 152 55% 45%;
     --success-foreground: 0 0% 100%;
+    --brand: 18 100% 55%;
+    --brand-foreground: 0 0% 4%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
