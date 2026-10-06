@@ -12,6 +12,7 @@ import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import crewLogo from "@/assets/crew-housing-logo.png";
+import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -173,6 +174,40 @@ const Index = () => {
                     </span>
                   ))}
                 </div>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+              <div className="order-2 md:order-1">
+                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
+                <div className="font-heading text-lg md:text-xl lg:text-[1.4rem] font-medium leading-[1.5] tracking-[-0.01em] text-foreground space-y-4">
+                  <p>
+                    Having Elite BNB Hosts handle our Airbnb has taken a <span className="text-brand font-bold">huge load off my plate</span>. They helped us win back our <span className="font-bold">Superhost status</span>, removed <span className="font-bold">30+</span> low rating, ineligible reviews, and won several Airbnb Support cases I wouldn't have known how to handle on my own. They've also filed <span className="font-bold">15+ claims</span> for us, most paid out in full, which adds up to <span className="text-brand font-bold">thousands of dollars in reimbursements</span>.
+                  </p>
+                  <p>
+                    What I appreciate most is that they know Airbnb's policies inside and out, and they know exactly when and how to push back. It's reassuring to have someone looking out for the property and making sure we don't leave money or opportunities on the table.
+                  </p>
+                  <p>I'd recommend them to any host.</p>
+                </div>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Superhost status recovered", "30+ ineligible reviews removed", "15+ claims filed", "Thousands in reimbursements"].map((chip) => (
+                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div className="order-1 md:order-2 flex flex-col items-center text-center">
+                <img
+                  src={sikanderPhoto}
+                  alt="Sikander Zafar"
+                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top ring-4 ring-brand ring-offset-4 ring-offset-background"
+                  loading="lazy"
+                />
+                <p className="font-heading text-2xl font-bold text-foreground mt-6">Sikander Zafar</p>
+                <p className="text-muted-foreground text-base mt-2">Airbnb host</p>
               </div>
             </div>
           </ScrollReveal>
