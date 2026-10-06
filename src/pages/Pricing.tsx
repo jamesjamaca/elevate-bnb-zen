@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Check } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
+import jacobPhoto from "@/assets/jacob-nostrant.jpg";
+import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 
 const faqs = [
   { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
@@ -257,13 +259,42 @@ const PricingPage = () => (
           </div>
         </ScrollReveal>
 
-        {/* Grid */}
+        {/* Named client testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              photo: jacobPhoto,
+              name: "Jacob Nostrant",
+              role: "Crew Housing · 100+ properties",
+              quote: "Working with James was a game changer! We kept Superhost every single quarter, and a few times it was a nail-biter. His team stepped in and saved it! We've won multiple claims, too many to count, and James was an absolute BEAST with reviews.",
+            },
+            {
+              photo: sikanderPhoto,
+              name: "Sikander Zafar",
+              role: "Airbnb host",
+              quote: "Having Elite BNB Hosts handle our Airbnb has taken a huge load off my plate. They helped us win back our Superhost status, removed 30+ low rating, ineligible reviews, and filed 26 claims for us, which adds up to $7,000+ in reimbursements.",
+            },
+          ].map((t, i) => (
+            <ScrollReveal key={t.name} delay={0.1 + i * 0.05}>
+              <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
+                <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-4">
+                  <img src={t.photo} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-brand ring-offset-2 ring-offset-secondary" loading="lazy" />
+                  <div>
+                    <p className="font-heading text-lg font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
+                  </div>
+                </div>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        {/* Short quotes */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
           {[
             { quote: "Thank you so much for your excellent work. The results speak for themselves — truly outstanding execution.", author: "Portfolio Host" },
             { quote: "Review successfully removed. Amazing work as always.", author: "Multi-Listing Operator" },
-            { quote: "Keep giving us excellent results. We're grateful for the consistency.", author: "Short-Term Rental Investor" },
-            { quote: "Great work, team. Fast turnaround and handled professionally.", author: "Property Manager" },
           ].map((t, i) => (
             <ScrollReveal key={i} delay={0.1 + i * 0.05}>
               <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
