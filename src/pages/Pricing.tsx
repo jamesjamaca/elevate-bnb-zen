@@ -251,7 +251,7 @@ const PricingPage = () => (
         <ScrollReveal delay={0.1}>
           <div className="bg-black text-white rounded-3xl p-10 md:p-14 mb-10 border border-brand/30">
             <p className="text-xl md:text-2xl leading-relaxed italic mb-6">
-              "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,000 reimbursement and protected the integrity of our portfolio."
+              "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,587 reimbursement and protected the integrity of our portfolio."
             </p>
             <span className="text-sm text-white/60">— Multi-Property Investor</span>
           </div>
