@@ -223,12 +223,12 @@ const Index = () => {
                   loading="lazy"
                 />
                 <p className="font-heading text-2xl font-bold text-foreground mt-6">Estiven Gomez</p>
-                <p className="text-muted-foreground text-base mt-2">Airbnb Property Manager</p>
+                <p className="text-muted-foreground text-base mt-2">Airbnb Property Manager &middot; 36 listings</p>
               </div>
               <div>
                 <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
                 <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                  Working with James has been a <span className="text-brand font-bold">transformative experience</span>. His professionalism, deep knowledge, and collaborative teamwork are second to none. He and his team helped us <span className="font-bold">regain our Superhost status</span>, boosting our rating from <span className="text-brand font-bold">4.76 to 4.89</span>. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world. I couldn't be happier to work with him!
+                  Partnering with James has been a <span className="text-brand font-bold">transformative experience</span>. His professionalism, deep knowledge, and collaborative teamwork are second to none. He and his team helped us <span className="font-bold">regain our Superhost status</span>, boosting our rating from <span className="text-brand font-bold">4.76 to 4.89</span>. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world. I couldn't be happier to work with him!
                 </blockquote>
                 <div className="flex flex-wrap gap-3 mt-8">
                   {["Superhost status regained", "Rating 4.76 \u2192 4.89"].map((chip) => (

@@ -278,8 +278,8 @@ const PricingPage = () => (
             {
               photo: estivenPhoto,
               name: "Estiven Gomez",
-              role: "Airbnb Property Manager",
-              quote: "Working with James has been a transformative experience. He and his team helped us regain our Superhost status, boosting our rating from 4.76 to 4.89. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world.",
+              role: "Airbnb Property Manager · 36 listings",
+              quote: "Partnering with James has been a transformative experience. He and his team helped us regain our Superhost status, boosting our rating from 4.76 to 4.89. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world.",
             },
             {
               quote: "Review successfully removed. Amazing work as always.",
