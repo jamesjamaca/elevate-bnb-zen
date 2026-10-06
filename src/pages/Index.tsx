@@ -184,7 +184,7 @@ const Index = () => {
                 <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
                 <div className="font-heading text-lg md:text-xl lg:text-[1.4rem] font-medium leading-[1.5] tracking-[-0.01em] text-foreground space-y-4">
                   <p>
-                    Having Elite BNB Hosts handle our Airbnb has taken a <span className="text-brand font-bold">huge load off my plate</span>. They helped us win back our <span className="font-bold">Superhost status</span>, removed <span className="font-bold">30+</span> low rating, ineligible reviews, and won several Airbnb Support cases I wouldn't have known how to handle on my own. They've also filed <span className="font-bold">15+ claims</span> for us, most paid out in full, which adds up to <span className="text-brand font-bold">thousands of dollars in reimbursements</span>.
+                    Having Elite BNB Hosts handle our Airbnb has taken a <span className="text-brand font-bold">huge load off my plate</span>. They helped us win back our <span className="font-bold">Superhost status</span>, removed <span className="font-bold">30+</span> low rating, ineligible reviews, and won several Airbnb Support cases I wouldn't have known how to handle on my own. They've also filed <span className="font-bold">26 claims</span> for us, most paid out in full, which adds up to <span className="text-brand font-bold">$7,000+ in reimbursements</span>.
                   </p>
                   <p>
                     What I appreciate most is that they know Airbnb's policies inside and out, and they know exactly when and how to push back. It's reassuring to have someone looking out for the property and making sure we don't leave money or opportunities on the table.
@@ -192,7 +192,7 @@ const Index = () => {
                   <p>I'd recommend them to any host.</p>
                 </div>
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["Superhost status recovered", "30+ ineligible reviews removed", "15+ claims filed", "Thousands in reimbursements"].map((chip) => (
+                  {["Superhost status recovered", "30+ ineligible reviews removed", "26 claims filed", "$7,000+ covered"].map((chip) => (
                     <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
                       {chip}
                     </span>
