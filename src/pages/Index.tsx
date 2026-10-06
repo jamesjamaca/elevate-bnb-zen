@@ -141,6 +141,44 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Jacob testimonial */}
+      <section className="py-20 lg:py-28 px-6 bg-secondary">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <p className="text-[#c2410c] text-sm font-semibold tracking-[0.3em] uppercase mb-10 text-center">In a client's words</p>
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src={jacobPhoto}
+                  alt="Jacob Nostrant"
+                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-brand ring-offset-4 ring-offset-background"
+                  loading="lazy"
+                />
+                <p className="font-heading text-2xl font-bold text-foreground mt-6">Jacob Nostrant</p>
+                <div className="flex items-center justify-center gap-2.5 mt-3">
+                  <img src={crewLogo} alt="Crew Housing logo" className="h-9 w-auto" loading="lazy" />
+                  <span className="text-foreground text-lg font-semibold">Crew Housing</span>
+                </div>
+                <p className="text-muted-foreground text-base mt-2">Mid-term rentals &middot; 66 properties</p>
+              </div>
+              <div>
+                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
+                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
+                  Working with James was a <span className="text-brand font-bold">game changer!</span> We kept Superhost <span className="font-bold">every single quarter</span>, and a few times it was a nail-biter. His team stepped in and saved it! We've won multiple claims, too many to count, and James was an absolute <span className="font-bold">BEAST</span> with reviews. Then there's the SOP: some months we brought in an extra <span className="text-brand font-bold">$20K+</span> in revenue just by following it. It felt like a money hack, and all of it is built on Airbnb's own policy. If you run Airbnbs, talk to James!
+                </blockquote>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["66 mid-term properties managed", "Superhost every quarter", "Multiple claims won", "$20K+ extra revenue in some months"].map((chip) => (
+                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
       {/* Social Proof */}
       <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-4xl">
@@ -231,44 +269,6 @@ const Index = () => {
             <Button variant="brand" size="xl" asChild>
               <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={18} /></a>
             </Button>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Jacob testimonial */}
-      <section className="py-20 lg:py-28 px-6 bg-secondary">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <p className="text-[#c2410c] text-sm font-semibold tracking-[0.3em] uppercase mb-10 text-center">In a client's words</p>
-            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="flex flex-col items-center text-center">
-                <img
-                  src={jacobPhoto}
-                  alt="Jacob Nostrant"
-                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-brand ring-offset-4 ring-offset-background"
-                  loading="lazy"
-                />
-                <p className="font-heading text-2xl font-bold text-foreground mt-6">Jacob Nostrant</p>
-                <div className="flex items-center justify-center gap-2.5 mt-3">
-                  <img src={crewLogo} alt="Crew Housing logo" className="h-9 w-auto" loading="lazy" />
-                  <span className="text-foreground text-lg font-semibold">Crew Housing</span>
-                </div>
-                <p className="text-muted-foreground text-base mt-2">Mid-term rentals &middot; 66 properties</p>
-              </div>
-              <div>
-                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                  Working with James was a <span className="text-brand font-bold">game changer!</span> We kept Superhost <span className="font-bold">every single quarter</span>, and a few times it was a nail-biter. His team stepped in and saved it! We've won multiple claims, too many to count, and James was an absolute <span className="font-bold">BEAST</span> with reviews. Then there's the SOP: some months we brought in an extra <span className="text-brand font-bold">$20K+</span> in revenue just by following it. It felt like a money hack, and all of it is built on Airbnb's own policy. If you run Airbnbs, talk to James!
-                </blockquote>
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {["66 mid-term properties managed", "Superhost every quarter", "Multiple claims won", "$20K+ extra revenue in some months"].map((chip) => (
-                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </ScrollReveal>
         </div>
       </section>
