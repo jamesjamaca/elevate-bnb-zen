@@ -13,6 +13,7 @@ import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import crewLogo from "@/assets/crew-housing-logo.png";
 import sikanderPhoto from "@/assets/sikander-zafar.jpg";
+import estivenPhoto from "@/assets/estiven-gomez.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -208,6 +209,34 @@ const Index = () => {
                 />
                 <p className="font-heading text-2xl font-bold text-foreground mt-6">Sikander Zafar</p>
                 <p className="text-muted-foreground text-base mt-2">Airbnb host</p>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+              <div className="flex flex-col items-center text-center">
+                <img
+                  src={estivenPhoto}
+                  alt="Estiven Gomez"
+                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-brand ring-offset-4 ring-offset-background"
+                  loading="lazy"
+                />
+                <p className="font-heading text-2xl font-bold text-foreground mt-6">Estiven Gomez</p>
+                <p className="text-muted-foreground text-base mt-2">Airbnb Property Manager</p>
+              </div>
+              <div>
+                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
+                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
+                  Working with James has been a <span className="text-brand font-bold">transformative experience</span>. His professionalism, deep knowledge, and collaborative teamwork are second to none. He and his team helped us <span className="font-bold">regain our Superhost status</span>, boosting our rating from <span className="text-brand font-bold">4.76 to 4.89</span>. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world. I couldn't be happier to work with him!
+                </blockquote>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Superhost status regained", "Rating 4.76 \u2192 4.89"].map((chip) => (
+                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </ScrollReveal>

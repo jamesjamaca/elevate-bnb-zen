@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import ScrollReveal from "@/components/ScrollReveal";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import sikanderPhoto from "@/assets/sikander-zafar.jpg";
+import estivenPhoto from "@/assets/estiven-gomez.jpg";
 
 const faqs = [
   { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
@@ -259,7 +260,7 @@ const PricingPage = () => (
           </div>
         </ScrollReveal>
 
-        {/* Named client testimonials */}
+        {/* Client testimonials */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
             {
@@ -274,33 +275,35 @@ const PricingPage = () => (
               role: "Airbnb host",
               quote: "Having Elite BNB Hosts handle our Airbnb has taken a huge load off my plate. They helped us win back our Superhost status, removed 30+ low rating, ineligible reviews, and filed 26 claims for us, which adds up to $7,000+ in reimbursements.",
             },
-          ].map((t, i) => (
-            <ScrollReveal key={t.name} delay={0.1 + i * 0.05}>
-              <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
-                <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
-                <div className="flex items-center gap-4">
-                  <img src={t.photo} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-brand ring-offset-2 ring-offset-secondary" loading="lazy" />
-                  <div>
-                    <p className="font-heading text-lg font-bold text-foreground leading-tight">{t.name}</p>
-                    <p className="text-sm text-muted-foreground">{t.role}</p>
-                  </div>
-                </div>
-              </div>
-            </ScrollReveal>
-          ))}
-        </div>
-
-        {/* Short quotes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-          {[
-            { quote: "Thank you so much for your excellent work. The results speak for themselves — truly outstanding execution.", author: "Portfolio Host" },
-            { quote: "Review successfully removed. Amazing work as always.", author: "Multi-Listing Operator" },
+            {
+              photo: estivenPhoto,
+              name: "Estiven Gomez",
+              role: "Airbnb Property Manager",
+              quote: "Working with James has been a transformative experience. He and his team helped us regain our Superhost status, boosting our rating from 4.76 to 4.89. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world.",
+            },
+            {
+              quote: "Review successfully removed. Amazing work as always.",
+              author: "Multi-Listing Operator",
+            },
           ].map((t, i) => (
             <ScrollReveal key={i} delay={0.1 + i * 0.05}>
-              <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
-                <p className="text-foreground text-base leading-relaxed italic mb-6">"{t.quote}"</p>
-                <span className="text-sm text-muted-foreground">— {t.author}</span>
-              </div>
+              {t.photo ? (
+                <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
+                  <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
+                  <div className="flex items-center gap-4">
+                    <img src={t.photo} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-brand ring-offset-2 ring-offset-secondary" loading="lazy" />
+                    <div>
+                      <p className="font-heading text-lg font-bold text-foreground leading-tight">{t.name}</p>
+                      <p className="text-sm text-muted-foreground">{t.role}</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
+                  <p className="text-foreground text-base leading-relaxed italic mb-6">"{t.quote}"</p>
+                  <span className="text-sm text-muted-foreground">— {t.author}</span>
+                </div>
+              )}
             </ScrollReveal>
           ))}
         </div>
