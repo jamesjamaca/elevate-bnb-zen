@@ -159,7 +159,7 @@ const Index = () => {
                   <img src={crewLogo} alt="Crew Housing logo" className="h-9 w-auto" loading="lazy" />
                   <span className="text-foreground text-lg font-semibold">Crew Housing</span>
                 </div>
-                <p className="text-muted-foreground text-base mt-2">Mid-term rentals &middot; 66 properties</p>
+                <p className="text-muted-foreground text-base mt-2">Short-term &amp; mid-term rentals &middot; 100+ properties</p>
               </div>
               <div>
                 <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
@@ -167,7 +167,7 @@ const Index = () => {
                   Working with James was a <span className="text-brand font-bold">game changer!</span> We kept Superhost <span className="font-bold">every single quarter</span>, and a few times it was a nail-biter. His team stepped in and saved it! We've won multiple claims, too many to count, and James was an absolute <span className="font-bold">BEAST</span> with reviews. Then there's the SOP: some months we brought in an extra <span className="text-brand font-bold">$20K+</span> in revenue just by following it. It felt like a money hack, and all of it is built on Airbnb's own policy. If you run Airbnbs, talk to James!
                 </blockquote>
                 <div className="flex flex-wrap gap-3 mt-8">
-                  {["66 mid-term properties managed", "Superhost every quarter", "Multiple claims won", "$20K+ extra revenue in some months"].map((chip) => (
+                  {["100+ short & mid-term properties managed", "Superhost every quarter", "Multiple claims won", "$20K+ extra revenue in some months"].map((chip) => (
                     <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
                       {chip}
                     </span>
