@@ -22,6 +22,7 @@ const capabilities = [
   { title: "Listing Optimization", desc: "SEO-driven listing improvements that increase visibility and booking conversion." },
   { title: "Revenue Optimization", desc: "Data-backed pricing strategies to maximize occupancy and daily rate." },
   { title: "Claims & Dispute Support", desc: "Expert handling of damage claims, refund requests, and platform disputes." },
+  { title: "Bookkeeping & Finance Management", desc: "Optional, whenever you need it. Our specialized finance team keeps your books clean, property by property." },
 ];
 
 const trustPillars = [

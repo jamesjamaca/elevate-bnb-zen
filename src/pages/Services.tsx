@@ -35,6 +35,11 @@ const services = [
     desc: "Expert handling of damage claims, refund requests, and platform disputes with full compliance.",
     details: ["Damage claim documentation", "Dispute resolution", "Platform mediation support", "Risk mitigation"],
   },
+  {
+    title: "Bookkeeping & Finance Management",
+    desc: "Optional, and available whenever you need it. Our specialized finance team keeps your rental books clean so you always know where each property stands.",
+    details: ["Monthly bookkeeping and reconciliation", "Income and expense tracking per property", "Payout and claims reimbursement tracking", "Monthly financial reports"],
+  },
 ];
 
 const ServicesPage = () => (
