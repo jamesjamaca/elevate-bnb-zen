@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check, ZoomIn } from "lucide-react";
+import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check, ZoomIn, Building2 } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
@@ -273,6 +273,31 @@ const Index = () => {
                 <img src={dharmeshProof} alt="Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing all four criteria achieved" className="w-full rounded-2xl border border-border" loading="lazy" />
                 <figcaption className="text-muted-foreground text-sm mt-3 text-center">Airbnb Superhost assessment, Oct 1, 2025 &ndash; Sep 30, 2026. All four criteria achieved.</figcaption>
               </figure>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+              <div className="flex flex-col items-center text-center">
+                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-black flex items-center justify-center ring-4 ring-brand ring-offset-4 ring-offset-background">
+                  <Building2 className="text-brand w-14 h-14 md:w-20 md:h-20" strokeWidth={1.5} aria-hidden="true" />
+                </div>
+                <p className="font-heading text-2xl font-bold text-foreground mt-6">Short-Term Rental Operator</p>
+                <p className="text-muted-foreground text-base mt-2">Florida &middot; 50+ listings</p>
+              </div>
+              <div>
+                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
+                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
+                  When my family took over our portfolio, the reviews were a mess. Elite BNB Hosts <span className="text-brand font-bold">removed the unfair reviews</span> that were dragging us down, stepped in on guest issues before they turned into bad ratings, and flagged the real problems in our units every month so our ops team could fix them. Since moving to our new account we're at a <span className="font-bold">5.0 rating</span> and <span className="text-brand font-bold">Superhost</span>. Their team is doing a fantastic job of protecting our ratings!
+                </blockquote>
+                <div className="flex flex-wrap gap-3 mt-8">
+                  {["Superhost earned", "5.0 rating", "50+ listings", "80+ reviews removed"].map((chip) => (
+                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </ScrollReveal>
         </div>
