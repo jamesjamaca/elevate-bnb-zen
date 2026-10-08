@@ -19,13 +19,13 @@ import dharmeshLogo from "@/assets/dharmesh-logo.png";
 import dharmeshProof from "@/assets/dharmesh-superhost-proof.jpg";
 
 const capabilities = [
-  { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
-  { title: "Guest Communication", desc: "24/7 professional messaging that shapes the guest experience from inquiry to checkout." },
-  { title: "Review Management & Reputation Protection", desc: "Strategic, policy-compliant review management that protects rankings and revenue." },
-  { title: "Listing Optimization", desc: "SEO-driven listing improvements that increase visibility and booking conversion." },
-  { title: "Revenue Optimization", desc: "Data-backed pricing strategies to maximize occupancy and daily rate." },
-  { title: "Claims & Dispute Support", desc: "Expert handling of damage claims, refund requests, and platform disputes." },
-  { title: "Bookkeeping & Finance Management", desc: "Optional, whenever you need it. Our specialized finance team keeps your books clean, property by property." },
+  { title: "Remote Ops", plain: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
+  { title: "Guest Experience", plain: "Guest Communication", desc: "24/7 professional messaging that shapes the guest experience from inquiry to checkout." },
+  { title: "Review Shield", plain: "Review Management & Reputation Protection", desc: "Strategic, policy-compliant review management that protects rankings and revenue." },
+  { title: "Listing Spotlight", plain: "Listing Optimization", desc: "SEO-driven listing improvements that increase visibility and booking conversion." },
+  { title: "Revenue Management", plain: "Revenue Optimization", desc: "Data-backed pricing strategies to maximize occupancy and daily rate." },
+  { title: "Claims Recovery", plain: "Claims & Dispute Support", desc: "Expert handling of damage claims, refund requests, and platform disputes." },
+  { title: "Bookkeeping and Finance Management", plain: "Optional add-on", desc: "Optional, whenever you need it. Our specialized finance team keeps your books clean, property by property." },
 ];
 
 const trustPillars = [
@@ -601,7 +601,8 @@ const Index = () => {
             {capabilities.map((c, i) => (
               <ScrollReveal key={c.title} delay={i * 0.08}>
                 <div>
-                  <h3 className="font-heading text-2xl font-semibold text-foreground mb-4">{c.title}</h3>
+                  <h3 className="font-heading text-2xl font-semibold text-foreground mb-1">{c.title}</h3>
+                  <p className="text-[#c2410c] text-xs font-semibold tracking-[0.2em] uppercase mb-4">{c.plain}</p>
                   <p className="text-muted-foreground text-lg leading-[1.6]">{c.desc}</p>
                 </div>
               </ScrollReveal>

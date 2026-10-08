@@ -6,37 +6,44 @@ import ambientWorkspace from "@/assets/ambient-workspace.jpg";
 
 const services = [
   {
-    title: "Remote Property Management",
+    title: "Remote Ops",
+    plain: "Remote Property Management",
     desc: "Complete operational oversight of your short-term rental — managed entirely remotely without sacrificing quality.",
     details: ["Full operational management", "Multi-platform coordination", "Performance monitoring", "Quality assurance systems"],
   },
   {
-    title: "Guest Communication",
+    title: "Guest Experience",
+    plain: "Guest Communication",
     desc: "Professional messaging from inquiry through checkout. Every interaction shapes positive experiences and prevents issues.",
     details: ["24/7 response coverage", "Pre-arrival coordination", "In-stay support", "Post-checkout follow-up"],
   },
   {
-    title: "Review Management",
+    title: "Review Shield",
+    plain: "Review Management",
     desc: "Strategic, policy-compliant review management that protects search ranking, booking conversion, and guest trust.",
     details: ["Proactive guest experience management", "Policy-compliant processes", "Reputation monitoring", "Listing performance protection"],
   },
   {
-    title: "Listing Optimization",
+    title: "Listing Spotlight",
+    plain: "Listing Optimization",
     desc: "Every element of your listing optimized for search visibility and booking conversion.",
     details: ["SEO-optimized copy", "Competitive positioning", "Photo strategy", "Conversion-focused descriptions"],
   },
   {
-    title: "Revenue Optimization",
+    title: "Revenue Management",
+    plain: "Revenue Optimization",
     desc: "Data-driven pricing strategies to maximize occupancy and daily rate throughout every season.",
     details: ["Dynamic pricing strategies", "Market trend analysis", "Seasonal adjustments", "Revenue reporting"],
   },
   {
-    title: "Claims & Dispute Support",
+    title: "Claims Recovery",
+    plain: "Claims & Dispute Support",
     desc: "Expert handling of damage claims, refund requests, and platform disputes with full compliance.",
     details: ["Damage claim documentation", "Dispute resolution", "Platform mediation support", "Risk mitigation"],
   },
   {
-    title: "Bookkeeping & Finance Management",
+    title: "Bookkeeping and Finance Management",
+    plain: "Optional add-on",
     desc: "Optional, and available whenever you need it. Our specialized finance team keeps your rental books clean so you always know where each property stands.",
     details: ["Monthly bookkeeping and reconciliation", "Income and expense tracking per property", "Payout and claims reimbursement tracking", "Monthly financial reports"],
   },
@@ -67,7 +74,8 @@ const ServicesPage = () => (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
                 <span className="text-brand/25 font-heading text-7xl lg:text-8xl font-bold leading-none block">0{i + 1}</span>
-                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-6 mb-6 tracking-[-0.02em]">{s.title}</h2>
+                <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-6 mb-2 tracking-[-0.02em]">{s.title}</h2>
+                <p className="text-[#c2410c] text-xs font-semibold tracking-[0.2em] uppercase mb-6">{s.plain}</p>
                 <p className="text-muted-foreground text-base leading-[1.7]">{s.desc}</p>
               </div>
               <ul className="space-y-5 lg:pt-28">
