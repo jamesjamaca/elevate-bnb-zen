@@ -7,6 +7,7 @@ import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 import estivenPhoto from "@/assets/estiven-gomez.jpg";
 import dharmeshLogo from "@/assets/dharmesh-logo.png";
 import dharmeshProof from "@/assets/dharmesh-superhost-proof.jpg";
+import sikanderProof from "@/assets/sikander-superhost-proof.jpg";
 import floridaProof from "@/assets/florida-superhost-proof.jpg";
 
 type Avatar =
@@ -121,6 +122,11 @@ const slides: Slide[] = [
       </div>
     ),
     chips: ["Superhost status recovered", "30+ ineligible reviews removed", "26 claims filed", "$7,000+ covered"],
+    proof: {
+      src: sikanderProof,
+      alt: "Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing Superhost status earned and all four criteria achieved",
+      caption: "Airbnb Superhost assessment, Oct 1, 2025 \u2013 Sep 30, 2026. Superhost status earned.",
+    },
   },
 ];
 

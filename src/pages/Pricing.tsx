@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check, Building2 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import ScrollReveal from "@/components/ScrollReveal";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
@@ -289,12 +289,22 @@ const PricingPage = () => (
               role: "Superhost · 324 reviews · 4.8 rating",
               quote: "The EliteBNB team have been nothing short of heaven sent. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them removed properly has been very successful! Highly recommend!",
             },
+            {
+              icon: true,
+              name: "Short-Term Rental Operator",
+              role: "Florida · 50+ listings",
+              quote: "Elite BNB Hosts removed the unfair reviews that were dragging us down, stepped in on guest issues before they turned into bad ratings, and flagged the real problems in our units every month. Since moving to our new account we're at a 5.0 rating and Superhost. Their team is doing a fantastic job of protecting our ratings!",
+            },
           ].map((t, i) => (
-            <ScrollReveal key={i} delay={0.1 + i * 0.05}>
+            <ScrollReveal key={i} delay={0.1 + i * 0.05} className={i === 4 ? "md:col-span-2" : ""}>
               <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
                 <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
                 <div className="flex items-center gap-4">
-                  {t.logo ? (
+                  {t.icon ? (
+                    <div className="w-14 h-14 rounded-full bg-black flex items-center justify-center ring-2 ring-brand ring-offset-2 ring-offset-secondary shrink-0">
+                      <Building2 className="text-brand w-6 h-6" strokeWidth={1.5} aria-hidden="true" />
+                    </div>
+                  ) : t.logo ? (
                     <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center ring-2 ring-brand ring-offset-2 ring-offset-secondary overflow-hidden shrink-0">
                       <img src={t.photo} alt={`${t.name} logo`} className="w-4/5 h-4/5 object-contain" loading="lazy" />
                     </div>
