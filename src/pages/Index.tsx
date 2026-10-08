@@ -17,6 +17,7 @@ import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 import estivenPhoto from "@/assets/estiven-gomez.jpg";
 import dharmeshLogo from "@/assets/dharmesh-logo.png";
 import dharmeshProof from "@/assets/dharmesh-superhost-proof.jpg";
+import floridaProof from "@/assets/florida-superhost-proof.jpg";
 
 const capabilities = [
   { title: "Remote Ops", plain: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -298,6 +299,10 @@ const Index = () => {
                   ))}
                 </div>
               </div>
+              <figure className="mt-12 md:col-span-2">
+                <img src={floridaProof} alt="Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing Superhost status earned and all four criteria achieved" className="w-full rounded-2xl border border-border" loading="lazy" />
+                <figcaption className="text-muted-foreground text-sm mt-3 text-center">Airbnb Superhost assessment, Oct 1, 2025 &ndash; Sep 30, 2026. Superhost status earned.</figcaption>
+              </figure>
             </div>
           </ScrollReveal>
         </div>
