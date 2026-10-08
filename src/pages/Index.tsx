@@ -10,6 +10,7 @@ import founderPhoto from "@/assets/founder.jpg";
 import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
 import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
+import clientSuperhostAfter from "@/assets/client-superhost-after.jpg";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import crewLogo from "@/assets/crew-housing-logo.png";
 import sikanderPhoto from "@/assets/sikander-zafar.jpg";
@@ -338,11 +339,12 @@ const Index = () => {
             </p>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14">
             {[
               { src: clientOccupancyBefore, alt: "Airbnb occupancy report for January to April showing a 68.5% average occupancy rate across 24 listings", caption: "Occupancy, Jan 1 – Apr 30: 68.5%" },
               { src: clientOccupancyAfter, alt: "Airbnb occupancy report for May to October showing a 91.9% average occupancy rate across 24 listings", caption: "Occupancy, May 1 – Oct 5: 91.9%" },
-              { src: clientSuperhostLost, alt: "Airbnb Superhost assessment showing Superhost status not earned for the July 2025 to June 2026 period", caption: "Superhost assessment before we took over" },
+              { src: clientSuperhostLost, alt: "Airbnb Superhost assessment showing Superhost status not earned for the July 2025 to June 2026 period, with a 4.7 overall rating", caption: "Before: Superhost not earned, 4.7 rating (Jul 2025 – Jun 2026)" },
+              { src: clientSuperhostAfter, alt: "Airbnb Superhost assessment showing Superhost status earned for the October 2025 to September 2026 period, with a 4.8 overall rating", caption: "After: Superhost earned, 4.8 rating (Oct 2025 – Sep 2026)" },
             ].map((shot, i) => (
               <ScrollReveal key={shot.caption} delay={i * 0.08}>
                 <figure className="h-full flex flex-col">
