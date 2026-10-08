@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check, ZoomIn, Building2 } from "lucide-react";
+import TestimonialCarousel from "@/components/TestimonialCarousel";
+import { ArrowRight, MessageSquare, ShieldCheck, FileCheck2, Check, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
@@ -11,13 +12,6 @@ import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
 import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
 import clientSuperhostAfter from "@/assets/client-superhost-after.jpg";
-import jacobPhoto from "@/assets/jacob-nostrant.jpg";
-import crewLogo from "@/assets/crew-housing-logo.png";
-import sikanderPhoto from "@/assets/sikander-zafar.jpg";
-import estivenPhoto from "@/assets/estiven-gomez.jpg";
-import dharmeshLogo from "@/assets/dharmesh-logo.png";
-import dharmeshProof from "@/assets/dharmesh-superhost-proof.jpg";
-import floridaProof from "@/assets/florida-superhost-proof.jpg";
 
 const capabilities = [
   { title: "Remote Ops", plain: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -152,158 +146,8 @@ const Index = () => {
       <section className="py-20 lg:py-28 px-6 bg-secondary">
         <div className="container mx-auto max-w-5xl">
           <ScrollReveal>
-            <p className="text-[#c2410c] text-sm font-semibold tracking-[0.3em] uppercase mb-10 text-center">In a client's words</p>
-            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="flex flex-col items-center text-center">
-                <img
-                  src={jacobPhoto}
-                  alt="Jacob Nostrant"
-                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-brand ring-offset-4 ring-offset-background"
-                  loading="lazy"
-                />
-                <p className="font-heading text-2xl font-bold text-foreground mt-6">Jacob Nostrant</p>
-                <div className="flex items-center justify-center gap-2.5 mt-3">
-                  <img src={crewLogo} alt="Crew Housing logo" className="h-9 w-auto" loading="lazy" />
-                  <span className="text-foreground text-lg font-semibold">Crew Housing</span>
-                </div>
-                <p className="text-muted-foreground text-base mt-2">Short-term &amp; mid-term rentals &middot; 100+ properties</p>
-              </div>
-              <div>
-                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                  Working with James was a <span className="text-brand font-bold">game changer!</span> We kept Superhost <span className="font-bold">every single quarter</span>, and a few times it was a nail-biter. His team stepped in and saved it! We've won multiple claims, too many to count, and James was an absolute <span className="font-bold">BEAST</span> with reviews. Then there's the SOP: some months we brought in an extra <span className="text-brand font-bold">$20K+</span> in revenue just by following it. It felt like a money hack, and all of it is built on Airbnb's own policy. If you run Airbnbs, talk to James!
-                </blockquote>
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {["100+ short & mid-term properties managed", "Superhost every quarter", "Multiple claims won", "$20K+ extra revenue in some months"].map((chip) => (
-                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="order-2 md:order-1">
-                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                <div className="font-heading text-lg md:text-xl lg:text-[1.4rem] font-medium leading-[1.5] tracking-[-0.01em] text-foreground space-y-4">
-                  <p>
-                    Having Elite BNB Hosts handle our Airbnb has taken a <span className="text-brand font-bold">huge load off my plate</span>. They helped us win back our <span className="font-bold">Superhost status</span>, removed <span className="font-bold">30+</span> low rating, ineligible reviews, and won several Airbnb Support cases I wouldn't have known how to handle on my own. They've also filed <span className="font-bold">26 claims</span> for us, most paid out in full, which adds up to <span className="text-brand font-bold">$7,000+ in reimbursements</span>.
-                  </p>
-                  <p>
-                    What I appreciate most is that they know Airbnb's policies inside and out, and they know exactly when and how to push back. It's reassuring to have someone looking out for the property and making sure we don't leave money or opportunities on the table.
-                  </p>
-                  <p>I'd recommend them to any host.</p>
-                </div>
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {["Superhost status recovered", "30+ ineligible reviews removed", "26 claims filed", "$7,000+ covered"].map((chip) => (
-                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div className="order-1 md:order-2 flex flex-col items-center text-center">
-                <img
-                  src={sikanderPhoto}
-                  alt="Sikander Zafar"
-                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover object-top ring-4 ring-brand ring-offset-4 ring-offset-background"
-                  loading="lazy"
-                />
-                <p className="font-heading text-2xl font-bold text-foreground mt-6">Sikander Zafar</p>
-                <p className="text-muted-foreground text-base mt-2">Airbnb host</p>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="flex flex-col items-center text-center">
-                <img
-                  src={estivenPhoto}
-                  alt="Estiven Gomez"
-                  className="w-36 h-36 md:w-48 md:h-48 rounded-full object-cover ring-4 ring-brand ring-offset-4 ring-offset-background"
-                  loading="lazy"
-                />
-                <p className="font-heading text-2xl font-bold text-foreground mt-6">Estiven Gomez</p>
-                <p className="text-muted-foreground text-base mt-2">Airbnb Property Manager &middot; 36 listings</p>
-              </div>
-              <div>
-                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                  Partnering with James has been a <span className="text-brand font-bold">transformative experience</span>. His professionalism, deep knowledge, and collaborative teamwork are second to none. He and his team helped us <span className="font-bold">regain our Superhost status</span>, boosting our rating from <span className="text-brand font-bold">4.76 to 4.89</span>. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world. I couldn't be happier to work with him!
-                </blockquote>
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {["Superhost status regained", "Rating 4.76 \u2192 4.89"].map((chip) => (
-                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-10 bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center">
-                <div className="order-2 md:order-1">
-                  <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                  <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                    The EliteBNB team have been nothing short of <span className="text-brand font-bold">heaven sent</span>. They manage our entire portfolio of STRs and have been paramount to the success of our business. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them <span className="font-bold">removed properly</span> has been very successful! Highly recommend!
-                  </blockquote>
-                  <div className="flex flex-wrap gap-3 mt-8">
-                    {["Superhost earned this assessment period", "Fake reviews removed through Airbnb policy"].map((chip) => (
-                      <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                        {chip}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                <div className="order-1 md:order-2 flex flex-col items-center text-center">
-                  <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-white flex items-center justify-center ring-4 ring-brand ring-offset-4 ring-offset-background overflow-hidden">
-                    <img src={dharmeshLogo} alt="Regal Bricks logo" className="w-4/5 h-4/5 object-contain" loading="lazy" />
-                  </div>
-                  <p className="font-heading text-2xl font-bold text-foreground mt-6">Regal Bricks</p>
-                  <p className="text-muted-foreground text-base mt-2">Superhost &middot; 324 reviews &middot; 4.8 rating</p>
-                </div>
-              </div>
-              <figure className="mt-12">
-                <img src={dharmeshProof} alt="Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing all four criteria achieved" className="w-full rounded-2xl border border-border" loading="lazy" />
-                <figcaption className="text-muted-foreground text-sm mt-3 text-center">Airbnb Superhost assessment, Oct 1, 2025 &ndash; Sep 30, 2026. All four criteria achieved.</figcaption>
-              </figure>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-10 md:gap-14 items-center bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
-              <div className="flex flex-col items-center text-center">
-                <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-black flex items-center justify-center ring-4 ring-brand ring-offset-4 ring-offset-background">
-                  <Building2 className="text-brand w-14 h-14 md:w-20 md:h-20" strokeWidth={1.5} aria-hidden="true" />
-                </div>
-                <p className="font-heading text-2xl font-bold text-foreground mt-6">Short-Term Rental Operator</p>
-                <p className="text-muted-foreground text-base mt-2">Florida &middot; 50+ listings</p>
-              </div>
-              <div>
-                <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
-                <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
-                  When my family took over our portfolio, the reviews were a mess. Elite BNB Hosts <span className="text-brand font-bold">removed the unfair reviews</span> that were dragging us down, stepped in on guest issues before they turned into bad ratings, and flagged the real problems in our units every month so our ops team could fix them. Since moving to our new account we're at a <span className="font-bold">5.0 rating</span> and <span className="text-brand font-bold">Superhost</span>. Their team is doing a fantastic job of protecting our ratings!
-                </blockquote>
-                <div className="flex flex-wrap gap-3 mt-8">
-                  {["Superhost earned", "5.0 rating", "50+ listings", "80+ reviews removed"].map((chip) => (
-                    <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <figure className="mt-12 md:col-span-2">
-                <img src={floridaProof} alt="Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing Superhost status earned and all four criteria achieved" className="w-full rounded-2xl border border-border" loading="lazy" />
-                <figcaption className="text-muted-foreground text-sm mt-3 text-center">Airbnb Superhost assessment, Oct 1, 2025 &ndash; Sep 30, 2026. Superhost status earned.</figcaption>
-              </figure>
-            </div>
+            <p className="text-[#c2410c] text-sm font-semibold tracking-[0.3em] uppercase mb-8 text-center">In a client's words</p>
+            <TestimonialCarousel />
           </ScrollReveal>
         </div>
       </section>
