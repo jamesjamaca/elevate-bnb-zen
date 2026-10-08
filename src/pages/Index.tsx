@@ -14,6 +14,8 @@ import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import crewLogo from "@/assets/crew-housing-logo.png";
 import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 import estivenPhoto from "@/assets/estiven-gomez.jpg";
+import dharmeshLogo from "@/assets/dharmesh-logo.png";
+import dharmeshProof from "@/assets/dharmesh-superhost-proof.jpg";
 
 const capabilities = [
   { title: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
@@ -239,6 +241,37 @@ const Index = () => {
                   ))}
                 </div>
               </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div className="mt-10 bg-background rounded-3xl p-8 md:p-14 border border-border shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)]">
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 md:gap-14 items-center">
+                <div className="order-2 md:order-1">
+                  <span aria-hidden="true" className="font-heading text-7xl leading-none text-brand block h-10">&ldquo;</span>
+                  <blockquote className="font-heading text-xl md:text-2xl lg:text-[1.75rem] font-medium leading-[1.45] tracking-[-0.01em] text-foreground">
+                    The EliteBNB team have been nothing short of <span className="text-brand font-bold">heaven sent</span>. They manage our entire portfolio of STRs and have been paramount to the success of our business. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them <span className="font-bold">removed properly</span> has been very successful! Highly recommend!
+                  </blockquote>
+                  <div className="flex flex-wrap gap-3 mt-8">
+                    {["Superhost earned this assessment period", "Fake reviews removed through Airbnb policy"].map((chip) => (
+                      <span key={chip} className="text-sm tracking-wide text-foreground border border-brand/40 bg-brand/10 rounded-full px-4 py-2">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="order-1 md:order-2 flex flex-col items-center text-center">
+                  <div className="w-36 h-36 md:w-48 md:h-48 rounded-full bg-white flex items-center justify-center ring-4 ring-brand ring-offset-4 ring-offset-background overflow-hidden">
+                    <img src={dharmeshLogo} alt="Regal Bricks logo" className="w-4/5 h-4/5 object-contain" loading="lazy" />
+                  </div>
+                  <p className="font-heading text-2xl font-bold text-foreground mt-6">Regal Bricks</p>
+                  <p className="text-muted-foreground text-base mt-2">Superhost &middot; 324 reviews &middot; 4.8 rating</p>
+                </div>
+              </div>
+              <figure className="mt-12">
+                <img src={dharmeshProof} alt="Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing all four criteria achieved" className="w-full rounded-2xl border border-border" loading="lazy" />
+                <figcaption className="text-muted-foreground text-sm mt-3 text-center">Airbnb Superhost assessment, Oct 1, 2025 &ndash; Sep 30, 2026. All four criteria achieved.</figcaption>
+              </figure>
             </div>
           </ScrollReveal>
         </div>

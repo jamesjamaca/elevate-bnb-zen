@@ -5,6 +5,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import jacobPhoto from "@/assets/jacob-nostrant.jpg";
 import sikanderPhoto from "@/assets/sikander-zafar.jpg";
 import estivenPhoto from "@/assets/estiven-gomez.jpg";
+import regalLogo from "@/assets/dharmesh-logo.png";
 
 const faqs = [
   { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
@@ -282,28 +283,30 @@ const PricingPage = () => (
               quote: "Partnering with James has been a transformative experience. He and his team helped us regain our Superhost status, boosting our rating from 4.76 to 4.89. Magnificent work. I honestly didn't think a comeback like this was possible in the Airbnb world.",
             },
             {
-              quote: "Review successfully removed. Amazing work as always.",
-              author: "Multi-Listing Operator",
+              photo: regalLogo,
+              logo: true,
+              name: "Regal Bricks",
+              role: "Superhost · 324 reviews · 4.8 rating",
+              quote: "The EliteBNB team have been nothing short of heaven sent. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them removed properly has been very successful! Highly recommend!",
             },
           ].map((t, i) => (
             <ScrollReveal key={i} delay={0.1 + i * 0.05}>
-              {t.photo ? (
-                <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
-                  <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
-                  <div className="flex items-center gap-4">
-                    <img src={t.photo} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-brand ring-offset-2 ring-offset-secondary" loading="lazy" />
-                    <div>
-                      <p className="font-heading text-lg font-bold text-foreground leading-tight">{t.name}</p>
-                      <p className="text-sm text-muted-foreground">{t.role}</p>
+              <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
+                <p className="text-foreground text-base leading-relaxed mb-8">&ldquo;{t.quote}&rdquo;</p>
+                <div className="flex items-center gap-4">
+                  {t.logo ? (
+                    <div className="w-14 h-14 rounded-full bg-white flex items-center justify-center ring-2 ring-brand ring-offset-2 ring-offset-secondary overflow-hidden shrink-0">
+                      <img src={t.photo} alt={`${t.name} logo`} className="w-4/5 h-4/5 object-contain" loading="lazy" />
                     </div>
+                  ) : (
+                    <img src={t.photo} alt={t.name} className="w-14 h-14 rounded-full object-cover object-top ring-2 ring-brand ring-offset-2 ring-offset-secondary shrink-0" loading="lazy" />
+                  )}
+                  <div>
+                    <p className="font-heading text-lg font-bold text-foreground leading-tight">{t.name}</p>
+                    <p className="text-sm text-muted-foreground">{t.role}</p>
                   </div>
                 </div>
-              ) : (
-                <div className="bg-secondary rounded-2xl p-8 h-full flex flex-col justify-between">
-                  <p className="text-foreground text-base leading-relaxed italic mb-6">"{t.quote}"</p>
-                  <span className="text-sm text-muted-foreground">— {t.author}</span>
-                </div>
-              )}
+              </div>
             </ScrollReveal>
           ))}
         </div>
