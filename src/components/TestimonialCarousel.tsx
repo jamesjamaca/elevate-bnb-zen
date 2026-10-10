@@ -60,12 +60,12 @@ const slides: Slide[] = [
     role: "Superhost · 324 reviews · 4.8 rating",
     avatar: { kind: "logo", src: dharmeshLogo, alt: "Regal Bricks logo" },
     short: (
-      <>The EliteBNB team have been nothing short of <O>heaven sent</O> &hellip; the team's success rate with getting [fake reviews] <B>removed properly</B> has been very successful! Highly recommend!</>
+      <>The EliteBNB team have been nothing short of <O>heaven sent</O> &hellip; the team's success rate with getting [untrue reviews] <B>removed properly</B> has been very successful! Highly recommend!</>
     ),
     full: (
-      <>The EliteBNB team have been nothing short of <O>heaven sent</O>. They manage our entire portfolio of STRs and have been paramount to the success of our business. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them <B>removed properly</B> has been very successful! Highly recommend!</>
+      <>The EliteBNB team have been nothing short of <O>heaven sent</O>. They manage our entire portfolio of STRs and have been paramount to the success of our business. We have had a myriad of guests attend our homes and try to manipulate the BNB system with untrue reviews, and the team's success rate with getting them <B>removed properly</B> has been very successful! Highly recommend!</>
     ),
-    chips: ["Superhost earned this assessment period", "Fake reviews removed through Airbnb policy"],
+    chips: ["Superhost earned this assessment period", "Untrue reviews removed through Airbnb policy"],
     proof: {
       src: dharmeshProof,
       alt: "Airbnb Superhost assessment for Oct 1, 2025 to Sep 30, 2026 showing all four criteria achieved",

@@ -287,7 +287,7 @@ const PricingPage = () => (
               logo: true,
               name: "Regal Bricks",
               role: "Superhost · 324 reviews · 4.8 rating",
-              quote: "The EliteBNB team have been nothing short of heaven sent. We have had a myriad of guests attend our homes and try to manipulate the BNB system with fake reviews, and the team's success rate with getting them removed properly has been very successful! Highly recommend!",
+              quote: "The EliteBNB team have been nothing short of heaven sent. We have had a myriad of guests attend our homes and try to manipulate the BNB system with untrue reviews, and the team's success rate with getting them removed properly has been very successful! Highly recommend!",
             },
             {
               icon: true,
