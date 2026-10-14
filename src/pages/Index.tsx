@@ -381,7 +381,7 @@ const Index = () => {
               { metric: "500+", label: "Reviews removed" },
               { metric: "39/40", label: "Airbnb claims won" },
               { metric: "$33,860", label: "Recovered for hosts" },
-              { metric: "30+", label: "Clients worked with" },
+              { metric: "$20K+", label: "Extra revenue in a month from our SOP (client-reported)" },
               { metric: "8", label: "Portfolios actively managed" },
               { metric: "200+", label: "Listings managed, each portfolio with a dedicated team" },
             ].map((item, i) => (
