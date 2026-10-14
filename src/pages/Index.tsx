@@ -386,7 +386,7 @@ const Index = () => {
               { metric: "200+", label: "Listings managed, each portfolio with a dedicated team" },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 0.08}>
-                <p className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-[-0.03em] whitespace-nowrap">{item.metric}</p>
+                <p className={`font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[-0.03em] whitespace-nowrap ${item.metric.startsWith("$") ? "text-brand" : "text-foreground"}`}>{item.metric}</p>
                 <p className="text-muted-foreground text-base mt-4 tracking-wide">{item.label}</p>
               </ScrollReveal>
             ))}
