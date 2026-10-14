@@ -7,7 +7,7 @@ import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/compone
 import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
-import founderPhoto from "@/assets/founder.jpg";
+import FounderPhotos from "@/components/FounderPhotos";
 import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
 import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
@@ -514,13 +514,7 @@ const Index = () => {
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
               <div className="flex flex-col items-center">
-                <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-border">
-                  <img
-                    src={founderPhoto}
-                    alt="James Jamaca, Founder of Elite BNB Hosts"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <FounderPhotos />
                 <p className="text-muted-foreground text-sm tracking-wide mt-6 text-center">
                   <a href="https://www.linkedin.com/in/jamesjamaca/" target="_blank" rel="noopener noreferrer" className="underline decoration-brand/60 underline-offset-4 hover:text-foreground transition-colors">James Jamaca</a> — Founder, Elite BNB Hosts
                 </p>
