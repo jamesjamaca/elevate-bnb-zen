@@ -236,7 +236,7 @@ const Index = () => {
               </blockquote>
               <p className="text-white/60 text-base tracking-wide mb-12">— Multi-Property Investor</p>
               <div className="flex flex-wrap gap-3">
-                {["90% Review Dispute Success Rate", "$8,587 Claims Recovered", "Multi-Platform Support"].map((stat) => (
+                {["39/40 Claims Won", "$8,587 Claims Recovered", "Multi-Platform Support"].map((stat) => (
                   <span key={stat} className="text-sm tracking-wide text-white/80 border border-brand/40 bg-brand/10 rounded-full px-5 py-2.5">
                     {stat}
                   </span>
@@ -258,7 +258,7 @@ const Index = () => {
                   The Airbnb Review Dispute Checklist
                 </h3>
                 <p className="text-muted-foreground text-base leading-[1.7] mb-8 flex-1">
-                  The exact 10-step process we use to dispute unfair reviews — with a 90% success rate. Free for any Airbnb host.
+                  The exact 10-step process we use to dispute unfair reviews. 500+ removed so far. Free for any Airbnb host.
                 </p>
                 <div className="ml-embedded" data-form="0u14Yd"></div>
               </div>
@@ -366,7 +366,7 @@ const Index = () => {
               {[
                 "Former Airbnb support supervisor & SME",
                 "3+ years managing Airbnb operations & property teams",
-                "Proprietary review dispute process — 90% success rate",
+                "39 of 40 claims won, $33,860 recovered for hosts",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="text-brand mt-0.5">✓</span>
@@ -498,20 +498,23 @@ const Index = () => {
                   Built by someone who's been in your corner.
                 </h2>
                 <p className="text-muted-foreground text-lg md:text-xl leading-[1.6] mb-8">
-                  James Jamaca spent years inside Airbnb's support and operations teams — as a supervisor, subject matter expert, and property manager. He's seen exactly how the platform works from the inside. Elite BNB Hosts was built on that experience.
+                  James Jamaca worked inside Airbnb's support operations and rose to supervisor. Elite BNB Hosts runs on what he learned about how the platform really works.
                 </p>
-                <ul className="space-y-4">
+                <ul className="space-y-5 mb-10">
                   {[
-                    "Former Airbnb support supervisor & SME",
-                    "3+ years managing Airbnb operations & property teams",
-                    "Proprietary review dispute process — 90% success rate",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-muted-foreground text-lg leading-[1.6]">
+                    ["Airbnb insider.", "Former support supervisor and subject matter expert."],
+                    ["3+ years running operations.", "Airbnb operations and property teams."],
+                    ["39 of 40 claims won.", "$33,860 recovered for hosts."],
+                  ].map(([lead, rest]) => (
+                    <li key={lead} className="flex items-start gap-3 text-muted-foreground text-lg leading-[1.6]">
                       <span className="text-brand mt-0.5 font-bold">✓</span>
-                      {item}
+                      <span><strong className="text-foreground font-semibold">{lead}</strong> {rest}</span>
                     </li>
                   ))}
                 </ul>
+                <Button variant="brand" size="xl" asChild className="w-full sm:w-auto">
+                  <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={18} /></a>
+                </Button>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.15}>
