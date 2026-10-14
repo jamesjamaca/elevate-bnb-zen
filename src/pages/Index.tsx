@@ -40,7 +40,7 @@ const trustPillars = [
     desc: "Specialists challenge every review that breaks Airbnb's rules, using Airbnb's own dispute process.",
     stat: "48 hrs",
     statLabel: "Avg. dispute filing time",
-    bullets: ["Every listing's rating tracked weekly", "780+ reviews disputed and removed", "Listing Rescue if one slips below 4.8"],
+    bullets: ["Every listing's rating tracked weekly", "500+ reviews disputed and removed", "Listing Rescue if one slips below 4.8"],
   },
   {
     num: "03",
@@ -376,15 +376,17 @@ const Index = () => {
             </ul>
           </ScrollReveal>
 
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-y-12 gap-x-12">
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-12">
             {[
-              { metric: "780+", label: "Reviews removed" },
-              { metric: "39/40", label: "Airbnb claims won, $30K+ approved" },
-              { metric: "133", label: "Listings in our largest portfolio" },
-              { metric: "90%", label: "Superhost rate across 8 portfolios" },
+              { metric: "500+", label: "Reviews removed" },
+              { metric: "39/40", label: "Airbnb claims won" },
+              { metric: "$33,860", label: "Recovered for hosts" },
+              { metric: "30+", label: "Clients worked with" },
+              { metric: "8", label: "Portfolios actively managed" },
+              { metric: "200+", label: "Listings managed, each portfolio with a dedicated team" },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 0.08}>
-                <p className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-[-0.03em]">{item.metric}</p>
+                <p className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground tracking-[-0.03em] whitespace-nowrap">{item.metric}</p>
                 <p className="text-muted-foreground text-base mt-4 tracking-wide">{item.label}</p>
               </ScrollReveal>
             ))}
