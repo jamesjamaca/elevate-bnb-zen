@@ -9,7 +9,7 @@ import regalLogo from "@/assets/dharmesh-logo.png";
 
 const faqs = [
   { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
-  { q: "How do you remove reviews?", a: "Only through Airbnb's official dispute process. We challenge reviews that break Airbnb's own policies. That's how we've removed 500+ so far." },
+  { q: "How do you remove reviews?", a: "Only through Airbnb's official dispute process. We challenge reviews that break Airbnb's own policies. That's how we've removed 780+ so far." },
   { q: "What access do you need?", a: "Co-host access to your listings. It stays under your control, and you can see everything we do." },
   { q: "What happens to my current team?", a: "They keep handling guests until handover on day 30. After that, they can focus on cleaning, maintenance and growth." },
   { q: "My properties are different. Will this work?", a: "We build a playbook for your properties in week one, with ready-made guides for villas, condos and penthouses." },
