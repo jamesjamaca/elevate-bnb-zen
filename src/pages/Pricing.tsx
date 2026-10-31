@@ -25,37 +25,38 @@ const extras = [
 const tiers = [
   {
     name: "Defend",
-    sub: "Review & Account Defense",
-    who: "You run guests in-house and need your rating and account protected.",
+    sub: "Revenue & Review Defense",
+    who: "You run guests in-house. We protect your payouts, ratings and account.",
     items: [
-      "Every listing's rating tracked weekly",
+      "Payout adjustments caught and disputed",
+      "Damage and reimbursement claims filed and won",
       "Qualifying reviews disputed within 48 hours",
-      "Damage and reimbursement claims handled",
-      "Listing Rescue if one slips below 4.8",
-      "Quarterly Superhost Risk Report",
+      "Every listing's rating tracked weekly",
+      "Monthly report of money recovered and saved",
     ],
   },
   {
     name: "Operate",
-    sub: "Full Operations",
-    who: "You want guests and reviews handed off completely.",
+    sub: "30-Day Operations Takeover",
+    who: "You want guests, payouts and reviews handed off completely.",
     featured: true,
     items: [
       "Everything in Defend",
       "24/7 guest messaging, inquiry to checkout",
-      "A playbook so every reply sounds like you",
+      "In-stay check-ins that catch problems before the review",
+      "Every stay documented, so you have the stronger case",
       "Full handover by day 30",
       "Superhost Guarantee (conditions apply)",
     ],
   },
   {
     name: "Scale",
-    sub: "Dedicated Portfolio Team",
+    sub: "Portfolio Protection Program",
     who: "Your portfolio needs its own team behind it.",
     items: [
       "Everything in Operate",
-      "A dedicated team assigned to your portfolio",
-      "Every listing tracked one by one",
+      "A dedicated team and account manager",
+      "Priority escalations with Airbnb",
       "Owner-ready monthly reports",
       "Risk flagged before every assessment",
     ],
@@ -126,7 +127,7 @@ const PricingPage = () => (
                 </ul>
                 <Button variant={t.featured ? "brand" : "default"} size="lg" className="w-full" asChild>
                   <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">
-                    Get a quote <ArrowRight className="ml-1" size={16} />
+                    Get my free audit <ArrowRight className="ml-1" size={16} />
                   </a>
                 </Button>
               </div>
