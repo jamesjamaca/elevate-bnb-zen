@@ -129,8 +129,10 @@ const Index = () => {
       </section>
 
       {/* Tools strip */}
-      <section className="py-14 px-6">
-        <div className="container mx-auto max-w-5xl">
+      <section className="relative py-16 px-6 overflow-hidden">
+        <img src={ambientInterior} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+        <div className="absolute inset-0 bg-black/45" />
+        <div className="relative container mx-auto max-w-5xl">
           <ScrollReveal>
             <ToolsStrip />
           </ScrollReveal>

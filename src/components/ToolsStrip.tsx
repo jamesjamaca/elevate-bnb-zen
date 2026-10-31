@@ -1,53 +1,95 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import airbnbLogo from "@/assets/tools/airbnb.png";
+import hostawayLogo from "@/assets/tools/hostaway.png";
+import guestyLogo from "@/assets/tools/guesty.png";
+import pricelabsLogo from "@/assets/tools/pricelabs.png";
+import breezewayLogo from "@/assets/tools/breezeway.png";
+import hospitableLogo from "@/assets/tools/hospitable.png";
+import ensoLogo from "@/assets/tools/enso.png";
+import turnoLogo from "@/assets/tools/turno.png";
+import bookingLogo from "@/assets/tools/booking.png";
+import notionLogo from "@/assets/tools/notion.png";
+import claudeLogo from "@/assets/tools/claude.png";
+import makeLogo from "@/assets/tools/make.png";
+import canvaLogo from "@/assets/tools/canva.png";
 
-const tools = [
-  "Airbnb", "Hostaway", "Guesty", "PriceLabs", "Breezeway", "Hospitable", "Enso Connect",
-  "Turno", "Booking.com", "Notion", "Claude", "Make.com", "Canva",
+// Add a `logo` import for any tool as its file arrives. Without one, the name shows as text.
+const tools: { name: string; logo?: string }[] = [
+  { name: "Airbnb", logo: airbnbLogo },
+  { name: "Hostaway", logo: hostawayLogo },
+  { name: "Guesty", logo: guestyLogo },
+  { name: "PriceLabs", logo: pricelabsLogo },
+  { name: "Breezeway", logo: breezewayLogo },
+  { name: "Hospitable", logo: hospitableLogo },
+  { name: "Enso Connect", logo: ensoLogo },
+  { name: "Turno", logo: turnoLogo },
+  { name: "Booking.com", logo: bookingLogo },
+  { name: "Notion", logo: notionLogo },
+  { name: "Claude", logo: claudeLogo },
+  { name: "Make.com", logo: makeLogo },
+  { name: "Canva", logo: canvaLogo },
 ];
 
 const ToolsStrip = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const scroll = (dir: 1 | -1) => ref.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
+  const [paused, setPaused] = useState(false);
+
+  const step = (dir: 1 | -1) => {
+    const el = ref.current;
+    if (!el) return;
+    const item = el.firstElementChild as HTMLElement | null;
+    const w = item ? item.offsetWidth : 200;
+    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
+    if (dir === 1 && atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
+    else el.scrollBy({ left: dir * w, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    if (paused) return;
+    const id = setInterval(() => step(1), 2800);
+    return () => clearInterval(id);
+  }, [paused]);
 
   return (
-    <div>
-      <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium text-center mb-6">
+    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} onTouchStart={() => setPaused(true)}>
+      <p className="text-white/80 text-sm tracking-[0.2em] uppercase font-medium text-center mb-6">
         The platforms and tools we run your operation on
       </p>
       <div className="relative">
         <button
           type="button"
-          aria-label="Scroll tools left"
-          onClick={() => scroll(-1)}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 h-11 w-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:border-brand transition-colors"
+          aria-label="Previous tools"
+          onClick={() => step(-1)}
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center text-black hover:text-brand transition-colors"
         >
-          <ChevronLeft size={18} />
+          <ChevronLeft size={20} />
         </button>
         <div
           ref={ref}
-          className="flex items-center gap-12 overflow-x-auto snap-x px-16 py-6 rounded-3xl bg-secondary border border-border/60 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto snap-x snap-mandatory rounded-3xl bg-white/75 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.4)] pl-20 pr-20 py-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {tools.map((t) => (
-            <span
-              key={t}
-              className="snap-center shrink-0 font-heading text-xl md:text-2xl font-semibold tracking-[-0.01em] text-foreground/70 whitespace-nowrap"
-            >
-              {t}
-            </span>
+            <div key={t.name} className="snap-start shrink-0 basis-1/2 sm:basis-1/3 lg:basis-1/6 flex items-center justify-center px-4 h-12">
+              {t.logo ? (
+                <img src={t.logo} alt={t.name} className="max-h-10 w-auto object-contain" loading="lazy" />
+              ) : (
+                <span className="font-heading text-xl md:text-2xl font-semibold tracking-[-0.01em] text-black/70 whitespace-nowrap">{t.name}</span>
+              )}
+            </div>
           ))}
         </div>
         <button
           type="button"
-          aria-label="Scroll tools right"
-          onClick={() => scroll(1)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 h-11 w-11 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:border-brand transition-colors"
+          aria-label="Next tools"
+          onClick={() => step(1)}
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center text-black hover:text-brand transition-colors"
         >
-          <ChevronRight size={18} />
+          <ChevronRight size={20} />
         </button>
       </div>
-      <p className="text-muted-foreground/60 text-xs text-center mt-4">
-        Names belong to their respective owners. No affiliation or endorsement implied.
+      <p className="text-white/60 text-xs text-center mt-4">
+        Names and logos belong to their respective owners. No affiliation or endorsement implied.
       </p>
     </div>
   );
