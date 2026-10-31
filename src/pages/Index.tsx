@@ -96,7 +96,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.25}>
             <p className="text-white/60 text-base md:text-lg tracking-wide mb-2">
-              Run by a former Airbnb Support Supervisor. 39 of 40 claims won. $33,860 recovered for hosts.
+              Run by a former Airbnb Support Supervisor. 39 of 40 claims won. $33,860 recovered in documented claims.
             </p>
             <p className="text-white/40 text-sm md:text-base tracking-wide mb-10">
               Superhost every quarter. Every listing at 4.8+.
@@ -221,7 +221,7 @@ const Index = () => {
               </blockquote>
               <p className="text-white/60 text-base tracking-wide mb-12">Multi-property investor, $8,587 recovered</p>
               <div className="flex flex-wrap gap-3">
-                {["39/40 claims won", "$33,860 recovered for hosts", "Multi-platform support"].map((stat) => (
+                {["39/40 claims won", "$33,860 recovered in claims", "Multi-platform support"].map((stat) => (
                   <span key={stat} className="text-sm tracking-wide text-white/80 border border-brand/40 bg-brand/10 rounded-full px-5 py-2.5">
                     {stat}
                   </span>
@@ -369,7 +369,7 @@ const Index = () => {
               {[
                 "Former Airbnb Support Supervisor (TDCX) and subject matter expert",
                 "3+ years managing Airbnb operations and property teams",
-                "39 of 40 claims won, $33,860 recovered for hosts",
+                "39 of 40 claims won, $33,860 recovered in claims",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="text-brand mt-0.5">✓</span>
@@ -393,8 +393,8 @@ const Index = () => {
             {[
               { metric: "500+", label: "Reviews removed" },
               { metric: "39/40", label: "Airbnb claims won" },
-              { metric: "$33,860", label: "Recovered for hosts" },
-              { metric: "$20K+", label: "Extra revenue in a month from our SOP (client-reported)" },
+              { metric: "$33,860", label: "Recovered in documented claims" },
+              { metric: "$50K+", label: "Recovered and earned for hosts (documented plus client-reported)" },
               { metric: "8", label: "Portfolios actively managed" },
               { metric: "200+", label: "Listings managed, each portfolio with a dedicated team" },
             ].map((item, i) => (
