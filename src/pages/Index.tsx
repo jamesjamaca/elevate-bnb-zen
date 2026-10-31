@@ -104,7 +104,7 @@ const Index = () => {
           </ScrollReveal>
           <ScrollReveal delay={0.3}>
             <div className="flex flex-col items-center justify-center gap-5">
-              <Button variant="brand" size="xl" asChild className="w-full sm:w-auto">
+              <Button variant="brand" size="xl" asChild className="w-full max-w-full h-auto min-h-14 py-3 whitespace-normal text-center sm:w-auto">
                 <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
               </Button>
               <a
@@ -203,7 +203,7 @@ const Index = () => {
           </div>
 
           <ScrollReveal>
-            <Button variant="brand" size="xl" asChild>
+            <Button variant="brand" size="xl" asChild className="max-w-full h-auto min-h-14 py-3 whitespace-normal text-center">
               <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
             </Button>
           </ScrollReveal>
@@ -532,7 +532,7 @@ const Index = () => {
           </div>
           <ScrollReveal delay={0.25}>
             <div className="text-center">
-              <Button variant="brand" size="xl" asChild>
+              <Button variant="brand" size="xl" asChild className="max-w-full h-auto min-h-14 py-3 whitespace-normal text-center">
                 <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
               </Button>
             </div>
@@ -556,7 +556,7 @@ const Index = () => {
             <p className="text-white/70 text-xl md:text-2xl mb-12 max-w-xl mx-auto leading-[1.5]">
               We'll go through your portfolio and show you every payout leak and every review we can remove. Free, and yours to keep.
             </p>
-            <Button variant="brand" size="xl" asChild>
+            <Button variant="brand" size="xl" asChild className="max-w-full h-auto min-h-14 py-3 whitespace-normal text-center">
               <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
             </Button>
           </ScrollReveal>
