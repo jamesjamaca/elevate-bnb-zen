@@ -21,8 +21,8 @@ const trustPillars = [
     icon: MessageSquare,
     title: "Guest Experience System",
     desc: "Trained agents assigned to your account handle every guest conversation, day and night, from your playbook.",
-    stat: "Every message answered on your playbook",
-    statLabel: "",
+    stat: "Every message",
+    statLabel: "answered on your playbook",
     bullets: ["Consistent tone across every listing", "Issues flagged before checkout", "One team across your whole portfolio"],
   },
   {
@@ -298,8 +298,11 @@ const Index = () => {
               <p className="text-muted-foreground text-base leading-[1.6] mb-4">
                 All we need is your last 90 days of Airbnb transaction history (a CSV export from your account). No account access required.
               </p>
+              <p className="text-muted-foreground text-base leading-[1.6] mb-4">
+                Your audit is ready within 24 hours (72 hours for portfolios over 50 listings), and we walk you through it on a call.
+              </p>
               <p className="text-muted-foreground/70 text-sm leading-[1.6] mb-1">
-                We accept 2 new Full Operations clients per month. Each one gets a dedicated, trained team.
+                We take on 2 new operations clients per month. Each one gets a dedicated, trained team.
               </p>
               <p className="text-muted-foreground/60 text-sm italic leading-[1.6] mb-8">
                 Next Superhost assessment: January 1. Start now and your system is running before it.
@@ -468,7 +471,7 @@ const Index = () => {
                   <p className="text-muted-foreground text-base leading-[1.6] mb-6">{p.desc}</p>
 
                   <div className="border-t border-border pt-5 mb-6">
-                    <div className={`font-heading font-bold text-foreground tracking-[-0.02em] tabular-nums ${p.stat.length > 12 ? "text-xl leading-[1.25]" : "text-3xl"}`}>
+                    <div className={`font-heading font-bold text-foreground tracking-[-0.02em] tabular-nums ${p.stat.length > 14 ? "text-xl leading-[1.25]" : "text-3xl"}`}>
                       {p.stat}
                     </div>
                     {p.statLabel && <p className="text-muted-foreground text-sm uppercase tracking-[0.1em] mt-1">{p.statLabel}</p>}
