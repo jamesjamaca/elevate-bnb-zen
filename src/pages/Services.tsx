@@ -117,7 +117,7 @@ const ServicesPage = () => (
             Let's build a management strategy around your properties and goals.
           </p>
           <Button variant="brand" size="xl" asChild>
-            <Link to="/contact">Book a Consultation <ArrowRight className="ml-1" size={16} /></Link>
+            <Link to="/contact">Get my free Revenue & Review Audit <ArrowRight className="ml-1" size={16} /></Link>
           </Button>
         </ScrollReveal>
       </div>

@@ -16,7 +16,7 @@ const faqs = [
 ];
 
 const extras = [
-  { title: "Free Review Audit", desc: "See every removable review across your portfolio before you commit." },
+  { title: "Free Revenue & Review Audit", desc: "See every removable review across your portfolio before you commit." },
   { title: "Property playbooks", desc: "Ready-made guides for villas, condos and penthouses." },
   { title: "Owner-ready reports", desc: "A monthly report property managers can send straight to owners." },
   { title: "Superhost Risk Report", desc: "Every quarter, listings at risk are flagged before the assessment." },
@@ -96,7 +96,7 @@ const PricingPage = () => (
               Three ways to work with us.
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-[1.6]">
-              Priced per listing, not as a percentage of your revenue. You get a custom quote after your free Review Audit.
+              Priced per listing, not as a percentage of your revenue. You get a custom quote after your free Revenue & Review Audit.
             </p>
           </div>
         </ScrollReveal>
@@ -211,7 +211,7 @@ const PricingPage = () => (
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-10">
             <Button variant="brand" size="xl" asChild>
-              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Review Audit</a>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Revenue & Review Audit</a>
             </Button>
           </div>
         </ScrollReveal>
@@ -331,10 +331,10 @@ const PricingPage = () => (
             Ready to protect your Superhost status?
           </h2>
           <p className="text-white/70 text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            Start with a free Review Audit. We'll show you exactly what we'd fix.
+            Start with a free Revenue & Review Audit. We'll show you exactly what we'd fix.
           </p>
           <Button variant="brand" size="xl" asChild>
-            <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Review Audit <ArrowRight className="ml-1" size={16} /></a>
+            <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Revenue & Review Audit <ArrowRight className="ml-1" size={16} /></a>
           </Button>
         </ScrollReveal>
       </div>

@@ -8,20 +8,11 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
 import FounderPhotos from "@/components/FounderPhotos";
+import PayoutLeakCalculator from "@/components/PayoutLeakCalculator";
 import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
 import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
 import clientSuperhostAfter from "@/assets/client-superhost-after.jpg";
-
-const capabilities = [
-  { title: "Remote Ops", plain: "Remote Property Management", desc: "Full operational oversight of your short-term rental — managed entirely remotely." },
-  { title: "Guest Experience", plain: "Guest Communication", desc: "24/7 professional messaging that shapes the guest experience from inquiry to checkout." },
-  { title: "Review Shield", plain: "Review Management & Reputation Protection", desc: "Strategic, policy-compliant review management that protects rankings and revenue." },
-  { title: "Listing Spotlight", plain: "Listing Optimization", desc: "SEO-driven listing improvements that increase visibility and booking conversion." },
-  { title: "Revenue Management", plain: "Revenue Optimization", desc: "Data-backed pricing strategies to maximize occupancy and daily rate." },
-  { title: "Claims Recovery", plain: "Claims & Dispute Support", desc: "Expert handling of damage claims, refund requests, and platform disputes." },
-  { title: "Bookkeeping and Finance Management", plain: "Optional add-on", desc: "Optional, whenever you need it. Our specialized finance team keeps your books clean, property by property." },
-];
 
 const trustPillars = [
   {
@@ -29,27 +20,27 @@ const trustPillars = [
     icon: MessageSquare,
     title: "Guest Experience System",
     desc: "Trained agents assigned to your account handle every guest conversation, day and night, from your playbook.",
-    stat: "24/7",
-    statLabel: "Live guest coverage",
-    bullets: ["Every message answered on your playbook", "Issues flagged before checkout", "One team across your whole portfolio"],
+    stat: "Every message answered on your playbook",
+    statLabel: "",
+    bullets: ["Consistent tone across every listing", "Issues flagged before checkout", "One team across your whole portfolio"],
   },
   {
     num: "02",
     icon: ShieldCheck,
     title: "Review Defense",
     desc: "Specialists challenge every review that breaks Airbnb's rules, using Airbnb's own dispute process.",
-    stat: "48 hrs",
-    statLabel: "Avg. dispute filing time",
-    bullets: ["Every listing's rating tracked weekly", "500+ reviews disputed and removed", "Listing Rescue if one slips below 4.8"],
+    stat: "500+",
+    statLabel: "Reviews removed",
+    bullets: ["Every listing's rating tracked weekly", "Bad reviews prevented with in-stay check-ins", "Listing Rescue if one slips below 4.8"],
   },
   {
     num: "03",
     icon: FileCheck2,
-    title: "Account Protection",
-    desc: "We keep your account healthy and get you paid for damage, with a claims specialist on every case.",
-    stat: "100%",
-    statLabel: "Claims documented & filed",
-    bullets: ["Damage and reimbursement claims", "Escalations handled for you", "Quarterly Superhost Risk Report"],
+    title: "Revenue Protection",
+    desc: "When a guest goes to Airbnb, we handle the case: documented, strategic, and built on how support actually decides. We recover what's owed and catch support errors before they cost you.",
+    stat: "39/40",
+    statLabel: "Claims won",
+    bullets: ["Payout adjustments caught and disputed", "Damage and reimbursement claims filed and won", "Monthly report of money recovered and saved"],
   },
 ];
 
@@ -89,55 +80,49 @@ const Index = () => {
           <ScrollReveal>
             <p className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 pl-1.5 pr-4 py-1.5 text-sm md:text-base text-white/80 mb-8">
               <span className="rounded-full bg-brand text-brand-foreground text-xs md:text-sm font-semibold px-3 py-1">Airbnb</span>
-              Review Management Specialists
+              Revenue &amp; Review Protection
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <h1 className="font-heading text-[2.9rem] sm:text-6xl md:text-7xl lg:text-[4.75rem] xl:text-[5.25rem] font-bold leading-[1] tracking-[-0.04em] mb-6">
-              Superhost every quarter.<br />
-              <span className="bg-gradient-to-r from-[#ffc58a] via-[#ff8a2a] to-[#ff5a14] bg-clip-text text-transparent">Every listing at 4.8+.</span>
+              <span className="bg-gradient-to-r from-[#ffc58a] via-[#ff8a2a] to-[#ff5a14] bg-clip-text text-transparent">Stop losing money</span><br />
+              to Airbnb.
             </h1>
           </ScrollReveal>
           <ScrollReveal delay={0.2}>
-            <p className="text-white/75 text-xl md:text-2xl max-w-3xl mx-auto leading-[1.5] mb-4">
-              A done-for-you guest experience and review defense system for property managers and operators with 10 to 100+ listings. It holds up even with unreasonable guests, and you don't add a single hire.
+            <p className="text-white/75 text-xl md:text-2xl max-w-3xl mx-auto leading-[1.5] mb-6">
+              Refunds you didn't owe. Damage claims never filed. Reviews that should have been removed. We protect the payouts and ratings of operators too busy scaling to watch every listing.
             </p>
           </ScrollReveal>
           <ScrollReveal delay={0.25}>
-            <p className="text-white/50 text-base md:text-lg tracking-wide mb-10">
-              Built for growing multi-listing operators.
+            <p className="text-white/60 text-base md:text-lg tracking-wide mb-2">
+              Run by a former Airbnb Support Supervisor. 39 of 40 claims won. $33,860 recovered for hosts.
+            </p>
+            <p className="text-white/40 text-sm md:text-base tracking-wide mb-10">
+              Superhost every quarter. Every listing at 4.8+.
             </p>
           </ScrollReveal>
-          <ScrollReveal delay={0.28}>
-            <form
-              onSubmit={handleHeroSubmit}
-              className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-2xl mx-auto mb-3"
-            >
-              <input
-                name="hero-email"
-                type="email"
-                required
-                placeholder="Enter your email address"
-                className="flex h-14 w-full sm:min-w-[300px] rounded-full border border-white/20 bg-white/10 px-6 py-2 text-lg text-white placeholder:text-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-              />
-              <Button type="submit" variant="brand" size="xl" disabled={heroSubmitting} className="w-full sm:w-auto">
-                {heroSubmitting ? 'Submitting…' : 'Get the Free Checklist'} <ArrowRight className="ml-1" size={18} />
-              </Button>
-            </form>
-            <p className="text-white/45 text-sm tracking-wide mb-10">Free instant download. No spam, ever.</p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.35}>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <ScrollReveal delay={0.3}>
+            <div className="flex flex-col items-center justify-center gap-5">
               <Button variant="brand" size="xl" asChild className="w-full sm:w-auto">
-                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={18} /></a>
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
               </Button>
-              <Button variant="on-dark" size="xl" asChild className="w-full sm:w-auto">
-                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">See how it works</a>
-              </Button>
+              <a
+                href="#payout-leak-calculator"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const go = () => {
+                    const el = document.getElementById("payout-leak-calculator");
+                    if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 72, behavior: "instant" as ScrollBehavior });
+                  };
+                  go();
+                  setTimeout(go, 350);
+                  setTimeout(go, 900);
+                }}
+                className="text-white/80 hover:text-white text-base md:text-lg underline decoration-brand/70 underline-offset-4 transition-colors">
+                Calculate your payout leak
+              </a>
             </div>
-            <p className="text-white/50 text-base md:text-lg tracking-wide mt-8 max-w-xl mx-auto">
-              We find every review that qualifies for removal across your portfolio. Free, and yours to keep.
-            </p>
           </ScrollReveal>
         </div>
       </section>
@@ -219,7 +204,7 @@ const Index = () => {
 
           <ScrollReveal>
             <Button variant="brand" size="xl" asChild>
-              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={18} /></a>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
             </Button>
           </ScrollReveal>
         </div>
@@ -230,13 +215,13 @@ const Index = () => {
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <div className="relative overflow-hidden bg-black text-white rounded-3xl p-10 md:p-16 lg:p-20" style={{ backgroundImage: "radial-gradient(90% 60% at 100% 0%, rgba(255,106,26,0.45) 0%, rgba(0,0,0,0) 60%), radial-gradient(70% 50% at 0% 110%, rgba(255,138,42,0.30) 0%, rgba(0,0,0,0) 60%)" }}>
-              <p className="text-brand text-sm tracking-[0.2em] uppercase font-medium mb-10">Client Result</p>
+              <p className="text-brand text-sm tracking-[0.2em] uppercase font-medium mb-10">One of our 39 claim wins</p>
               <blockquote className="font-heading text-2xl md:text-3xl lg:text-4xl font-medium leading-[1.35] tracking-[-0.01em] mb-8">
                 "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,587 reimbursement and protected the integrity of our portfolio."
               </blockquote>
-              <p className="text-white/60 text-base tracking-wide mb-12">— Multi-Property Investor</p>
+              <p className="text-white/60 text-base tracking-wide mb-12">Multi-property investor, $8,587 recovered</p>
               <div className="flex flex-wrap gap-3">
-                {["39/40 Claims Won", "$8,587 Claims Recovered", "Multi-Platform Support"].map((stat) => (
+                {["39/40 claims won", "$33,860 recovered for hosts", "Multi-platform support"].map((stat) => (
                   <span key={stat} className="text-sm tracking-wide text-white/80 border border-brand/40 bg-brand/10 rounded-full px-5 py-2.5">
                     {stat}
                   </span>
@@ -247,56 +232,72 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Lead Capture */}
-      <section className="py-20 lg:py-28 bg-secondary px-6">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <ScrollReveal>
-              <div className="border border-border rounded-2xl p-10 md:p-12 h-full flex flex-col bg-background">
-                <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-4">Free Download</p>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-4">
-                  The Airbnb Review Dispute Checklist
-                </h3>
-                <p className="text-muted-foreground text-base leading-[1.7] mb-8 flex-1">
-                  The exact 10-step process we use to dispute unfair reviews. 500+ removed so far. Free for any Airbnb host.
-                </p>
-                <div className="ml-embedded" data-form="0u14Yd"></div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1}>
-              <div className="border border-border rounded-2xl p-10 md:p-12 h-full flex flex-col bg-background">
-                <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-4">Free Review Audit</p>
-                <h3 className="font-heading text-2xl md:text-3xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-4">
-                  Get your free Review Audit.
-                </h3>
-                <p className="text-muted-foreground text-base leading-[1.7] mb-4">
-                  We go through your portfolio listing by listing and show you exactly what we'd fix.
-                </p>
-                <ul className="space-y-3 mb-6 flex-1">
-                  {[
-                    "Every review that qualifies for removal",
-                    "Listings at risk of dropping below 4.8",
-                    "Your Superhost risk before the next assessment",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-foreground text-sm">
-                      <span className="w-1 h-1 rounded-full bg-foreground shrink-0 mt-2" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <p className="text-muted-foreground/70 text-sm leading-[1.6] mb-1">
-                  We accept 2 new Full Operations clients per month. Each one gets a newly trained, dedicated team.
-                </p>
-                <p className="text-muted-foreground/50 text-sm italic leading-[1.6] mb-8">
-                  Next Superhost assessment: January 1. Start now and your system is running before it.
-                </p>
-                <Button variant="brand" size="xl" asChild className="w-full sm:w-fit h-auto min-h-14 py-3 whitespace-normal text-center">
-                  <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Review Audit <ArrowRight className="ml-1" size={18} /></a>
-                </Button>
-                <p className="text-muted-foreground/50 text-xs tracking-wide mt-4">No cost. No obligation. You keep the audit.</p>
-              </div>
-            </ScrollReveal>
+      {/* Payout Leak Calculator */}
+      <section id="payout-leak-calculator" className="py-20 lg:py-28 bg-secondary px-6 scroll-mt-20">
+        <div className="container mx-auto max-w-6xl">
+          <PayoutLeakCalculator auditUrl="https://calendly.com/usa-elitebnbhosts/30min" />
+
+          <div className="mt-12 border border-border rounded-2xl bg-background p-8 md:p-10">
+            <p className="text-foreground text-lg font-semibold mb-2">Want our Review Dispute Checklist too?</p>
+            <p className="text-muted-foreground text-base leading-[1.7] mb-6 max-w-2xl">
+              The exact 10-step process we use to dispute unfair reviews. 500+ removed so far. Free for any Airbnb host.
+            </p>
+            <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row gap-3 max-w-xl">
+              <input
+                name="hero-email"
+                type="email"
+                required
+                placeholder="Enter your email address"
+                className="flex h-12 w-full rounded-full border border-border bg-background px-5 py-2 text-base text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+              />
+              <Button type="submit" variant="brand" size="lg" disabled={heroSubmitting} className="w-full sm:w-auto whitespace-nowrap">
+                {heroSubmitting ? 'Submitting…' : 'Send me the checklist'}
+              </Button>
+            </form>
           </div>
+        </div>
+      </section>
+
+      {/* Audit */}
+      <section id="audit" className="py-20 lg:py-28 px-6">
+        <div className="container mx-auto max-w-3xl">
+          <ScrollReveal>
+            <div className="border border-border rounded-2xl p-10 md:p-12 bg-background">
+              <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-4">Free Revenue &amp; Review Audit</p>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-4">
+                Get your free Revenue &amp; Review Audit.
+              </h2>
+              <p className="text-muted-foreground text-lg leading-[1.7] mb-6">
+                We go through your portfolio listing by listing and show you exactly where money and ratings are leaking, and what we'd fix.
+              </p>
+              <ul className="space-y-3 mb-6">
+                {[
+                  "Refunds and payout adjustments you didn't need to give",
+                  "Damage you could still recover",
+                  "Every review that qualifies for removal",
+                  "Listings at risk of dropping below 4.8, and your Superhost risk before the next assessment",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-foreground text-base">
+                    <span className="text-brand mt-0.5 font-bold">✓</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="text-muted-foreground text-base leading-[1.6] mb-4">
+                All we need is your last 90 days of Airbnb transaction history (a CSV export from your account). No account access required.
+              </p>
+              <p className="text-muted-foreground/70 text-sm leading-[1.6] mb-1">
+                We accept 2 new Full Operations clients per month. Each one gets a dedicated, trained team.
+              </p>
+              <p className="text-muted-foreground/60 text-sm italic leading-[1.6] mb-8">
+                Next Superhost assessment: January 1. Start now and your system is running before it.
+              </p>
+              <Button variant="brand" size="xl" asChild className="w-full sm:w-fit h-auto min-h-14 py-3 whitespace-normal text-center">
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
+              </Button>
+              <p className="text-muted-foreground/60 text-xs tracking-wide mt-4">No cost. No obligation. You keep the audit.</p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
@@ -318,6 +319,7 @@ const Index = () => {
           </ScrollReveal>
           <div className="space-y-5 max-w-2xl">
             {[
+              { title: "Airbnb takes it out of your payout.", desc: "Refunds and adjustments get deducted, often before you can respond, and most hosts never dispute them." },
               { title: "Unfair reviews stay up.", desc: "Nobody has time to file disputes properly, so reviews that break Airbnb's rules never get challenged." },
               { title: "Damage goes unpaid.", desc: "Claims get filed late, filed wrong, or not filed at all." },
               { title: "Guest messaging is inconsistent.", desc: "Different people, different tone, slow replies at 2 a.m." },
@@ -354,18 +356,19 @@ const Index = () => {
       {/* Who We Are */}
       <section className="py-20 lg:py-28 px-6">
         <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <ScrollReveal>
             <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-6">Who We Are</p>
             <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-10">
               Real experience. Real results.
             </h2>
-            <p className="text-muted-foreground text-xl md:text-2xl leading-[1.6] max-w-xl mb-8">
+            <p className="text-muted-foreground text-xl md:text-2xl leading-[1.6] mb-8">
               Elite BNB Hosts was founded by James Jamaca — a former Airbnb support supervisor and subject matter expert with direct experience managing reviews, guest communication, and AirCover claims. We don't guess at what works. We know — because we've worked inside the system that governs your listing.
             </p>
             <ul className="space-y-3 text-foreground text-lg">
               {[
-                "Former Airbnb support supervisor & SME",
-                "3+ years managing Airbnb operations & property teams",
+                "Former Airbnb Support Supervisor (TDCX) and subject matter expert",
+                "3+ years managing Airbnb operations and property teams",
                 "39 of 40 claims won, $33,860 recovered for hosts",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
@@ -375,6 +378,16 @@ const Index = () => {
               ))}
             </ul>
           </ScrollReveal>
+
+            <ScrollReveal delay={0.15}>
+              <div className="flex flex-col items-center">
+                <FounderPhotos />
+                <p className="text-muted-foreground text-sm tracking-wide mt-6 text-center">
+                  <a href="https://www.linkedin.com/in/jamesjamaca/" target="_blank" rel="noopener noreferrer" className="underline decoration-brand/60 underline-offset-4 hover:text-foreground transition-colors">James Jamaca</a> — Founder, Elite BNB Hosts
+                </p>
+              </div>
+            </ScrollReveal>
+          </div>
 
           <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-14 gap-x-12">
             {[
@@ -443,10 +456,10 @@ const Index = () => {
                   <p className="text-muted-foreground text-base leading-[1.6] mb-6">{p.desc}</p>
 
                   <div className="border-t border-border pt-5 mb-6">
-                    <div className="font-heading text-3xl font-bold text-foreground tracking-[-0.02em] tabular-nums">
+                    <div className={`font-heading font-bold text-foreground tracking-[-0.02em] tabular-nums ${p.stat.length > 12 ? "text-xl leading-[1.25]" : "text-3xl"}`}>
                       {p.stat}
                     </div>
-                    <p className="text-muted-foreground text-sm uppercase tracking-[0.1em] mt-1">{p.statLabel}</p>
+                    {p.statLabel && <p className="text-muted-foreground text-sm uppercase tracking-[0.1em] mt-1">{p.statLabel}</p>}
                   </div>
 
                   <ul className="space-y-2.5 mt-auto">
@@ -464,92 +477,27 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="py-20 lg:py-28 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <ScrollReveal>
-            <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-6">Capabilities</p>
-            <h2 className="font-heading text-4xl md:text-6xl font-bold text-foreground leading-[1.05] tracking-[-0.02em] mb-16">
-              One system.<br />Complete management.
-            </h2>
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20">
-            {capabilities.map((c, i) => (
-              <ScrollReveal key={c.title} delay={i * 0.08}>
-                <div>
-                  <h3 className="font-heading text-2xl font-semibold text-foreground mb-1">{c.title}</h3>
-                  <p className="text-[#c2410c] text-xs font-semibold tracking-[0.2em] uppercase mb-4">{c.plain}</p>
-                  <p className="text-muted-foreground text-lg leading-[1.6]">{c.desc}</p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet the Founder */}
-      <section className="py-20 lg:py-28 px-6">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <ScrollReveal>
-              <div>
-                <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-6">Who We Are</p>
-                <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-6">
-                  Built by someone who's been in your corner.
-                </h2>
-                <p className="text-muted-foreground text-lg md:text-xl leading-[1.6] mb-8">
-                  James Jamaca worked inside Airbnb's support operations and rose to supervisor. Elite BNB Hosts runs on what he learned about how the platform really works.
-                </p>
-                <ul className="space-y-5 mb-10">
-                  {[
-                    ["Airbnb insider.", "Former support supervisor and subject matter expert."],
-                    ["3+ years running operations.", "Airbnb operations and property teams."],
-                    ["39 of 40 claims won.", "$33,860 recovered for hosts."],
-                  ].map(([lead, rest]) => (
-                    <li key={lead} className="flex items-start gap-3 text-muted-foreground text-lg leading-[1.6]">
-                      <span className="text-brand mt-0.5 font-bold">✓</span>
-                      <span><strong className="text-foreground font-semibold">{lead}</strong> {rest}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button variant="brand" size="xl" asChild className="w-full sm:w-auto">
-                  <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get your free Review Audit <ArrowRight className="ml-1" size={18} /></a>
-                </Button>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={0.15}>
-              <div className="flex flex-col items-center">
-                <FounderPhotos />
-                <p className="text-muted-foreground text-sm tracking-wide mt-6 text-center">
-                  <a href="https://www.linkedin.com/in/jamesjamaca/" target="_blank" rel="noopener noreferrer" className="underline decoration-brand/60 underline-offset-4 hover:text-foreground transition-colors">James Jamaca</a> — Founder, Elite BNB Hosts
-                </p>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* Who It's For */}
       <section className="py-20 lg:py-28 bg-muted px-6">
         <div className="container mx-auto max-w-4xl">
           <ScrollReveal>
             <p className="text-muted-foreground text-sm tracking-[0.2em] uppercase font-medium mb-6">Who It's For</p>
             <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] tracking-[-0.02em] mb-16">
-              Built for two kinds of operators.
+              Built for operators who are busy growing.
             </h2>
           </ScrollReveal>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-16">
             <ScrollReveal delay={0.15}>
               <div>
                 <h3 className="font-heading text-2xl font-semibold text-foreground mb-3">Arbitrage operators</h3>
-                <p className="text-muted-foreground text-base mb-6">10 to 20 listings</p>
+                <p className="text-muted-foreground text-base mb-6">10 to 50 listings</p>
                 <p className="text-muted-foreground text-lg leading-[1.6] mb-6">
-                  You're stuck. Every new listing adds more messages, more reviews to fight, more fires. You want to grow without becoming the bottleneck.
+                  You're adding units every month, and every new listing means more messages, more refund requests, and more reviews to watch. You want to keep growing without money leaking out of the listings you already have.
                 </p>
                 <ul className="space-y-4">
                   {[
-                    "Hand off guests and reviews in 30 days",
-                    "Scale past 20 listings with Superhost protected",
+                    "Payouts and reviews protected while you scale",
+                    "Hand off guests, refunds, and claims in 30 days",
                     "Get your time back",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-muted-foreground text-lg leading-[1.6]">
@@ -565,12 +513,12 @@ const Index = () => {
                 <h3 className="font-heading text-2xl font-semibold text-foreground mb-3">Property managers</h3>
                 <p className="text-muted-foreground text-base mb-6">50 to 100+ listings</p>
                 <p className="text-muted-foreground text-lg leading-[1.6] mb-6">
-                  You answer to owners. One bad quarter on one listing becomes a hard conversation. You want protection and visibility across the whole portfolio.
+                  You answer to owners. One refund dispute or one bad quarter on one listing becomes a hard conversation. You want protection and proof across the whole portfolio.
                 </p>
                 <ul className="space-y-4">
                   {[
                     "Every listing at 4.8+, tracked one by one",
-                    "Owner-ready monthly reports",
+                    "Monthly report of money recovered and saved, ready for owners",
                     "Risk flagged before the assessment, not after",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-3 text-muted-foreground text-lg leading-[1.6]">
@@ -585,7 +533,7 @@ const Index = () => {
           <ScrollReveal delay={0.25}>
             <div className="text-center">
               <Button variant="brand" size="xl" asChild>
-                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get Your Free Review Audit <ArrowRight className="ml-1" size={18} /></a>
+                <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
               </Button>
             </div>
           </ScrollReveal>
@@ -603,13 +551,13 @@ const Index = () => {
         <div className="relative container mx-auto max-w-3xl text-center">
           <ScrollReveal>
             <h2 className="font-heading text-4xl md:text-6xl lg:text-[4.25rem] font-bold leading-[1.02] tracking-[-0.03em] mb-8">
-              Management built<br />around performance.
+              Find out what Airbnb<br />is taking from you.
             </h2>
             <p className="text-white/70 text-xl md:text-2xl mb-12 max-w-xl mx-auto leading-[1.5]">
-              Scale your Airbnb without the stress. Let's build a strategy that works.
+              We'll go through your portfolio and show you every payout leak and every review we can remove. Free, and yours to keep.
             </p>
             <Button variant="brand" size="xl" asChild>
-              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book a Consultation <ArrowRight className="ml-1" size={18} /></a>
+              <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={18} /></a>
             </Button>
           </ScrollReveal>
         </div>
