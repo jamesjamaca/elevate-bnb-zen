@@ -9,6 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 import ambientInterior from "@/assets/ambient-interior.jpg";
 import FounderPhotos from "@/components/FounderPhotos";
 import PayoutLeakCalculator from "@/components/PayoutLeakCalculator";
+import ToolsStrip from "@/components/ToolsStrip";
 import clientOccupancyBefore from "@/assets/client-occupancy-before.jpg";
 import clientOccupancyAfter from "@/assets/client-occupancy-after.jpg";
 import clientSuperhostLost from "@/assets/client-superhost-lost.jpg";
@@ -123,6 +124,15 @@ const Index = () => {
                 Calculate your payout leak
               </a>
             </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Tools strip */}
+      <section className="py-14 px-6">
+        <div className="container mx-auto max-w-5xl">
+          <ScrollReveal>
+            <ToolsStrip />
           </ScrollReveal>
         </div>
       </section>
