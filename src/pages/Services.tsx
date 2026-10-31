@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -6,48 +5,48 @@ import ambientWorkspace from "@/assets/ambient-workspace.jpg";
 
 const services = [
   {
-    title: "Remote Ops",
-    plain: "Remote Property Management",
-    desc: "Complete operational oversight of your short-term rental — managed entirely remotely without sacrificing quality.",
-    details: ["Full operational management", "Multi-platform coordination", "Performance monitoring", "Quality assurance systems"],
-  },
-  {
-    title: "Guest Experience",
-    plain: "Guest Communication",
-    desc: "Professional messaging from inquiry through checkout. Every interaction shapes positive experiences and prevents issues.",
-    details: ["24/7 response coverage", "Pre-arrival coordination", "In-stay support", "Post-checkout follow-up"],
-  },
-  {
-    title: "Review Shield",
-    plain: "Review Management",
-    desc: "Strategic, policy-compliant review management that protects search ranking, booking conversion, and guest trust.",
-    details: ["Proactive guest experience management", "Policy-compliant processes", "Reputation monitoring", "Listing performance protection"],
-  },
-  {
-    title: "Listing Spotlight",
-    plain: "Listing Optimization",
-    desc: "Every element of your listing optimized for search visibility and booking conversion.",
-    details: ["SEO-optimized copy", "Competitive positioning", "Photo strategy", "Conversion-focused descriptions"],
-  },
-  {
-    title: "Revenue Management",
-    plain: "Revenue Optimization",
-    desc: "Data-driven pricing strategies to maximize occupancy and daily rate throughout every season.",
-    details: ["Dynamic pricing strategies", "Market trend analysis", "Seasonal adjustments", "Revenue reporting"],
+    title: "Payout Protection",
+    plain: "Revenue Protection",
+    desc: "Airbnb support can refund a guest straight out of your payout. We catch those adjustments and dispute the ones you didn't owe.",
+    included: "Defend, Operate, Scale",
+    details: ["Payout adjustments caught and disputed", "Refund requests handled before they become deductions", "Support errors escalated and corrected", "Monthly report of money recovered and saved"],
   },
   {
     title: "Claims Recovery",
-    plain: "Claims & Dispute Support",
-    desc: "Expert handling of damage claims, refund requests, and platform disputes with full compliance.",
-    details: ["Damage claim documentation", "Dispute resolution", "Platform mediation support", "Risk mitigation"],
+    plain: "Damage & Reimbursement Claims",
+    desc: "Claims built the way Airbnb needs to see them: itemized, documented, and filed on time. 39 of 40 won in 2026.",
+    included: "Defend, Operate, Scale",
+    details: ["AirCover damage claims filed and followed through", "Itemized invoices and photo evidence prepared", "Guest disputes and platform mediation", "Every claim tracked to payout"],
   },
   {
-    title: "Bookkeeping and Finance Management",
+    title: "Review Defense",
+    plain: "Review Removal & Protection",
+    desc: "Reviews that break Airbnb's policy get disputed through the official process. 500+ removed so far, with no workarounds that put your account at risk.",
+    included: "Defend, Operate, Scale",
+    details: ["Qualifying reviews disputed within 48 hours", "Public responses that protect your listing", "Every listing's rating tracked weekly", "Listing Rescue if one slips below 4.8"],
+  },
+  {
+    title: "Guest Experience",
+    plain: "Guest Communication & Prevention",
+    desc: "The best review defense is a guest who never wanted to write a bad one. We catch problems mid-stay and fix them while they can still be fixed.",
+    included: "Operate, Scale",
+    details: ["24/7 guest messaging, inquiry to checkout", "In-stay check-ins that catch problems before the review", "Every stay documented, so you have the stronger case", "A playbook so every reply sounds like you"],
+  },
+  {
+    title: "Operations & Pricing",
+    plain: "Day-to-Day Portfolio Management",
+    desc: "The daily work of running your listings, handed off in 30 days.",
+    included: "Operate, Scale",
+    details: ["Cleaning and maintenance coordination", "Pricing run on your rules", "Multi-platform coordination (Airbnb, VRBO, Booking.com)", "Quality checks on every listing"],
+  },
+  {
+    title: "Bookkeeping & Finance",
     plain: "Optional add-on",
-    desc: "Optional, and available whenever you need it. Our specialized finance team keeps your rental books clean so you always know where each property stands.",
+    desc: "Clean books for every property, so you always know where each one stands.",
+    addon: true,
     details: ["Monthly bookkeeping and reconciliation", "Income and expense tracking per property", "Payout and claims reimbursement tracking", "Monthly financial reports"],
   },
-];
+] as { title: string; plain: string; desc: string; details: string[]; included?: string; addon?: boolean }[];
 
 const ServicesPage = () => (
   <div>
@@ -57,10 +56,10 @@ const ServicesPage = () => (
         <ScrollReveal>
           <p className="text-brand text-sm font-semibold tracking-[0.3em] uppercase mb-8">Services</p>
           <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-white leading-[0.92] tracking-[-0.03em] mb-8">
-            One integrated system.<br />Complete management.
+            Everything we do protects your money or your ratings.
           </h1>
           <p className="text-white/70 text-lg md:text-xl lg:text-2xl max-w-lg mx-auto leading-relaxed">
-            Everything you need to run a high-performing rental business — managed remotely, built around results.
+            Five services, one team, all built on how Airbnb support actually decides.
           </p>
         </ScrollReveal>
       </div>
@@ -73,10 +72,15 @@ const ServicesPage = () => (
           <ScrollReveal key={s.title}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <span className="text-brand/25 font-heading text-7xl lg:text-8xl font-bold leading-none block">0{i + 1}</span>
+                <span className={`text-brand/25 font-heading font-bold leading-none block ${s.addon ? "text-5xl lg:text-6xl uppercase" : "text-7xl lg:text-8xl"}`}>{s.addon ? "Add-on" : `0${i + 1}`}</span>
                 <h2 className="font-heading text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mt-6 mb-2 tracking-[-0.02em]">{s.title}</h2>
                 <p className="text-[#c2410c] text-xs font-semibold tracking-[0.2em] uppercase mb-6">{s.plain}</p>
                 <p className="text-muted-foreground text-base leading-[1.7]">{s.desc}</p>
+                {s.included && (
+                  <p className="text-foreground text-sm font-semibold mt-6">
+                    Included in: <span className="font-normal text-muted-foreground">{s.included}</span>
+                  </p>
+                )}
               </div>
               <ul className="space-y-5 lg:pt-28">
                 {s.details.map((d) => (
@@ -111,13 +115,13 @@ const ServicesPage = () => (
       <div className="container relative mx-auto max-w-3xl text-center">
         <ScrollReveal>
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-white leading-[1.05] tracking-[-0.02em] mb-8">
-            Ready to protect your performance?
+            Not sure which services you need?
           </h2>
           <p className="text-white/70 text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            Let's build a management strategy around your properties and goals.
+            Start with a free audit. We'll show you where money and ratings are leaking, and what we'd fix first.
           </p>
           <Button variant="brand" size="xl" asChild>
-            <Link to="/contact">Get my free Revenue & Review Audit <ArrowRight className="ml-1" size={16} /></Link>
+            <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={16} /></a>
           </Button>
         </ScrollReveal>
       </div>
