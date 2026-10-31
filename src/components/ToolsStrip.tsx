@@ -35,14 +35,20 @@ const ToolsStrip = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [paused, setPaused] = useState(false);
 
-  const step = (dir: 1 | -1) => {
+  // Endless loop: the list is rendered twice and we jump back by one list length before each step.
+  const step = (dir: 1 | -1, page = false) => {
     const el = ref.current;
     if (!el) return;
     const item = el.firstElementChild as HTMLElement | null;
     const w = item ? item.offsetWidth : 200;
-    const atEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 4;
-    if (dir === 1 && atEnd) el.scrollTo({ left: 0, behavior: "smooth" });
-    else el.scrollBy({ left: dir * w, behavior: "smooth" });
+    if (!w) return;
+    const half = w * tools.length;
+    const count = page ? Math.max(1, Math.round(el.clientWidth / w)) : 1;
+    let pos = el.scrollLeft;
+    if (pos >= half) pos -= half;
+    if (dir === -1 && pos < w * count) pos += half;
+    if (pos !== el.scrollLeft) el.scrollTo({ left: pos, behavior: "instant" });
+    el.scrollBy({ left: dir * w * count, behavior: "smooth" });
   };
 
   useEffect(() => {
@@ -60,20 +66,20 @@ const ToolsStrip = () => {
         <button
           type="button"
           aria-label="Previous tools"
-          onClick={() => step(-1)}
+          onClick={() => step(-1, true)}
           className="absolute left-3 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center text-black hover:text-brand transition-colors"
         >
           <ChevronLeft size={20} />
         </button>
-        <div className="rounded-3xl bg-white/75 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.4)] px-16 sm:px-20 py-8">
+        <div className="rounded-3xl bg-white/75 backdrop-blur-xl border border-white/60 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.4)] px-16 sm:px-20 py-6">
           <div
             ref={ref}
             className="flex overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
-            {tools.map((t) => (
-              <div key={t.name} className="snap-start shrink-0 basis-full sm:basis-1/3 lg:basis-1/6 flex items-center justify-center px-4 h-12">
+            {[...tools, ...tools].map((t, i) => (
+              <div key={t.name + i} aria-hidden={i >= tools.length || undefined} className="snap-start shrink-0 basis-full sm:basis-1/3 lg:basis-1/6 flex items-center justify-center px-5 h-14">
                 {t.logo ? (
-                  <img src={t.logo} alt={t.name} className="max-h-10 max-w-full w-auto object-contain" loading="lazy" />
+                  <img src={t.logo} alt={t.name} className="max-h-12 max-w-full w-auto object-contain" loading="lazy" />
                 ) : (
                   <span className="font-heading text-xl md:text-2xl font-semibold tracking-[-0.01em] text-black/70 whitespace-nowrap">{t.name}</span>
                 )}
@@ -84,7 +90,7 @@ const ToolsStrip = () => {
         <button
           type="button"
           aria-label="Next tools"
-          onClick={() => step(1)}
+          onClick={() => step(1, true)}
           className="absolute right-3 top-1/2 -translate-y-1/2 z-10 h-12 w-12 rounded-full bg-white shadow-md flex items-center justify-center text-black hover:text-brand transition-colors"
         >
           <ChevronRight size={20} />
