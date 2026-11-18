@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/ThemeToggle";
+import { AUDIT_URL } from "@/lib/offer";
 
 const navItems = [
   { label: "Services", path: "/services" },
@@ -43,7 +44,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-2">
           <ThemeToggle />
           <Button variant={isHome ? "on-dark" : "default"} size="sm" asChild>
-            <Link to="/contact">Get Started</Link>
+            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer">Free Audit</a>
           </Button>
         </div>
 
@@ -77,7 +78,7 @@ const Navbar = () => {
             <li className="flex items-center justify-between pt-4">
               <ThemeToggle />
               <Button variant="default" size="sm" asChild>
-                <Link to="/contact" onClick={() => setMobileOpen(false)}>Get Started</Link>
+                <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" onClick={() => setMobileOpen(false)}>Free Audit</a>
               </Button>
             </li>
           </ul>

@@ -8,55 +8,63 @@ import estivenPhoto from "@/assets/estiven-gomez.jpg";
 import regalLogo from "@/assets/dharmesh-logo.png";
 
 const faqs = [
-  { q: "Can't I just hire a VA for less?", a: "You can. A VA answers messages. We protect the rating behind every listing: guest messaging, review disputes, claims and Superhost tracking, run by specialists. One lost badge costs more than the difference." },
-  { q: "How do you remove reviews?", a: "Only through Airbnb's official dispute process. We challenge reviews that break Airbnb's own policies. That's how we've removed 500+ so far." },
+  { q: "My ratings are fine.", a: "Today. At 30 listings, one bad stay per week is enough to slip before the next assessment. The audit shows which listings are closest." },
+  { q: "How do you remove reviews?", a: "Airbnb's official process, policy violations only. No workarounds. Most of our work is stopping the bad review before it's written." },
+  { q: "Airbnb's decisions are final.", a: "Most adjustments and policy-breaking reviews are never disputed at all. We know how support decides because we've supervised those cases." },
+  { q: "I check my payouts myself.", a: "At 10 listings, maybe. At 30, you're watching new acquisitions, not old payouts." },
+  { q: "A VA is cheaper.", a: "A VA answers messages. We protect Superhost and get money back. Run the audit and compare." },
+  { q: "I already have a VA.", a: "Keep them. That's Defend: we protect the reviews and the money, and QA their work." },
   { q: "What access do you need?", a: "Co-host access to your listings. It stays under your control, and you can see everything we do." },
   { q: "What happens to my current team?", a: "They keep handling guests until handover on day 30. After that, they can focus on cleaning, maintenance and growth." },
-  { q: "My properties are different. Will this work?", a: "We build a playbook for your properties in week one, with ready-made guides for villas, condos and penthouses." },
 ];
 
 const extras = [
-  { title: "Free Revenue & Review Audit", desc: "See every removable review across your portfolio before you commit." },
-  { title: "Property playbooks", desc: "Ready-made guides for villas, condos and penthouses." },
-  { title: "Owner-ready reports", desc: "A monthly report property managers can send straight to owners." },
-  { title: "Superhost Risk Report", desc: "Every quarter, listings at risk are flagged before the assessment." },
+  { title: "Quarterly Superhost Risk Report", desc: "Every quarter, listings at risk are flagged before the assessment." },
+  { title: "Listing Rescue", desc: "Any listing under 4.8 gets a free audit and fixes." },
+  { title: "Money Recovered & Saved report", desc: "An owner-ready monthly report property managers can send straight to owners." },
+  { title: "The Elite Ops System playbooks", desc: "In-stay check-ins, stay documentation and escalation playbooks, built around your properties." },
 ];
 
 const tiers = [
   {
     name: "Defend",
     sub: "Revenue & Review Defense",
-    who: "You run guests in-house. We protect your payouts, ratings and account.",
+    who: "For operators who run guests in-house or already have a VA. 10+ listings.",
     items: [
+      "Reviews disputed within 48 hours",
+      "Weekly rating tracking",
+      "Listing Rescue",
+      "Damage and reimbursement claims",
       "Payout adjustments caught and disputed",
-      "Damage and reimbursement claims filed and won",
-      "Qualifying reviews disputed within 48 hours",
-      "Every listing's rating tracked weekly",
-      "Monthly report of money recovered and saved",
+      "Weekly QA of your VA",
+      "Monthly Money Recovered & Saved report",
+      "Includes the 48-Hour Filing Guarantee",
     ],
   },
   {
     name: "Operate",
     sub: "30-Day Operations Takeover",
-    who: "You want guests, payouts and reviews handed off completely.",
+    who: "For arbitrage operators scaling past 15 listings.",
     featured: true,
     items: [
       "Everything in Defend",
-      "24/7 guest messaging, inquiry to checkout",
-      "In-stay check-ins that catch problems before the review",
-      "Every stay documented, so you have the stronger case",
+      "24/7 guest messaging",
+      "In-stay check-ins",
+      "Every stay documented",
+      "Cleaning and maintenance coordination",
+      "Pricing run on your rules",
       "Full handover by day 30",
-      "Superhost Guarantee (conditions apply)",
+      "Includes the Superhost Guarantee",
     ],
   },
   {
     name: "Scale",
     sub: "Portfolio Protection Program",
-    who: "Your portfolio needs its own team behind it.",
+    who: "For property managers with 50+ listings.",
     items: [
       "Everything in Operate",
       "A dedicated team and account manager",
-      "Priority escalations with Airbnb",
+      "Priority escalations",
       "Owner-ready monthly reports",
       "Risk flagged before every assessment",
     ],
@@ -77,10 +85,10 @@ const PricingPage = () => (
         <ScrollReveal delay={0.1}>
           <div className="max-w-2xl mx-auto space-y-4 text-white/70 text-lg md:text-xl lg:text-2xl leading-relaxed">
             <p>
-              Traditional property management often charges a percentage of your revenue, or requires hiring in-house staff — adding headcount, not control.
+              Traditional property management often charges a percentage of your revenue, or requires hiring in-house staff. That adds headcount, not control.
             </p>
             <p>
-              Elite BNB Hosts operates as a done-for-you team instead — full remote operations, without adding a single hire.
+              Elite BNB Hosts operates as a done-for-you team instead, with full remote operations and without adding a single hire.
             </p>
           </div>
         </ScrollReveal>
@@ -97,7 +105,7 @@ const PricingPage = () => (
               Three ways to work with us.
             </h2>
             <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-[1.6]">
-              Priced per listing, not as a percentage of your revenue. You get a custom quote after your free Revenue & Review Audit.
+              Priced per listing. Quote after your free audit.
             </p>
           </div>
         </ScrollReveal>
@@ -176,16 +184,24 @@ const PricingPage = () => (
         <div className="space-y-6 max-w-3xl mx-auto">
           <ScrollReveal delay={0.1}>
             <div className="bg-secondary rounded-2xl p-10 border-l-4 border-brand">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Superhost Guarantee (Operate tier)</h3>
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Superhost Guarantee (Operate & Scale)</h3>
               <p className="text-foreground text-base leading-[1.7] italic mb-4">
-                "Keep Superhost at your first full quarterly assessment after handover, or we work for free until you do."
+                "Keep Superhost at the first full quarterly assessment after handover, or we work for free until you do."
               </p>
               <p className="text-muted-foreground text-sm leading-[1.6]">
-                Conditions: maintenance issues fixed within 24–48 hours, no host cancellations above Airbnb's limit, your staff follow the playbook, and our access stays active all quarter.
+                Conditions: maintenance fixed within 24 to 48 hours, no host cancellations above Airbnb's limit, your staff follow the playbook, access stays active.
               </p>
             </div>
           </ScrollReveal>
           <ScrollReveal delay={0.15}>
+            <div className="bg-secondary rounded-2xl p-10 border-l-4 border-brand">
+              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">48-Hour Filing Guarantee (Defend)</h3>
+              <p className="text-muted-foreground text-base leading-[1.7]">
+                Every qualifying review and every disputable payout adjustment is filed within 48 hours of being caught, or that month is free for those listings.
+              </p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal delay={0.2}>
             <div className="bg-secondary rounded-2xl p-10 border-l-4 border-brand">
               <h3 className="font-heading text-xl font-semibold text-foreground mb-3">Listing Rescue</h3>
               <p className="text-muted-foreground text-base leading-[1.7]">
@@ -193,25 +209,17 @@ const PricingPage = () => (
               </p>
             </div>
           </ScrollReveal>
-          <ScrollReveal delay={0.2}>
-            <div className="bg-secondary rounded-2xl p-10 border-l-4 border-brand">
-              <h3 className="font-heading text-xl font-semibold text-foreground mb-3">48-Hour Filing</h3>
-              <p className="text-muted-foreground text-base leading-[1.7]">
-                Every new review that qualifies for dispute is filed within 48 hours, or that month is free for those listings.
-              </p>
-            </div>
-          </ScrollReveal>
         </div>
 
         <ScrollReveal delay={0.25}>
           <p className="text-muted-foreground text-base italic leading-[1.6] max-w-2xl mx-auto text-center mt-10">
-            We don't promise Airbnb's decisions on reviews or claims. Nobody controls those. Our track record speaks for itself instead.
+            We guarantee our actions, never Airbnb's decisions.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.3}>
           <div className="text-center mt-10">
-            <Button variant="brand" size="xl" asChild>
+            <Button variant="brand" size="xl" asChild className="max-w-full h-auto min-h-14 py-3 whitespace-normal text-center">
               <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Revenue & Review Audit</a>
             </Button>
           </div>
@@ -258,7 +266,7 @@ const PricingPage = () => (
             <p className="text-xl md:text-2xl leading-relaxed italic mb-6">
               "What could have been a major financial loss was fully recovered through ElitebnbHosts' structured documentation and claims process. Their attention to detail resulted in an $8,587 reimbursement and protected the integrity of our portfolio."
             </p>
-            <span className="text-sm text-white/60">— Multi-Property Investor</span>
+            <span className="text-sm text-white/60">Multi-Property Investor</span>
           </div>
         </ScrollReveal>
 
@@ -334,7 +342,7 @@ const PricingPage = () => (
           <p className="text-white/70 text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
             Start with a free Revenue & Review Audit. We'll show you exactly what we'd fix.
           </p>
-          <Button variant="brand" size="xl" asChild>
+          <Button variant="brand" size="xl" asChild className="max-w-full h-auto min-h-14 py-3 whitespace-normal text-center">
             <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Book my free Revenue & Review Audit <ArrowRight className="ml-1" size={16} /></a>
           </Button>
         </ScrollReveal>

@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import ScrollReveal from "@/components/ScrollReveal";
 import ambientCoastal from "@/assets/ambient-coastal.jpg";
+import { AUDIT_URL } from "@/lib/offer";
 
 const AboutPage = () => (
   <div>
@@ -30,7 +31,7 @@ const AboutPage = () => (
             Scale demands structure.
           </h2>
           <p className="text-white/75 text-lg md:text-xl leading-[1.7] max-w-2xl">
-            The short-term rental industry rewards visibility, responsiveness, and reputation. As portfolios grow, operational complexity increases. Guest communication, reviews, claims, and performance monitoring must be structured — not reactive.
+            The short-term rental industry rewards visibility, responsiveness, and reputation. As portfolios grow, operational complexity increases. Guest communication, reviews, claims, and performance monitoring must be structured, not reactive.
           </p>
         </ScrollReveal>
       </div>
@@ -60,10 +61,10 @@ const AboutPage = () => (
           </h2>
           <div className="space-y-6 text-muted-foreground text-lg md:text-xl leading-[1.7] max-w-2xl">
             <p>
-              ElitebnbHosts was designed around compliance, documentation, and long-term platform integrity. While many operators rely on shortcuts, we focus on strategic guest communication, performance oversight, and policy-aligned review management.
+              ElitebnbHosts was designed around compliance, documentation, and long-term platform integrity. While many operators rely on shortcuts, we focus on strategic guest communication, performance oversight, and policy-aligned review defense.
             </p>
             <p>
-              Our priority is sustainable account health and protected revenue — not temporary results.
+              Our priority is sustainable account health and protected revenue, not temporary results.
             </p>
           </div>
         </ScrollReveal>
@@ -82,7 +83,7 @@ const AboutPage = () => (
         <div className="space-y-16">
           {[
             { num: "01", title: "Day 0: Book your audit.", desc: "We record each listing's rating, Superhost status and next assessment date." },
-            { num: "02", title: "Day 1: Audit delivered.", desc: "We walk you through it on a call. Portfolios over 50 listings get it within 72 hours." },
+            { num: "02", title: "Day 1: Audit delivered.", desc: "Ready within 24 hours for up to 50 listings, 72 hours for larger portfolios. We walk you through it on a 30-minute call." },
             { num: "03", title: "Days 2–3: First disputes filed.", desc: "Review disputes and open claims start right away." },
             { num: "04", title: "Week 1: Your playbook.", desc: "We document how your properties run so every agent handles guests your way." },
             { num: "05", title: "Day 30: Full handover.", desc: "Your dedicated team takes over guest operations. Your current team covers until then." },
@@ -117,7 +118,7 @@ const AboutPage = () => (
               ElitebnbHosts operates on a policy-aligned framework designed to protect long-term account health. Every review strategy, guest interaction, and claims process is structured around platform compliance and documented precision.
             </p>
             <p>
-              While short-term shortcuts may produce temporary results, we prioritize sustainable performance — ensuring that growth never comes at the expense of platform stability.
+              While short-term shortcuts may produce temporary results, we prioritize sustainable performance, so growth never comes at the expense of platform stability.
             </p>
             <p>
               Our goal is simple: protect visibility, protect revenue, and protect the integrity of every portfolio we manage.
@@ -139,7 +140,7 @@ const AboutPage = () => (
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
             <Button variant="brand" size="xl" asChild>
-              <Link to="/contact">Let's Talk About Your Portfolio <ArrowRight className="ml-1" size={16} /></Link>
+              <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={16} /></a>
             </Button>
             <Button variant="outline" size="xl" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white" asChild>
               <Link to="/services">See How We Can Support You</Link>

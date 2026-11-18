@@ -5,25 +5,25 @@ import ambientWorkspace from "@/assets/ambient-workspace.jpg";
 
 const services = [
   {
+    title: "Review Defense",
+    plain: "Review Dispute & Protection",
+    desc: "Reviews that break Airbnb's policy get disputed through Airbnb's official process. 500+ removed through that process.",
+    included: "Defend, Operate, Scale",
+    details: ["Qualifying reviews disputed within 48 hours", "Public responses that protect your listing", "Every listing's rating tracked weekly", "Listing Rescue if one slips below 4.8"],
+  },
+  {
+    title: "Claims Recovery",
+    plain: "Damage & Reimbursement Claims",
+    desc: "Claims built the way Airbnb needs to see them: itemized, documented, and filed on time. 39 of 40 documented claims approved in 2026 (97.5%).",
+    included: "Defend, Operate, Scale",
+    details: ["AirCover damage claims filed and followed through", "Itemized invoices and photo evidence prepared", "Guest disputes and platform mediation", "Every claim tracked to payout"],
+  },
+  {
     title: "Payout Protection",
     plain: "Revenue Protection",
     desc: "Airbnb support can refund a guest straight out of your payout. We catch those adjustments and dispute the ones you didn't owe.",
     included: "Defend, Operate, Scale",
     details: ["Payout adjustments caught and disputed", "Refund requests handled before they become deductions", "Support errors escalated and corrected", "Monthly report of money recovered and saved"],
-  },
-  {
-    title: "Claims Recovery",
-    plain: "Damage & Reimbursement Claims",
-    desc: "Claims built the way Airbnb needs to see them: itemized, documented, and filed on time. 39 of 40 won in 2026.",
-    included: "Defend, Operate, Scale",
-    details: ["AirCover damage claims filed and followed through", "Itemized invoices and photo evidence prepared", "Guest disputes and platform mediation", "Every claim tracked to payout"],
-  },
-  {
-    title: "Review Defense",
-    plain: "Review Removal & Protection",
-    desc: "Reviews that break Airbnb's policy get disputed through the official process. 500+ removed so far, with no workarounds that put your account at risk.",
-    included: "Defend, Operate, Scale",
-    details: ["Qualifying reviews disputed within 48 hours", "Public responses that protect your listing", "Every listing's rating tracked weekly", "Listing Rescue if one slips below 4.8"],
   },
   {
     title: "Guest Experience",
@@ -56,7 +56,7 @@ const ServicesPage = () => (
         <ScrollReveal>
           <p className="text-brand text-sm font-semibold tracking-[0.3em] uppercase mb-8">Services</p>
           <h1 className="font-heading text-5xl md:text-6xl lg:text-[5rem] font-bold text-white leading-[0.92] tracking-[-0.03em] mb-8">
-            Everything we do protects your money or your ratings.
+            Everything we do protects your ratings or your money.
           </h1>
           <p className="text-white/70 text-lg md:text-xl lg:text-2xl max-w-lg mx-auto leading-relaxed">
             Five services, one team, all built on how Airbnb support actually decides.
@@ -118,7 +118,7 @@ const ServicesPage = () => (
             Not sure which services you need?
           </h2>
           <p className="text-white/70 text-lg md:text-xl max-w-md mx-auto mb-14 leading-[1.7]">
-            Start with a free audit. We'll show you where money and ratings are leaking, and what we'd fix first.
+            Start with a free audit. We'll show you where ratings and money are leaking, and what we'd fix first.
           </p>
           <Button variant="brand" size="xl" asChild>
             <a href="https://calendly.com/usa-elitebnbhosts/30min" target="_blank" rel="noopener noreferrer">Get my free Revenue &amp; Review Audit <ArrowRight className="ml-1" size={16} /></a>

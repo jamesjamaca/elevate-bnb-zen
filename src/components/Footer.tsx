@@ -10,7 +10,7 @@ const Footer = () => (
             elitebnb<span className="font-light">hosts</span>
           </h3>
           <p className="text-muted-foreground text-sm leading-[1.7] max-w-xs">
-            Remote property management for modern Airbnb hosts. Intelligent systems, exceptional results.
+            Airbnb review and payout protection for operators with 10 to 100 listings.
           </p>
         </div>
         <div>
