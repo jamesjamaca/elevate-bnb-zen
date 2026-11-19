@@ -208,7 +208,7 @@ const Index = () => {
               </blockquote>
               <p className="text-white/60 text-base tracking-wide mb-12">One of our 39 wins: multi-property investor, $8,587 recovered.</p>
               <div className="flex flex-wrap gap-3">
-                {["39 of 40 documented claims approved in 2026 (97.5%)", "$33,860 recovered for hosts (of $42,543 filed)"].map((stat) => (
+                {["39 of 40 documented claims approved in 2026 (97.5%)", "$33,860 recovered for hosts"].map((stat) => (
                   <span key={stat} className="text-sm tracking-wide text-white/80 border border-brand/40 bg-brand/10 rounded-full px-5 py-2.5">
                     {stat}
                   </span>
@@ -399,7 +399,7 @@ const Index = () => {
             {[
               { metric: "500+", label: "reviews removed through Airbnb's official process" },
               { metric: "39 of 40", label: "documented claims approved in 2026 (97.5%)" },
-              { metric: "$33,860", label: "recovered for hosts (of $42,543 filed)" },
+              { metric: "$33,860", label: "recovered for hosts" },
               { metric: "200+", label: "listings supported across 8 operators" },
             ].map((item, i) => (
               <ScrollReveal key={item.label} delay={i * 0.08}>
