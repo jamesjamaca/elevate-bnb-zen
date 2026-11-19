@@ -59,7 +59,9 @@ const Footer = () => (
         </div>
       </div>
       <div className="border-t border-border mt-20 pt-10 text-center text-xs text-muted-foreground space-y-2">
-        <p>© {new Date().getFullYear()} ElitebnbHosts. All rights reserved.</p>
+        <p>© 2026 Elite BNB Host Group LLC. All rights reserved.</p>
+        <p>Elite BNB Hosts is a brand of Elite BNB Host Group LLC.</p>
+        {/* <p>[MAILING ADDRESS]</p> -- uncomment and replace once the address is supplied */}
         <p>Elite BNB Hosts is an independent service and is not affiliated with Airbnb.</p>
       </div>
     </div>
